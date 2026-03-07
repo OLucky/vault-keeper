@@ -1,0 +1,9 @@
+.error {
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--color-accent-rose);
+  border-radius: var(--radius-md);
+  background-color: color-mix(in srgb, var(--color-accent-rose) 10%, var(--color-bg-surface));
+  color: var(--color-accent-rose);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Weapon Generator",
+  "tables": [
+    {
+      "name": "Type",
+      "die": "d6",
+      "entries": [
+        { "range": [1, 1], "title": "Sword" },
+        { "range": [2, 2], "title": "Axe" },
+        { "range": [3, 3], "title": "Spear" },
+        { "range": [4, 4], "title": "Mace" },
+        { "range": [5, 5], "title": "Dagger" },
+        { "range": [6, 6], "title": "Bow" }
+      ]
+    },
+    {
+      "name": "Material",
+      "die": "d6",
+      "entries": [
+        { "range": [1, 2], "title": "Iron" },
+        { "range": [3, 4], "title": "Bone" },
+        { "range": [5, 5], "title": "Crystal", "description": "Rare and fragile" },
+        { "range": [6, 6], "title": "Synth" }
+      ]
+    },
+    {
+      "name": "Condition",
+      "die": "d4",
+      "entries": [
+        { "range": [1, 1], "title": "Pristine", "description": "Unusually well-preserved" },
+        { "range": [2, 2], "title": "Worn" },
+        { "range": [3, 3], "title": "Damaged" },
+        { "range": [4, 4], "title": "Ancient", "description": "Crumbling but still functional" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+.layout {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: var(--space-md) var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-accent-cyan);
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.85;
+  }
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-xl);
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}

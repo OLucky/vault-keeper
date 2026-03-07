@@ -1,0 +1,1 @@
+{ "name": "Weapons & Items", "tableSets": ["weapon-generator.json", "trade-goods.json"] }

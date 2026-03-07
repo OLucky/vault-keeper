@@ -1,0 +1,1 @@
+{ "name": "NPCs", "tableSets": ["npc-generator.json", "npc-appearance.json"] }

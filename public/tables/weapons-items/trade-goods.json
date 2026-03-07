@@ -1,0 +1,41 @@
+{
+  "name": "Trade Goods",
+  "tables": [
+    {
+      "name": "Item",
+      "die": "d10",
+      "entries": [
+        { "range": [1, 1], "title": "Water purifier", "description": "Solar-powered, slow but reliable" },
+        { "range": [2, 2], "title": "Fungal spores" },
+        { "range": [3, 3], "title": "Synth-silk bolt" },
+        { "range": [4, 4], "title": "Ancient data-slug", "description": "Contents unknown" },
+        { "range": [5, 5], "title": "Healing salve" },
+        { "range": [6, 6], "title": "Map fragment" },
+        { "range": [7, 7], "title": "Beast hide" },
+        { "range": [8, 8], "title": "Scrap electronics" },
+        { "range": [9, 9], "title": "Vault key", "description": "May or may not work" },
+        { "range": [10, 10], "title": "Psyche crystal" }
+      ]
+    },
+    {
+      "name": "Value",
+      "die": "d6",
+      "entries": [
+        { "range": [1, 2], "title": "Worthless", "description": "Good only for barter with the desperate" },
+        { "range": [3, 4], "title": "Common" },
+        { "range": [5, 5], "title": "Valuable" },
+        { "range": [6, 6], "title": "Priceless", "description": "Worth killing for" }
+      ]
+    },
+    {
+      "name": "Origin",
+      "die": "d8",
+      "entries": [
+        { "range": [1, 2], "title": "Scavenged from ruins" },
+        { "range": [3, 4], "title": "Traded from a caravan" },
+        { "range": [5, 6], "title": "Stolen", "description": "Previous owner may come looking" },
+        { "range": [7, 8], "title": "Gifted by a dying traveler" }
+      ]
+    }
+  ]
+}

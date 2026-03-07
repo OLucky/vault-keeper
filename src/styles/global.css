@@ -1,0 +1,139 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+/* Dark Sci-Fi Theme - Vaults of Vaarn */
+:root {
+  /* Base colors */
+  --color-bg-primary: #0a0e14;
+  --color-bg-secondary: #131920;
+  --color-bg-surface: #1a2030;
+  --color-bg-elevated: #222a3a;
+
+  /* Text colors */
+  --color-text-primary: #c8d0dc;
+  --color-text-secondary: #7a8694;
+  --color-text-muted: #4a5568;
+
+  /* Accent colors - desert-tech palette inspired by Vaarn */
+  --color-accent-cyan: #39c5cf;
+  --color-accent-amber: #d4a041;
+  --color-accent-violet: #9b6dff;
+  --color-accent-rose: #cf4f6f;
+  --color-accent-green: #3fbf7f;
+
+  /* Borders */
+  --color-border: #2a3444;
+  --color-border-focus: var(--color-accent-cyan);
+
+  /* Spacing scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+}
+
+a {
+  color: var(--color-accent-cyan);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}

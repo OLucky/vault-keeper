@@ -1,0 +1,33 @@
+.subtitle {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-md);
+}
+
+.section {
+  margin-top: var(--space-xl);
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.recentList {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.recentItem {
+  /* wrapper for table set name + result card */
+}
+
+.recentItemName {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
