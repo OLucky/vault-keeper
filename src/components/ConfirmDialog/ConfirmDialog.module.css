@@ -1,0 +1,76 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  /* no extra styles needed, overlay handles positioning */
+}
+
+.dialog {
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  max-width: 360px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  outline: none;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.message {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-lg) 0;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+.cancelButton {
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface);
+}
+
+.confirmButton {
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-accent-rose);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-rose);
+  color: var(--color-bg-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmButton:hover {
+  opacity: 0.85;
+}

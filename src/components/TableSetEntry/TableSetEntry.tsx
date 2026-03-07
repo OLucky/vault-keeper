@@ -5,6 +5,7 @@ import type { GeneratedResult, TableSet } from '../../lib/types'
 import { rollTableSet, rerollFieldWithTriggers } from '../../lib/rolling'
 import { tableSetQueryOptions } from '../../lib/loader'
 import { useRollStore } from '../../stores/rollStore'
+import { useSessionLogStore } from '../../stores/sessionLogStore'
 import { ResultCard } from '../ResultCard/ResultCard'
 import styles from './TableSetEntry.module.css'
 
@@ -40,6 +41,7 @@ export function TableSetEntry({ tableSet, categoryId, fileName = '' }: TableSetE
     try {
       const result = await rollTableSet(tableSet, categoryId, undefined, fetchTableSetFn, storeKey)
       addRoll(storeKey, result)
+      useSessionLogStore.getState().addEntry(result, categoryId)
     } finally {
       setIsRolling(false)
     }
