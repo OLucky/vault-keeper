@@ -46,6 +46,31 @@
   font-style: italic;
 }
 
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.bookmarkButton {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.bookmarkButton:hover {
+  color: var(--color-accent-amber);
+}
+
+.bookmarkSaved {
+  color: var(--color-accent-amber);
+}
+
 .deleteButton {
   font-size: var(--text-sm);
   color: var(--color-text-muted);

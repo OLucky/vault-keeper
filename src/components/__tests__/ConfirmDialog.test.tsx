@@ -7,7 +7,7 @@ describe('ConfirmDialog', () => {
   it('renders nothing when isOpen is false', () => {
     render(
       <ConfirmDialog
-        title="Confirm"
+        title="Delete Item"
         message="Are you sure?"
         onConfirm={vi.fn()}
         onCancel={vi.fn()}
@@ -15,14 +15,14 @@ describe('ConfirmDialog', () => {
       />
     )
 
-    expect(screen.queryByText('Confirm')).not.toBeInTheDocument()
+    expect(screen.queryByText('Delete Item')).not.toBeInTheDocument()
     expect(screen.queryByText('Are you sure?')).not.toBeInTheDocument()
   })
 
   it('renders title and message when open', () => {
     render(
       <ConfirmDialog
-        title="Confirm"
+        title="Delete Item"
         message="Are you sure?"
         onConfirm={vi.fn()}
         onCancel={vi.fn()}
@@ -30,18 +30,19 @@ describe('ConfirmDialog', () => {
       />
     )
 
-    expect(screen.getByText('Confirm')).toBeInTheDocument()
+    expect(screen.getByText('Delete Item')).toBeInTheDocument()
     expect(screen.getByText('Are you sure?')).toBeInTheDocument()
   })
 
-  it('calls onConfirm when Clear button is clicked', async () => {
+  it('calls onConfirm when confirm button is clicked', async () => {
     const user = userEvent.setup()
     const onConfirm = vi.fn()
 
     render(
       <ConfirmDialog
-        title="Confirm"
+        title="Clear Log"
         message="Are you sure?"
+        confirmLabel="Clear"
         onConfirm={onConfirm}
         onCancel={vi.fn()}
         isOpen={true}
@@ -59,7 +60,7 @@ describe('ConfirmDialog', () => {
 
     render(
       <ConfirmDialog
-        title="Confirm"
+        title="Delete Item"
         message="Are you sure?"
         onConfirm={vi.fn()}
         onCancel={onCancel}
@@ -78,7 +79,7 @@ describe('ConfirmDialog', () => {
 
     render(
       <ConfirmDialog
-        title="Confirm"
+        title="Delete Item"
         message="Are you sure?"
         onConfirm={onConfirm}
         onCancel={vi.fn()}

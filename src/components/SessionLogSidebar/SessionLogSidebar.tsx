@@ -106,6 +106,7 @@ export function SessionLogSidebar() {
       <ConfirmDialog
         title="Clear Session Log"
         message="Clear all logged results? This cannot be undone."
+        confirmLabel="Clear"
         isOpen={showClearConfirm}
         onConfirm={() => { clearAll(); setShowClearConfirm(false) }}
         onCancel={() => setShowClearConfirm(false)}

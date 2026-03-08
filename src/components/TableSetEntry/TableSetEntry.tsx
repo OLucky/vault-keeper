@@ -6,6 +6,7 @@ import { rollTableSet, rerollFieldWithTriggers } from '../../lib/rolling'
 import { tableSetQueryOptions } from '../../lib/loader'
 import { useRollStore } from '../../stores/rollStore'
 import { useSessionLogStore } from '../../stores/sessionLogStore'
+import { useSavedResultsStore } from '../../stores/savedResultsStore'
 import { ResultCard } from '../ResultCard/ResultCard'
 import styles from './TableSetEntry.module.css'
 
@@ -19,6 +20,7 @@ interface TableSetEntryProps {
 
 export function TableSetEntry({ tableSet, categoryId, fileName = '' }: TableSetEntryProps) {
   const storeKey = `${categoryId}/${fileName}`
+  const savedResults = useSavedResultsStore((s) => s.savedResults)
   const addRoll = useRollStore((s) => s.addRoll)
   const rerollField = useRollStore((s) => s.rerollField)
   const stackedResults = useRollStore(
@@ -82,6 +84,9 @@ export function TableSetEntry({ tableSet, categoryId, fileName = '' }: TableSetE
               result={result}
               tableSet={tableSet}
               onFieldReroll={handleFieldReroll}
+              isSaved={savedResults.some((r) => r.id === result.id)}
+              onSave={() => useSavedResultsStore.getState().saveResult(result, categoryId)}
+              onUnsave={() => useSavedResultsStore.getState().removeResult(result.id)}
             />
           ))}
         </div>

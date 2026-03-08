@@ -7,9 +7,10 @@ interface ConfirmDialogProps {
   onConfirm: () => void
   onCancel: () => void
   isOpen: boolean
+  confirmLabel?: string
 }
 
-export function ConfirmDialog({ title, message, onConfirm, onCancel, isOpen }: ConfirmDialogProps) {
+export function ConfirmDialog({ title, message, onConfirm, onCancel, isOpen, confirmLabel = 'Confirm' }: ConfirmDialogProps) {
   return (
     <ModalOverlay className={styles.overlay} isOpen={isOpen} onOpenChange={(open) => { if (!open) onCancel() }} isDismissable>
       <Modal className={styles.modal}>
@@ -18,7 +19,7 @@ export function ConfirmDialog({ title, message, onConfirm, onCancel, isOpen }: C
           <p className={styles.message}>{message}</p>
           <div className={styles.actions}>
             <button className={styles.cancelButton} onClick={onCancel} type="button">Cancel</button>
-            <button className={styles.confirmButton} onClick={onConfirm} type="button">Clear</button>
+            <button className={styles.confirmButton} onClick={onConfirm} type="button">{confirmLabel}</button>
           </div>
         </Dialog>
       </Modal>

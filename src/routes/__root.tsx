@@ -19,6 +19,9 @@ function RootLayout() {
           <Link to="/" className={styles.logo}>
             Vault Keeper
           </Link>
+          <Link to="/saved" className={styles.navLink}>
+            Saved
+          </Link>
           <SidebarToggle />
         </nav>
       </header>

@@ -28,6 +28,17 @@
   }
 }
 
+.navLink {
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+
+  &:hover {
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+}
+
 .content {
   display: flex;
   flex: 1;
