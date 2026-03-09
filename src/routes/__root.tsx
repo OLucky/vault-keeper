@@ -1,5 +1,6 @@
 import { createRootRouteWithContext, Link, Outlet } from '@tanstack/react-router'
 import type { QueryClient } from '@tanstack/react-query'
+import { HamburgerMenu } from '../components/HamburgerMenu/HamburgerMenu'
 import { SidebarToggle } from '../components/SidebarToggle/SidebarToggle'
 import { SessionLogSidebar } from '../components/SessionLogSidebar/SessionLogSidebar'
 import { useSessionLogStore } from '../stores/sessionLogStore'
@@ -19,6 +20,9 @@ function RootLayout() {
           <Link to="/" className={styles.logo}>
             Vault Keeper
           </Link>
+          <span className={styles.hamburger}>
+            <HamburgerMenu />
+          </span>
           <Link to="/saved" className={styles.navLink}>
             Saved
           </Link>

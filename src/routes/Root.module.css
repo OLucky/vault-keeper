@@ -39,6 +39,10 @@
   }
 }
 
+.hamburger {
+  display: none;
+}
+
 .content {
   display: flex;
   flex: 1;
@@ -52,4 +56,25 @@
   margin: 0 auto;
   width: 100%;
   overflow-y: auto;
+}
+
+@media (max-width: 960px) {
+  .main {
+    max-width: none;
+    padding: var(--space-lg);
+  }
+
+  .navLink {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: var(--space-md);
+  }
 }

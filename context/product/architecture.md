@@ -19,7 +19,7 @@ _Vault Keeper is a fully client-side web application with no backend server. All
 ## 2. Data & Persistence
 
 - **Table Data (Static):** JSON files served from the `/public` directory, fetched at runtime on demand. This allows adding or editing tables without rebuilding the app.
-- **Session Log (Ephemeral):** Managed in-memory via a Zustand store. Lives for the duration of the browser tab session.
+- **Session Log (Persistent):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Entries survive page refreshes and tab closures; only cleared when the user explicitly clears the log.
 - **Saved Results (Persistent, Phase 2):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Individual results are saved/removed by the user.
 
 ---

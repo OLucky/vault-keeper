@@ -60,3 +60,10 @@
   color: var(--color-accent-rose);
   font-style: italic;
 }
+
+@media (max-width: 960px) {
+  .bookmark {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

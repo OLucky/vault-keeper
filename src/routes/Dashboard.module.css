@@ -31,3 +31,9 @@
   font-size: var(--text-base);
   font-weight: 500;
 }
+
+@media (max-width: 640px) {
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+  }
+}

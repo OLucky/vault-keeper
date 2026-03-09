@@ -33,3 +33,10 @@
   padding: 0 4px;
   line-height: 1;
 }
+
+@media (max-width: 960px) {
+  .toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

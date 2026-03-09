@@ -60,3 +60,10 @@
 .deleteButton:hover {
   color: var(--color-accent-rose);
 }
+
+@media (max-width: 960px) {
+  .deleteButton {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

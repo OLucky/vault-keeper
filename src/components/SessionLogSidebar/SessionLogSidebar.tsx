@@ -10,6 +10,7 @@ export function SessionLogSidebar() {
   const entries = useSessionLogStore((s) => s.entries)
   const removeEntry = useSessionLogStore((s) => s.removeEntry)
   const clearAll = useSessionLogStore((s) => s.clearAll)
+  const toggleSidebar = useSessionLogStore((s) => s.toggleSidebar)
   const [showClearConfirm, setShowClearConfirm] = useState(false)
   const [copied, setCopied] = useState(false)
 
@@ -70,6 +71,9 @@ export function SessionLogSidebar() {
         <div className={styles.header}>
           <div className={styles.headerTop}>
             <span className={styles.title}>Session Log ({entries.length})</span>
+            <button className={styles.closeButton} onClick={toggleSidebar} type="button" aria-label="Close sidebar">
+              ✕
+            </button>
             {entries.length > 0 && (
               <button className={styles.clearButton} onClick={() => setShowClearConfirm(true)} type="button">
                 Clear

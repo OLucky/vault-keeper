@@ -137,3 +137,10 @@ code {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
 }
+
+@media (max-width: 640px) {
+  :root {
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.25rem;
+  }
+}

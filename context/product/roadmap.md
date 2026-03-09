@@ -26,15 +26,15 @@ _The core experience: browse tables, roll, and see results instantly._
 
 _Capture results during play and save the ones worth keeping._
 
-- [ ] **Session Log**
-  - [ ] **Auto-Capture Results:** Automatically add each generated result to a running session log visible in the UI.
-  - [ ] **Organized by Category & Table Set:** Display logged results grouped by category and table set for easy scanning.
-  - [ ] **Export as Text:** Enable exporting the session log as plain text for use in notes or other tools.
+- [x] **Session Log**
+  - [x] **Auto-Capture Results:** Automatically add each generated result to a running session log visible in the UI.
+  - [x] **Organized by Category & Table Set:** Display logged results grouped by category and table set for easy scanning.
+  - [x] **Export as Text:** Enable exporting the session log as plain text for use in notes or other tools.
 
-- [ ] **Save Individual Results**
-  - [ ] **Save a Result:** Allow the user to mark/save specific generated results they want to keep.
-  - [ ] **Saved Results Collection:** Provide a dedicated view of all saved results, persisted to browser local storage.
-  - [ ] **Remove Saved Results:** Let the user delete individual saved results they no longer need.
+- [x] **Save Individual Results**
+  - [x] **Save a Result:** Allow the user to mark/save specific generated results they want to keep.
+  - [x] **Saved Results Collection:** Provide a dedicated view of all saved results, persisted to browser local storage.
+  - [x] **Remove Saved Results:** Let the user delete individual saved results they no longer need.
 
 ---
 
@@ -43,5 +43,5 @@ _Capture results during play and save the ones worth keeping._
 _Quality of life improvements refined based on real usage._
 
 - [ ] **Quality of Life**
-  - [ ] **Responsive Layout:** Improve the UI for tablet/phone use at the game table.
+  - [x] **Responsive Layout:** Improve the UI for tablet/phone use at the game table.
   - [ ] **Favorites/Pinned Tables:** Let the user pin frequently-used table sets for quick access.
