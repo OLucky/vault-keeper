@@ -25,9 +25,11 @@ export const Route = createFileRoute('/$categoryId')({
 function TableSetItem({
   categoryId,
   fileName,
+  categoryName,
 }: {
   categoryId: string
   fileName: string
+  categoryName: string
 }) {
   const { data, isError, error } = useQuery(
     tableSetQueryOptions(categoryId, fileName),
@@ -38,7 +40,7 @@ function TableSetItem({
   if (!data) {
     return null
   }
-  return <TableSetEntry tableSet={data} categoryId={categoryId} fileName={fileName} />
+  return <TableSetEntry tableSet={data} categoryId={categoryId} fileName={fileName} categoryName={categoryName} />
 }
 
 function CategoryPage() {
@@ -88,6 +90,7 @@ function CategoryPage() {
             categoryId={categoryId}
             fileName={fileName}
             filter={filter}
+            categoryName={categoryName}
           />
         ))}
       </div>
@@ -99,10 +102,12 @@ function FilteredTableSetItem({
   categoryId,
   fileName,
   filter,
+  categoryName,
 }: {
   categoryId: string
   fileName: string
   filter: string
+  categoryName: string
 }) {
   const { data } = useQuery(tableSetQueryOptions(categoryId, fileName))
   if (filter && data) {
@@ -114,5 +119,5 @@ function FilteredTableSetItem({
   if (filter && !data) {
     return null
   }
-  return <TableSetItem categoryId={categoryId} fileName={fileName} />
+  return <TableSetItem categoryId={categoryId} fileName={fileName} categoryName={categoryName} />
 }

@@ -10,7 +10,7 @@ _Vault Keeper is a fully client-side web application with no backend server. All
 - **Language:** TypeScript
 - **UI Framework:** React
 - **Routing:** TanStack Router (file-based, type-safe routing)
-- **State Management:** Zustand (session log, saved results, app state)
+- **State Management:** Zustand (session log, saved results, favorites/pinned tables, app state)
 - **Component Library:** React Aria Components (accessible, unstyled primitives)
 - **Styling:** CSS Modules with modern CSS features (nesting, custom properties, container queries)
 
@@ -21,6 +21,7 @@ _Vault Keeper is a fully client-side web application with no backend server. All
 - **Table Data (Static):** JSON files served from the `/public` directory, fetched at runtime on demand. This allows adding or editing tables without rebuilding the app.
 - **Session Log (Persistent):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Entries survive page refreshes and tab closures; only cleared when the user explicitly clears the log.
 - **Saved Results (Persistent, Phase 2):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Individual results are saved/removed by the user.
+- **Favorites/Pinned Tables (Persistent, Phase 3):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Pinned table sets with drag-to-reorder via React Aria DnD.
 
 ---
 

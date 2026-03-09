@@ -25,6 +25,32 @@
   font-size: var(--text-lg);
   font-weight: 600;
   color: var(--color-text-primary);
+  flex: 1;
+}
+
+.pinButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  padding: var(--space-xs);
+  margin-left: auto;
+  margin-right: var(--space-sm);
+  transition: color 0.15s ease;
+}
+
+.pinButton:hover {
+  color: var(--color-accent-violet);
+}
+
+.pinButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.pinButton.pinned {
+  color: var(--color-accent-violet);
 }
 
 .rollButton {

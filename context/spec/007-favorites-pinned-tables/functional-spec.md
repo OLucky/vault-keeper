@@ -1,7 +1,7 @@
 # Functional Specification: Favorites/Pinned Tables
 
 - **Roadmap Item:** Phase 3 — Favorites/Pinned Tables
-- **Status:** Approved
+- **Status:** Completed
 - **Author:** Claude (with GM input)
 
 ---
@@ -24,10 +24,10 @@ As more table sets are added to Vault Keeper (the long-term goal is full sourceb
 - Table sets that are already pinned display a filled/active icon, indicating their pinned state.
 - Clicking the active icon unpins the table set (removes it from the collection).
   - **Acceptance Criteria:**
-    - [ ] Each table set on the category page has a pin action (e.g., star or pin icon).
-    - [ ] Clicking the icon pins the table set and the icon changes to a filled/active state.
-    - [ ] Clicking the active icon unpins the table set and the icon returns to its default state.
-    - [ ] Pinning and unpinning do not require a confirmation prompt (instant toggle).
+    - [x]Each table set on the category page has a pin action (e.g., star or pin icon).
+    - [x]Clicking the icon pins the table set and the icon changes to a filled/active state.
+    - [x]Clicking the active icon unpins the table set and the icon returns to its default state.
+    - [x]Pinning and unpinning do not require a confirmation prompt (instant toggle).
 
 ### 2.2 Pinned Section on Dashboard
 
@@ -35,36 +35,36 @@ As more table sets are added to Vault Keeper (the long-term goal is full sourceb
 - Each pinned table set is displayed as a clickable card that navigates to the table set's roll view.
 - The cards show the table set name and its source category for context.
   - **Acceptance Criteria:**
-    - [ ] A "Pinned" section appears at the top of the dashboard when at least one table set is pinned.
-    - [ ] Each pinned card displays the table set name and its source category.
-    - [ ] Clicking a pinned card navigates to that table set's roll view.
-    - [ ] When no table sets are pinned, the pinned section is not shown on the dashboard.
+    - [x]A "Pinned" section appears at the top of the dashboard when at least one table set is pinned.
+    - [x]Each pinned card displays the table set name and its source category.
+    - [x]Clicking a pinned card navigates to that table set's roll view.
+    - [x]When no table sets are pinned, the pinned section is not shown on the dashboard.
 
 ### 2.3 Manual Reordering
 
 - The user can drag pinned cards to rearrange them in their preferred order.
 - The custom order persists across page refreshes and browser sessions.
   - **Acceptance Criteria:**
-    - [ ] Pinned cards can be reordered by dragging.
-    - [ ] The new order is saved immediately and persists after page refresh.
-    - [ ] Newly pinned table sets are added to the end of the list.
+    - [x]Pinned cards can be reordered by dragging.
+    - [x]The new order is saved immediately and persists after page refresh.
+    - [x]Newly pinned table sets are added to the end of the list.
 
 ### 2.4 Unpin from Dashboard
 
 - In addition to unpinning from the category page, the user can unpin a table set directly from the pinned section on the dashboard (e.g., via a small unpin icon on the card).
   - **Acceptance Criteria:**
-    - [ ] Each pinned card on the dashboard has an unpin action (e.g., a small × or unpin icon).
-    - [ ] Clicking the unpin action removes the card from the pinned section immediately.
-    - [ ] The corresponding pin icon on the category page reverts to its default/unpinned state.
+    - [x]Each pinned card on the dashboard has an unpin action (e.g., a small × or unpin icon).
+    - [x]Clicking the unpin action removes the card from the pinned section immediately.
+    - [x]The corresponding pin icon on the category page reverts to its default/unpinned state.
 
 ### 2.5 Persistence
 
 - Pinned table sets and their order are persisted to browser local storage.
 - Pinned tables persist independently of the session log and saved results.
   - **Acceptance Criteria:**
-    - [ ] Pinned table sets persist across page refreshes and browser tab closures.
-    - [ ] The custom order is preserved after refresh.
-    - [ ] Clearing the session log or saved results does not affect pinned tables.
+    - [x]Pinned table sets persist across page refreshes and browser tab closures.
+    - [x]The custom order is preserved after refresh.
+    - [x]Clearing the session log or saved results does not affect pinned tables.
 
 ---
 

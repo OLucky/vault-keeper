@@ -44,4 +44,4 @@ _Quality of life improvements refined based on real usage._
 
 - [ ] **Quality of Life**
   - [x] **Responsive Layout:** Improve the UI for tablet/phone use at the game table.
-  - [ ] **Favorites/Pinned Tables:** Let the user pin frequently-used table sets for quick access.
+  - [x] **Favorites/Pinned Tables:** Let the user pin frequently-used table sets for quick access.

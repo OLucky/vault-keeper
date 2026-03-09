@@ -7,6 +7,7 @@ import { tableSetQueryOptions } from '../../lib/loader'
 import { useRollStore } from '../../stores/rollStore'
 import { useSessionLogStore } from '../../stores/sessionLogStore'
 import { useSavedResultsStore } from '../../stores/savedResultsStore'
+import { useFavoritesStore } from '../../stores/favoritesStore'
 import { ResultCard } from '../ResultCard/ResultCard'
 import styles from './TableSetEntry.module.css'
 
@@ -16,9 +17,10 @@ interface TableSetEntryProps {
   tableSet: TableSet
   categoryId: string
   fileName?: string
+  categoryName?: string
 }
 
-export function TableSetEntry({ tableSet, categoryId, fileName = '' }: TableSetEntryProps) {
+export function TableSetEntry({ tableSet, categoryId, fileName = '', categoryName = '' }: TableSetEntryProps) {
   const storeKey = `${categoryId}/${fileName}`
   const savedResults = useSavedResultsStore((s) => s.savedResults)
   const addRoll = useRollStore((s) => s.addRoll)
@@ -30,6 +32,10 @@ export function TableSetEntry({ tableSet, categoryId, fileName = '' }: TableSetE
       [storeKey],
     ),
   )
+
+  const isPinned = useFavoritesStore((s) => s.isPinned(categoryId, fileName))
+  const addPinned = useFavoritesStore((s) => s.addPinned)
+  const removePinned = useFavoritesStore((s) => s.removePinned)
 
   const queryClient = useQueryClient()
   const [isRolling, setIsRolling] = useState(false)
@@ -74,6 +80,19 @@ export function TableSetEntry({ tableSet, categoryId, fileName = '' }: TableSetE
     <div className={styles.wrapper}>
       <div className={styles.entry}>
         <span className={styles.name}>{tableSet.name}</span>
+        <Button
+          className={`${styles.pinButton} ${isPinned ? styles.pinned : ''}`}
+          aria-label={isPinned ? 'Unpin' : 'Pin'}
+          onPress={() => {
+            if (isPinned) {
+              removePinned(categoryId, fileName)
+            } else {
+              addPinned({ categoryId, fileName, tableSetName: tableSet.name, categoryName })
+            }
+          }}
+        >
+          {isPinned ? '★' : '☆'}
+        </Button>
         <Button className={styles.rollButton} onPress={handleRoll} isDisabled={isRolling}>Roll</Button>
       </div>
       {stackedResults.length > 0 && (
