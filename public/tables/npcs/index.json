@@ -1,1 +1,1 @@
-{ "name": "NPCs", "tableSets": ["npc-generator.json", "npc-appearance.json"] }
+{ "name": "NPCs", "tableSets": ["names.json", "careers.json"] }
