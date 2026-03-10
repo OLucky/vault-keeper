@@ -45,3 +45,4 @@ _Quality of life improvements refined based on real usage._
 - [ ] **Quality of Life**
   - [x] **Responsive Layout:** Improve the UI for tablet/phone use at the game table.
   - [x] **Favorites/Pinned Tables:** Let the user pin frequently-used table sets for quick access.
+  - [x] **Vaarn Weather Simulator:** Digitize the hex-based weather chart — d6-driven daily weather advancement with full rules text, manual placement, and persistent marker position.

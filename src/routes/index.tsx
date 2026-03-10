@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
 import { Button, GridList, GridListItem, useDragAndDrop } from 'react-aria-components'
 import { manifestQueryOptions, categoryQueryOptions } from '../lib/loader'
@@ -123,6 +123,16 @@ function Dashboard() {
       <p className={styles.subtitle}>
         Welcome to Vault Keeper — your Vaults of Vaarn GM companion.
       </p>
+
+      <section className={styles.section}>
+        <h2>Tools</h2>
+        <div className={styles.categoriesGrid}>
+          <Link to="/weather" className={styles.toolCard}>
+            <span className={styles.toolName}>Weather Simulator</span>
+            <span className={styles.toolDescription}>Track Vaarn's weather hex chart</span>
+          </Link>
+        </div>
+      </section>
 
       {pinnedTableSets.length > 0 && (
         <PinnedSection pinnedTableSets={pinnedTableSets} />
