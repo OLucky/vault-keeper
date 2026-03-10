@@ -110,7 +110,7 @@ describe('TableSchema', () => {
       entries: [{ range: [1, 6], title: 'All' }],
     })
     expect(table.name).toBe('Test Table')
-    expect(table.die).toBe('d6')
+    expect('die' in table && table.die).toBe('d6')
   })
 
   it('accepts a table with optional id and conditional', () => {
@@ -131,7 +131,7 @@ describe('TableSchema', () => {
       die: 'd80',
       entries: [{ range: [1, 80], title: 'All' }],
     })
-    expect(table.die).toBe('d80')
+    expect('die' in table && table.die).toBe('d80')
   })
 
   it('rejects table with invalid die type', () => {

@@ -16,8 +16,13 @@ export function rerollSingleField(
   tableIndex: number,
   rollFn: (die: DieType) => number = rollDie
 ): ResultField {
-  const roll = rollFn(table.die)
-  const entry = findEntry(table.entries, roll)
+  if (table.type === 'computed') {
+    throw new Error('Cannot reroll a computed table with rerollSingleField')
+  }
+  // After computed check, table must be a lookup table
+  const lookupTable = table as { die: DieType; entries: Entry[]; name: string }
+  const roll = rollFn(lookupTable.die)
+  const entry = findEntry(lookupTable.entries, roll)
   return {
     tableName: table.name,
     entry: {
@@ -47,8 +52,10 @@ function rollSingleTable(
     return { field, entry: syntheticEntry }
   }
 
-  const roll = rollFn(table.die)
-  const entry = findEntry(table.entries, roll)
+  // After computed check, table must be a lookup table
+  const lookupTable = table as { die: DieType; entries: Entry[]; name: string }
+  const roll = rollFn(lookupTable.die)
+  const entry = findEntry(lookupTable.entries, roll)
   const field: ResultField = {
     tableName: table.name,
     entry: {

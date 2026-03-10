@@ -1,9 +1,12 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { QueryClient } from '@tanstack/react-query'
 import {
   manifestQueryOptions,
   categoryQueryOptions,
   tableSetQueryOptions,
 } from '../loader'
+
+const client = new QueryClient()
 
 function mockFetch(data: unknown, ok = true, status = 200) {
   return vi.fn().mockResolvedValue({
@@ -46,7 +49,8 @@ describe('manifestQueryOptions', () => {
       queryKey: ['manifest'],
       signal: new AbortController().signal,
       meta: undefined,
-    })
+      client,
+    } as any)
 
     expect(fetch).toHaveBeenCalledWith('/tables/manifest.json')
     expect(result).toEqual(validManifest)
@@ -61,7 +65,8 @@ describe('manifestQueryOptions', () => {
       queryKey: ['manifest'],
       signal: new AbortController().signal,
       meta: undefined,
-    })
+      client,
+    } as any)
 
     expect(result).toEqual({ categories: ['npcs'] })
   })
@@ -75,7 +80,8 @@ describe('manifestQueryOptions', () => {
         queryKey: ['manifest'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow(/Validation error.*manifest\.json/)
   })
 
@@ -88,7 +94,8 @@ describe('manifestQueryOptions', () => {
         queryKey: ['manifest'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow('Network failure')
   })
 
@@ -101,7 +108,8 @@ describe('manifestQueryOptions', () => {
         queryKey: ['manifest'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow(/Failed to fetch.*manifest\.json.*404/)
   })
 })
@@ -125,7 +133,8 @@ describe('categoryQueryOptions', () => {
       queryKey: ['category', 'npcs'],
       signal: new AbortController().signal,
       meta: undefined,
-    })
+      client,
+    } as any)
 
     expect(fetch).toHaveBeenCalledWith('/tables/npcs/index.json')
     expect(result).toEqual(validCategory)
@@ -140,7 +149,8 @@ describe('categoryQueryOptions', () => {
       queryKey: ['category', 'locations'],
       signal: new AbortController().signal,
       meta: undefined,
-    })
+      client,
+    } as any)
 
     expect(result).toEqual(validCategory)
   })
@@ -154,7 +164,8 @@ describe('categoryQueryOptions', () => {
         queryKey: ['category', 'npcs'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow(/Validation error.*npcs\/index\.json/)
   })
 })
@@ -192,7 +203,8 @@ describe('tableSetQueryOptions', () => {
       queryKey: ['tableSet', 'npcs', 'npc-generator.json'],
       signal: new AbortController().signal,
       meta: undefined,
-    })
+      client,
+    } as any)
 
     expect(fetch).toHaveBeenCalledWith('/tables/npcs/npc-generator.json')
     expect(result).toEqual(validTableSet)
@@ -206,7 +218,8 @@ describe('tableSetQueryOptions', () => {
       queryKey: ['tableSet', 'npcs', 'npc-generator.json'],
       signal: new AbortController().signal,
       meta: undefined,
-    })
+      client,
+    } as any)
 
     expect(result.name).toBe('NPC Generator')
     expect(result.tables).toHaveLength(1)
@@ -221,7 +234,8 @@ describe('tableSetQueryOptions', () => {
         queryKey: ['tableSet', 'npcs', 'npc-generator.json'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow(/Validation error.*npc-generator\.json/)
   })
 
@@ -247,7 +261,8 @@ describe('tableSetQueryOptions', () => {
         queryKey: ['tableSet', 'npcs', 'npc-generator.json'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow(/Validation error.*npc-generator\.json.*Gap/)
   })
 
@@ -260,7 +275,8 @@ describe('tableSetQueryOptions', () => {
         queryKey: ['tableSet', 'npcs', 'npc-generator.json'],
         signal: new AbortController().signal,
         meta: undefined,
-      })
+        client,
+      } as any)
     ).rejects.toThrow('Connection refused')
   })
 })
