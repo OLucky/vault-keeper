@@ -1,0 +1,104 @@
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background-color: var(--color-bg-primary);
+  padding: var(--space-md);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-2xl) var(--space-xl);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.heading {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  color: var(--color-accent-cyan);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.input {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus {
+  border-color: var(--color-border-focus);
+}
+
+.error {
+  font-size: var(--text-sm);
+  color: var(--color-accent-rose);
+}
+
+.button {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-accent-cyan);
+  color: var(--color-bg-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  outline: none;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 2px;
+}
+
+.button:active {
+  opacity: 0.8;
+}

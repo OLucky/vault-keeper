@@ -4,6 +4,8 @@ import { HamburgerMenu } from '../components/HamburgerMenu/HamburgerMenu'
 import { SidebarToggle } from '../components/SidebarToggle/SidebarToggle'
 import { SessionLogSidebar } from '../components/SessionLogSidebar/SessionLogSidebar'
 import { useSessionLogStore } from '../stores/sessionLogStore'
+import { useAuthStore } from '../stores/authStore'
+import { AuthScreen } from '../components/AuthScreen/AuthScreen'
 import styles from './Root.module.css'
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -12,6 +14,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootLayout() {
   const sidebarOpen = useSessionLogStore((s) => s.sidebarOpen)
+  const isAuthenticated = useAuthStore((s) => s.isAuthenticated)
+
+  const authRequired = import.meta.env.VITE_APP_PASSWORD
+  if (authRequired && !isAuthenticated) return <AuthScreen />
 
   return (
     <div className={styles.layout}>
