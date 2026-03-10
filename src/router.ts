@@ -5,6 +5,7 @@ import { routeTree } from './routeTree.gen'
 export function createAppRouter(queryClient: QueryClient) {
   return createRouter({
     routeTree,
+    basepath: import.meta.env.BASE_URL,
     context: { queryClient },
   })
 }
