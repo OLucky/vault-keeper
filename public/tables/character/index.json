@@ -1,0 +1,1 @@
+{ "name": "Character", "tableSets": ["player-character.json", "true-kin.json", "cacogen.json", "synth.json", "newbeast.json", "neobloom.json", "mycomorph.json", "faa-nomad.json", "cacklemaw-exile.json", "planeyfolk.json", "lithling.json"] }

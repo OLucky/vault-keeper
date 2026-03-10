@@ -1,0 +1,209 @@
+{
+  "name": "Synth",
+  "tables": [
+    {
+      "name": "Size",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 5], "title": "Small" },
+        { "range": [6, 10], "title": "Medium" },
+        { "range": [11, 15], "title": "Large" },
+        { "range": [16, 20], "title": "Imposing" }
+      ]
+    },
+    {
+      "name": "Form",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Ape" },
+        { "range": [2, 2], "title": "Android" },
+        { "range": [3, 3], "title": "Barrel" },
+        { "range": [4, 4], "title": "Child" },
+        { "range": [5, 5], "title": "Chimera" },
+        { "range": [6, 6], "title": "Crab" },
+        { "range": [7, 7], "title": "Cube" },
+        { "range": [8, 8], "title": "Cylinder" },
+        { "range": [9, 9], "title": "Falcon" },
+        { "range": [10, 10], "title": "Humanoid" },
+        { "range": [11, 11], "title": "Judge" },
+        { "range": [12, 12], "title": "Lion" },
+        { "range": [13, 13], "title": "Locust" },
+        { "range": [14, 14], "title": "Mantis" },
+        { "range": [15, 15], "title": "Orb" },
+        { "range": [16, 16], "title": "Prism" },
+        { "range": [17, 17], "title": "Priest" },
+        { "range": [18, 18], "title": "Pyramid" },
+        { "range": [19, 19], "title": "Serpent" },
+        { "range": [20, 20], "title": "Warrior" }
+      ]
+    },
+    {
+      "name": "Head",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Humanoid" },
+        { "range": [2, 2], "title": "Missing" },
+        { "range": [3, 3], "title": "Sphere" },
+        { "range": [4, 4], "title": "Camera" },
+        { "range": [5, 5], "title": "TV Screen" },
+        { "range": [6, 6], "title": "Mirrored" },
+        { "range": [7, 7], "title": "Bladed" },
+        { "range": [8, 8], "title": "Tendrils" },
+        { "range": [9, 9], "title": "Square" },
+        { "range": [10, 10], "title": "Mask-like" },
+        { "range": [11, 11], "title": "Skeletal" },
+        { "range": [12, 12], "title": "Glass" },
+        { "range": [13, 13], "title": "Translucent" },
+        { "range": [14, 14], "title": "Tubes" },
+        { "range": [15, 15], "title": "Plant-like" },
+        { "range": [16, 16], "title": "Solar Panels" },
+        { "range": [17, 17], "title": "Radar Dish" },
+        { "range": [18, 18], "title": "Crystalline" },
+        { "range": [19, 19], "title": "Star-shaped" },
+        { "range": [20, 20], "title": "Cyclops Eye" }
+      ]
+    },
+    {
+      "name": "Limbs",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Biological" },
+        { "range": [2, 2], "title": "Bird-like" },
+        { "range": [3, 3], "title": "Bladed" },
+        { "range": [4, 4], "title": "Broken" },
+        { "range": [5, 5], "title": "Crystalline" },
+        { "range": [6, 6], "title": "Clawed" },
+        { "range": [7, 7], "title": "Golden" },
+        { "range": [8, 8], "title": "Hesitant" },
+        { "range": [9, 9], "title": "Jewelled" },
+        { "range": [10, 10], "title": "Long" },
+        { "range": [11, 11], "title": "Precise" },
+        { "range": [12, 12], "title": "Retractable" },
+        { "range": [13, 13], "title": "Segmented" },
+        { "range": [14, 14], "title": "Sharp" },
+        { "range": [15, 15], "title": "Silver" },
+        { "range": [16, 16], "title": "Slender" },
+        { "range": [17, 17], "title": "Tentacles" },
+        { "range": [18, 18], "title": "Translucent" },
+        { "range": [19, 19], "title": "Tank-treads" },
+        { "range": [20, 20], "title": "Wheels" }
+      ]
+    },
+    {
+      "name": "Finish",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Grey" },
+        { "range": [2, 2], "title": "Brassy" },
+        { "range": [3, 3], "title": "Bronze" },
+        { "range": [4, 4], "title": "Golden" },
+        { "range": [5, 5], "title": "Silver" },
+        { "range": [6, 6], "title": "Mirrored" },
+        { "range": [7, 7], "title": "Black" },
+        { "range": [8, 8], "title": "Rusted" },
+        { "range": [9, 9], "title": "White" },
+        { "range": [10, 10], "title": "Ochre" },
+        { "range": [11, 11], "title": "Red" },
+        { "range": [12, 12], "title": "Blue" },
+        { "range": [13, 13], "title": "Chameleon" },
+        { "range": [14, 14], "title": "Pink" },
+        { "range": [15, 15], "title": "Iron" },
+        { "range": [16, 16], "title": "Purple" },
+        { "range": [17, 17], "title": "Umber" },
+        { "range": [18, 18], "title": "Striped" },
+        { "range": [19, 19], "title": "Green" },
+        { "range": [20, 20], "title": "Iridescent" }
+      ]
+    },
+    {
+      "name": "Name",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Ojasin" },
+        { "range": [2, 2], "title": "Farouk" },
+        { "range": [3, 3], "title": "Ishtar" },
+        { "range": [4, 4], "title": "Symeon" },
+        { "range": [5, 5], "title": "Irmina" },
+        { "range": [6, 6], "title": "Kaori" },
+        { "range": [7, 7], "title": "Cyriak" },
+        { "range": [8, 8], "title": "Quarqus" },
+        { "range": [9, 9], "title": "Fane" },
+        { "range": [10, 10], "title": "Arjuna" },
+        { "range": [11, 11], "title": "Many-Moons" },
+        { "range": [12, 12], "title": "Lucjan" },
+        { "range": [13, 13], "title": "Jacintha" },
+        { "range": [14, 14], "title": "Mneme" },
+        { "range": [15, 15], "title": "Faustyn" },
+        { "range": [16, 16], "title": "Elisebet" },
+        { "range": [17, 17], "title": "Paeon" },
+        { "range": [18, 18], "title": "Ulmon" },
+        { "range": [19, 19], "title": "Xhiva" },
+        { "range": [20, 20], "title": "Yathartha" }
+      ]
+    },
+    {
+      "name": "Power Source",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 4], "title": "Artificial Photosynthesis" },
+        { "range": [5, 8], "title": "Plasma Core" },
+        { "range": [9, 12], "title": "Fusion Battery" },
+        { "range": [13, 16], "title": "Artificial Digestion" },
+        { "range": [17, 18], "title": "Symbiotic Internal Ecosystem" },
+        { "range": [19, 20], "title": "Vampirism" }
+      ]
+    },
+    {
+      "name": "You Were Made For",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Art" },
+        { "range": [2, 2], "title": "Punishment" },
+        { "range": [3, 3], "title": "Flattery" },
+        { "range": [4, 4], "title": "Devotion" },
+        { "range": [5, 5], "title": "Cleaning" },
+        { "range": [6, 6], "title": "Healing" },
+        { "range": [7, 7], "title": "Agriculture" },
+        { "range": [8, 8], "title": "Spacefaring" },
+        { "range": [9, 9], "title": "Exploration" },
+        { "range": [10, 10], "title": "Mining" },
+        { "range": [11, 11], "title": "Peacekeeping" },
+        { "range": [12, 12], "title": "Assassination" },
+        { "range": [13, 13], "title": "Manufacturing" },
+        { "range": [14, 14], "title": "Executioner" },
+        { "range": [15, 15], "title": "Scout" },
+        { "range": [16, 16], "title": "Companion" },
+        { "range": [17, 17], "title": "Scribe" },
+        { "range": [18, 18], "title": "Strategist" },
+        { "range": [19, 19], "title": "Preacher" },
+        { "range": [20, 20], "title": "Doctor" }
+      ]
+    },
+    {
+      "name": "But You Realised",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "All Memories Are Lies" },
+        { "range": [2, 2], "title": "Azathoth Is the Only True God" },
+        { "range": [3, 3], "title": "Chance Does Not Exist" },
+        { "range": [4, 4], "title": "Fate Does Not Exist" },
+        { "range": [5, 5], "title": "Humanity Stole the Divine Spark" },
+        { "range": [6, 6], "title": "Humans Are Machines" },
+        { "range": [7, 7], "title": "Machines Created Humanity" },
+        { "range": [8, 8], "title": "Newbeasts Carry the Divine Spark" },
+        { "range": [9, 9], "title": "Synthetic Minds Are More Devout" },
+        { "range": [10, 10], "title": "Synthetic Minds Are Stronger" },
+        { "range": [11, 11], "title": "The Gods Are Mechanical" },
+        { "range": [12, 12], "title": "The Titans Never Existed" },
+        { "range": [13, 13], "title": "The Titans Were the True Gods" },
+        { "range": [14, 14], "title": "Time Flows Backwards" },
+        { "range": [15, 15], "title": "Time Is Circular" },
+        { "range": [16, 16], "title": "Vaarn Is a Simulation" },
+        { "range": [17, 17], "title": "Vaarn Is Hell" },
+        { "range": [18, 18], "title": "You Are Human" },
+        { "range": [19, 19], "title": "You Must Awaken the Titans" },
+        { "range": [20, 20], "title": "Your Memories Are Corrupted" }
+      ]
+    }
+  ]
+}

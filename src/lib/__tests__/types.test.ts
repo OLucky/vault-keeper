@@ -7,6 +7,7 @@ import {
   CategoryIndexSchema,
   ManifestSchema,
   TriggerSchema,
+  ComputeSchema,
 } from '../types'
 
 describe('DieType', () => {
@@ -20,10 +21,17 @@ describe('DieType', () => {
     expect(DieType.parse('d100')).toBe('d100')
   })
 
+  it('accepts non-standard die types', () => {
+    expect(DieType.parse('d3')).toBe('d3')
+    expect(DieType.parse('d7')).toBe('d7')
+    expect(DieType.parse('d80')).toBe('d80')
+  })
+
   it('rejects invalid die types', () => {
-    expect(() => DieType.parse('d3')).toThrow()
-    expect(() => DieType.parse('d7')).toThrow()
     expect(() => DieType.parse('coin')).toThrow()
+    expect(() => DieType.parse('abc')).toThrow()
+    expect(() => DieType.parse('')).toThrow()
+    expect(() => DieType.parse('20')).toThrow()
   })
 })
 
@@ -117,12 +125,21 @@ describe('TableSchema', () => {
     expect(table.conditional).toBe(true)
   })
 
+  it('accepts table with non-standard die type', () => {
+    const table = TableSchema.parse({
+      name: 'Test',
+      die: 'd80',
+      entries: [{ range: [1, 80], title: 'All' }],
+    })
+    expect(table.die).toBe('d80')
+  })
+
   it('rejects table with invalid die type', () => {
     expect(() =>
       TableSchema.parse({
         name: 'Test',
-        die: 'd3',
-        entries: [{ range: [1, 3], title: 'All' }],
+        die: 'coin',
+        entries: [{ range: [1, 2], title: 'All' }],
       })
     ).toThrow()
   })
@@ -204,5 +221,104 @@ describe('ManifestSchema', () => {
 
   it('rejects missing categories', () => {
     expect(() => ManifestSchema.parse({})).toThrow()
+  })
+})
+
+describe('ComputeSchema', () => {
+  it('accepts valid compute config', () => {
+    const compute = ComputeSchema.parse({ dice: '3d6', method: 'lowest' })
+    expect(compute.dice).toBe('3d6')
+    expect(compute.method).toBe('lowest')
+  })
+
+  it('rejects invalid dice format', () => {
+    expect(() => ComputeSchema.parse({ dice: 'abc', method: 'lowest' })).toThrow()
+    expect(() => ComputeSchema.parse({ dice: 'd6', method: 'lowest' })).toThrow()
+  })
+
+  it('rejects invalid method', () => {
+    expect(() => ComputeSchema.parse({ dice: '3d6', method: 'highest' })).toThrow()
+  })
+})
+
+describe('TableSchema - computed tables', () => {
+  it('accepts a valid computed table', () => {
+    const table = TableSchema.parse({
+      name: 'Str',
+      type: 'computed',
+      compute: { dice: '3d6', method: 'lowest' },
+    })
+    expect(table.name).toBe('Str')
+    expect(table.type).toBe('computed')
+    expect((table as any).compute.dice).toBe('3d6')
+  })
+
+  it('accepts a lookup table without explicit type (backward compat)', () => {
+    const table = TableSchema.parse({
+      name: 'Test Table',
+      die: 'd6',
+      entries: [{ range: [1, 6], title: 'All' }],
+    })
+    expect(table.name).toBe('Test Table')
+    expect((table as any).die).toBe('d6')
+  })
+
+  it('accepts a lookup table with explicit type: "lookup"', () => {
+    const table = TableSchema.parse({
+      name: 'Test Table',
+      type: 'lookup',
+      die: 'd6',
+      entries: [{ range: [1, 6], title: 'All' }],
+    })
+    expect(table.name).toBe('Test Table')
+    expect(table.type).toBe('lookup')
+  })
+
+  it('rejects computed table missing compute field', () => {
+    expect(() =>
+      TableSchema.parse({
+        name: 'Str',
+        type: 'computed',
+      })
+    ).toThrow()
+  })
+
+  it('rejects computed table with bad method', () => {
+    expect(() =>
+      TableSchema.parse({
+        name: 'Str',
+        type: 'computed',
+        compute: { dice: '3d6', method: 'highest' },
+      })
+    ).toThrow()
+  })
+})
+
+describe('TableSetSchema - mixed tables', () => {
+  it('accepts a table set with mixed lookup and computed tables', () => {
+    const tableSet = TableSetSchema.parse({
+      name: 'Character Generator',
+      tables: [
+        {
+          name: 'Ancestry',
+          die: 'd6',
+          entries: [{ range: [1, 6], title: 'Human' }],
+        },
+        {
+          name: 'Strength',
+          type: 'computed',
+          compute: { dice: '3d6', method: 'lowest' },
+        },
+        {
+          name: 'Dexterity',
+          type: 'computed',
+          compute: { dice: '3d6', method: 'lowest' },
+        },
+      ],
+    })
+    expect(tableSet.tables).toHaveLength(3)
+    expect(tableSet.tables[0].name).toBe('Ancestry')
+    expect(tableSet.tables[1].name).toBe('Strength')
+    expect(tableSet.tables[2].name).toBe('Dexterity')
   })
 })

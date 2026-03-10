@@ -1,0 +1,83 @@
+{
+  "name": "Advanced Weapon",
+  "tables": [
+    {
+      "name": "Melee Weapon Base",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Dagger", "description": "d6, 1 slot" },
+        { "range": [2, 2], "title": "Flail", "description": "d6, 1 slot" },
+        { "range": [3, 3], "title": "Whip", "description": "d6, 1 slot" },
+        { "range": [4, 4], "title": "Axe", "description": "d6, 1 slot" },
+        { "range": [5, 5], "title": "Club", "description": "d6, 1 slot" },
+        { "range": [6, 6], "title": "Fleshripper", "description": "d6, Electrical, 1 slot" },
+        { "range": [7, 7], "title": "Shock Baton", "description": "d6, Electrical, 1 slot" },
+        { "range": [8, 8], "title": "Razordisk", "description": "d6, 1 slot" },
+        { "range": [9, 9], "title": "War Fan", "description": "d6, 1 slot" },
+        { "range": [10, 10], "title": "Scythe", "description": "d6, 1 slot" },
+        { "range": [11, 11], "title": "Sword", "description": "d8, 2 slots" },
+        { "range": [12, 12], "title": "Mace", "description": "d8, 2 slots" },
+        { "range": [13, 13], "title": "Rapier", "description": "d8, 2 slots" },
+        { "range": [14, 14], "title": "Spear", "description": "d8, 2 slots" },
+        { "range": [15, 15], "title": "Quarterstaff", "description": "d8, 2 slots" },
+        { "range": [16, 16], "title": "War Hammer", "description": "d8, 2 slots" },
+        { "range": [17, 17], "title": "Great Mace", "description": "d10, 3 slots" },
+        { "range": [18, 18], "title": "Great Axe", "description": "d10, 3 slots" },
+        { "range": [19, 19], "title": "Halberd", "description": "d10, 3 slots" },
+        { "range": [20, 20], "title": "Great Sword", "description": "d10, 3 slots" }
+      ]
+    },
+    {
+      "name": "Ranged Weapon Base",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Sling", "description": "d4, 1 slot, Ud20" },
+        { "range": [2, 2], "title": "Revolver", "description": "d6, 1 slot, Ud10" },
+        { "range": [3, 3], "title": "Pistol", "description": "d6, 1 slot, Ud10" },
+        { "range": [4, 4], "title": "Musket", "description": "d8, 2 slots, Ud8" },
+        { "range": [5, 5], "title": "Shotgun", "description": "d8, 2 slots, Ud8" },
+        { "range": [6, 6], "title": "Crossbow", "description": "d8, 2 slots, Ud8" },
+        { "range": [7, 7], "title": "Longbow", "description": "d8, 2 slots, Ud10" },
+        { "range": [8, 8], "title": "Rifle", "description": "d8, 2 slots, Ud10" },
+        { "range": [9, 9], "title": "Laser Pistol", "description": "d6, Beam, 1 slot, Ud12" },
+        { "range": [10, 10], "title": "Hand Cannon", "description": "d8, 2 slots, Ud8" },
+        { "range": [11, 11], "title": "Shock Bow", "description": "d8, Electrical, 2 slots, Ud8" },
+        { "range": [12, 12], "title": "Auto-Rifle", "description": "d8, 2 slots, Ud8" },
+        { "range": [13, 13], "title": "Scattergun", "description": "d8, 2 slots, Ud10" },
+        { "range": [14, 14], "title": "Laser Rifle", "description": "d8, Beam, 2 slots, Ud12" },
+        { "range": [15, 15], "title": "Concussion Rifle", "description": "d10, Concussive, 3 slots, Ud8" },
+        { "range": [16, 16], "title": "Spore Thrower", "description": "d10, Blast, Fungal, 3 slots, Ud8" },
+        { "range": [17, 17], "title": "Grenade Launcher", "description": "d10, Blast, 3 slots, Ud6" },
+        { "range": [18, 18], "title": "Laser Cannon", "description": "d10, Beam, 3 slots, Ud6" },
+        { "range": [19, 19], "title": "Port-A-Cannon", "description": "d12, Blast, 5 slots, Ud4" },
+        { "range": [20, 20], "title": "Railgun", "description": "d12, Piercing, 5 slots, Ud4" }
+      ]
+    },
+    {
+      "name": "Weapon Tag",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Agonising", "description": "Biological targets Morale save or flee the wielder. PCs damaged must EGO save or move away from the user." },
+        { "range": [2, 2], "title": "Anti-Paradoxical", "description": "Weapon is designed to combat extra dimensional beings. Double damage to Outsider-type creatures." },
+        { "range": [3, 3], "title": "Blasting", "description": "The weapon can hit multiple targets in the same area. Roll to-hit once and compare to the AV score of all targets." },
+        { "range": [4, 4], "title": "Blinding", "description": "Targets must DEX Save vs 1 round of Blindness." },
+        { "range": [5, 5], "title": "Concussive", "description": "Targets STR save or are moved away from their location." },
+        { "range": [6, 6], "title": "Corrosive", "description": "The weapon degrades AV. On a hit, the weapon either deals damage or reduces the target's AV score by one (attacker's choice)." },
+        { "range": [7, 7], "title": "Electrical", "description": "Double damage to Synthetic creatures, targets wearing metal armour, targets in water." },
+        { "range": [8, 8], "title": "Entangling", "description": "Targets DEX save or become Entangled. Entangled creatures have AV 09, and attack with DIS. Must DEX Save to break free." },
+        { "range": [9, 9], "title": "Eroding", "description": "Double damage to Mineral-type creatures, vehicles, and static structures." },
+        { "range": [10, 10], "title": "Flaming", "description": "Ignites flammable objects. Cannot be used underwater or against submerged opponents." },
+        { "range": [11, 11], "title": "Freezing", "description": "Targets CON save vs d4 DEX damage. At 0 DEX they are frozen solid and cannot move." },
+        { "range": [12, 12], "title": "Heavy", "description": "Double damage, double slot weight, minimum STR +3 to use." },
+        { "range": [13, 13], "title": "Hypergeometric", "description": "The weapon exists partially outside of Euclidean space and deals doubled damage to Hypergeometric creatures." },
+        { "range": [14, 14], "title": "Mauling", "description": "Extra dice of damage against targets with AV 13 or lower, deals halved damage to opponents with AV 16 or higher." },
+        { "range": [15, 15], "title": "Parasitic", "description": "The weapon is alive, and cannot be unequipped without surgery. The user must consume double rations each day. It does not need to reload." },
+        { "range": [16, 16], "title": "Piercing", "description": "Extra dice of damage against targets with AV 16 or higher, deals halved damage to opponents of AV 13 or lower." },
+        { "range": [17, 17], "title": "Psyche-Suppressant", "description": "Double damage to Psychic creatures. Cannot use Mystic Gifts while holding." },
+        { "range": [18, 18], "title": "Strong", "description": "The weapon deals double base damage. If the weapon would break, it does not." },
+        { "range": [19, 19], "title": "Unstable", "description": "If the wielder of this weapon rolls a 1 while using it, the weapon explodes, dealing 2d6 damage to the wielder." },
+        { "range": [20, 20], "title": "Vampiric", "description": "When this weapon damages biological creatures, the wielder regains HP equal to half the damage inflicted." }
+      ]
+    }
+  ]
+}

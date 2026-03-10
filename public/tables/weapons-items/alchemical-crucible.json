@@ -1,0 +1,57 @@
+{
+  "name": "Alchemical Crucible",
+  "tables": [
+    {
+      "name": "Crucible Quality",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Ultraviolet" },
+        { "range": [2, 2], "title": "Engraved" },
+        { "range": [3, 3], "title": "Flexglass" },
+        { "range": [4, 4], "title": "Crystalline" },
+        { "range": [5, 5], "title": "Ceramic" },
+        { "range": [6, 6], "title": "Polychrome" },
+        { "range": [7, 7], "title": "Quicksilver" },
+        { "range": [8, 8], "title": "Spiny" },
+        { "range": [9, 9], "title": "Transparent" },
+        { "range": [10, 10], "title": "Bejewelled" },
+        { "range": [11, 11], "title": "Stone" },
+        { "range": [12, 12], "title": "Plasteel" },
+        { "range": [13, 13], "title": "Flowstone" },
+        { "range": [14, 14], "title": "Luminous" },
+        { "range": [15, 15], "title": "Golden" },
+        { "range": [16, 16], "title": "Bronze" },
+        { "range": [17, 17], "title": "Sky-Iron" },
+        { "range": [18, 18], "title": "Azure" },
+        { "range": [19, 19], "title": "Magnetised" },
+        { "range": [20, 20], "title": "Lurid" }
+      ]
+    },
+    {
+      "name": "Crucible Shape",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Cauldron" },
+        { "range": [2, 2], "title": "Pot" },
+        { "range": [3, 3], "title": "Skull" },
+        { "range": [4, 4], "title": "Urn" },
+        { "range": [5, 5], "title": "Vase" },
+        { "range": [6, 6], "title": "Sphere" },
+        { "range": [7, 7], "title": "Pyramid" },
+        { "range": [8, 8], "title": "Helm" },
+        { "range": [9, 9], "title": "Gourd" },
+        { "range": [10, 10], "title": "Kettle" },
+        { "range": [11, 11], "title": "Bottle" },
+        { "range": [12, 12], "title": "Amphora" },
+        { "range": [13, 13], "title": "Flagon" },
+        { "range": [14, 14], "title": "Jug" },
+        { "range": [15, 15], "title": "Teapot" },
+        { "range": [16, 16], "title": "Chalice" },
+        { "range": [17, 17], "title": "Barrel" },
+        { "range": [18, 18], "title": "Cube" },
+        { "range": [19, 19], "title": "Thermos" },
+        { "range": [20, 20], "title": "Eyeball" }
+      ]
+    }
+  ]
+}

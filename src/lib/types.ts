@@ -1,16 +1,10 @@
 import { z } from 'zod'
 
-export const DieType = z.enum(['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'])
+export const DieType = z.string().regex(/^d\d+$/, 'Die type must be in format "dN" (e.g., d6, d20, d80)')
 export type DieType = z.infer<typeof DieType>
 
-export const DIE_MAX: Record<DieType, number> = {
-  d4: 4,
-  d6: 6,
-  d8: 8,
-  d10: 10,
-  d12: 12,
-  d20: 20,
-  d100: 100,
+export function getDieMax(die: DieType): number {
+  return parseInt(die.slice(1), 10)
 }
 
 export const TriggerSchema = z
@@ -31,13 +25,40 @@ export const EntrySchema = z.object({
 })
 export type Entry = z.infer<typeof EntrySchema>
 
-export const TableSchema = z.object({
+export const ComputeSchema = z.object({
+  dice: z.string().regex(/^\d+d\d+$/, 'Dice must be in format "NdX" (e.g., 3d6)'),
+  method: z.enum(['lowest']),
+})
+export type Compute = z.infer<typeof ComputeSchema>
+
+export const LookupTableSchema = z.object({
   name: z.string(),
   id: z.string().optional(),
+  type: z.literal('lookup').optional(),
   die: DieType,
   conditional: z.boolean().optional(),
   entries: z.array(EntrySchema),
 })
+
+export const ComputedTableSchema = z.object({
+  name: z.string(),
+  id: z.string().optional(),
+  type: z.literal('computed'),
+  conditional: z.boolean().optional(),
+  compute: ComputeSchema,
+})
+
+export const TableSchema = z.discriminatedUnion('type', [
+  z.object({
+    name: z.string(),
+    id: z.string().optional(),
+    type: z.literal('lookup'),
+    die: DieType,
+    conditional: z.boolean().optional(),
+    entries: z.array(EntrySchema),
+  }),
+  ComputedTableSchema,
+]).or(LookupTableSchema)
 export type Table = z.infer<typeof TableSchema>
 
 export const TableSetSchema = z.object({
@@ -63,6 +84,7 @@ export interface ResultField {
   tableIndex: number
   error?: string
   triggered?: boolean
+  computed?: boolean
 }
 
 export interface GeneratedResult {

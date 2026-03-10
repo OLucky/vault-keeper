@@ -1,0 +1,88 @@
+{
+  "name": "Armour",
+  "tables": [
+    {
+      "name": "Quality",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Shabby" },
+        { "range": [2, 2], "title": "Decadent" },
+        { "range": [3, 3], "title": "Ancestral" },
+        { "range": [4, 4], "title": "Quicksilver" },
+        { "range": [5, 5], "title": "Nano-weave" },
+        { "range": [6, 6], "title": "Spiny" },
+        { "range": [7, 7], "title": "Dazzling" },
+        { "range": [8, 8], "title": "Tarnished" },
+        { "range": [9, 9], "title": "Indigo" },
+        { "range": [10, 10], "title": "Golden" },
+        { "range": [11, 11], "title": "Symbiotic" },
+        { "range": [12, 12], "title": "Biomechanical" },
+        { "range": [13, 13], "title": "Occult" },
+        { "range": [14, 14], "title": "Fungal" },
+        { "range": [15, 15], "title": "Translucent" },
+        { "range": [16, 16], "title": "Gaudy" },
+        { "range": [17, 17], "title": "Sacred" },
+        { "range": [18, 18], "title": "Iridescent" },
+        { "range": [19, 19], "title": "Crystalline" },
+        { "range": [20, 20], "title": "Ornate" }
+      ]
+    },
+    {
+      "name": "Armour Type",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 2], "title": "Desert Robes", "description": "AV 11, 1 slot" },
+        { "range": [3, 5], "title": "Hazard Wrap", "description": "AV 12, 3 slots. ADV on Saves vs Radiation and Toxins." },
+        { "range": [6, 9], "title": "War-Shirt", "description": "AV 12, 2 slots" },
+        { "range": [10, 13], "title": "Brigandine", "description": "AV 13, 3 slots" },
+        { "range": [14, 16], "title": "Cuirass", "description": "AV 14, 4 slots" },
+        { "range": [17, 18], "title": "Chain-Mail", "description": "AV 15, 5 slots" },
+        { "range": [19, 20], "title": "Plate Armour", "description": "AV 16, 6 slots. DIS when swimming or climbing." }
+      ]
+    },
+    {
+      "name": "Helm",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 5], "title": "None" },
+        { "range": [6, 6], "title": "Spiny Helm", "description": "+1 AV" },
+        { "range": [7, 7], "title": "Dazzling Helm", "description": "+1 AV" },
+        { "range": [8, 8], "title": "Ridiculous Helm", "description": "+1 AV" },
+        { "range": [9, 9], "title": "Decadent Helm", "description": "+1 AV" },
+        { "range": [10, 10], "title": "Golden Helm", "description": "+1 AV" },
+        { "range": [11, 11], "title": "Bone Helm", "description": "+1 AV" },
+        { "range": [12, 12], "title": "Biomechanical Helm", "description": "+1 AV" },
+        { "range": [13, 13], "title": "Occult Helm", "description": "+1 AV" },
+        { "range": [14, 14], "title": "Fungal Helm", "description": "+1 AV" },
+        { "range": [15, 15], "title": "Translucent Helm", "description": "+1 AV" },
+        { "range": [16, 16], "title": "Gaudy Helm", "description": "+1 AV" },
+        { "range": [17, 17], "title": "Sacred Helm", "description": "+1 AV" },
+        { "range": [18, 18], "title": "Iridescent Helm", "description": "+1 AV" },
+        { "range": [19, 19], "title": "Crystalline Helm", "description": "+1 AV" },
+        { "range": [20, 20], "title": "Ornate Helm", "description": "+1 AV" }
+      ]
+    },
+    {
+      "name": "Shield",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 5], "title": "None" },
+        { "range": [6, 6], "title": "Wooden Shield", "description": "+1 AV" },
+        { "range": [7, 7], "title": "Plastiglass Shield", "description": "+1 AV" },
+        { "range": [8, 8], "title": "Nomad's Shield", "description": "+1 AV" },
+        { "range": [9, 9], "title": "Painted Shield", "description": "+1 AV" },
+        { "range": [10, 10], "title": "Apeskin Shield", "description": "+1 AV" },
+        { "range": [11, 11], "title": "Bone Shield", "description": "+1 AV" },
+        { "range": [12, 12], "title": "Starburst Shield", "description": "+1 AV" },
+        { "range": [13, 13], "title": "Gladiator's Shield", "description": "+1 AV" },
+        { "range": [14, 14], "title": "Fungal Shield", "description": "+1 AV" },
+        { "range": [15, 15], "title": "Polychrome Shield", "description": "+1 AV" },
+        { "range": [16, 16], "title": "Stone Shield", "description": "+1 AV" },
+        { "range": [17, 17], "title": "Holy Fool's Shield", "description": "+1 AV" },
+        { "range": [18, 18], "title": "Temple-forged Shield", "description": "+1 AV" },
+        { "range": [19, 19], "title": "Sickly Moon Shield", "description": "+1 AV" },
+        { "range": [20, 20], "title": "Sun Flambeaux Shield", "description": "+1 AV" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "name": "Grave",
+  "tables": [
+    {
+      "name": "Location",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Ruined Village" },
+        { "range": [2, 2], "title": "Large Cave" },
+        { "range": [3, 3], "title": "Secret Cave" },
+        { "range": [4, 4], "title": "Below Floating Crystal" },
+        { "range": [5, 5], "title": "Lonely Hilltop" },
+        { "range": [6, 6], "title": "Dry River-bed" },
+        { "range": [7, 7], "title": "Dry Lake-bed" },
+        { "range": [8, 8], "title": "Imposing Crypt" },
+        { "range": [9, 9], "title": "Cactus Grove" },
+        { "range": [10, 10], "title": "Ring of Standing Stones" },
+        { "range": [11, 11], "title": "Under Petrified Tree" },
+        { "range": [12, 12], "title": "Below Huge Statue" },
+        { "range": [13, 13], "title": "Elegant Pagoda" },
+        { "range": [14, 14], "title": "Looming Edifice" },
+        { "range": [15, 15], "title": "Plain of Stones" },
+        { "range": [16, 16], "title": "Near Wreck" },
+        { "range": [17, 17], "title": "Near Oasis" },
+        { "range": [18, 18], "title": "Near Ruin" },
+        { "range": [19, 19], "title": "Near Holy Place" },
+        { "range": [20, 20], "title": "Near Settlement" }
+      ]
+    },
+    {
+      "name": "Grave For",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Autarchy Soldiers" },
+        { "range": [2, 2], "title": "Titan-era Programmers" },
+        { "range": [3, 3], "title": "Autarchy Nobles" },
+        { "range": [4, 4], "title": "Autarch's Consort" },
+        { "range": [5, 5], "title": "Newbeasts" },
+        { "range": [6, 6], "title": "Synthetic Warrior" },
+        { "range": [7, 7], "title": "Synthetic Poet" },
+        { "range": [8, 8], "title": "Synthetic Oracle" },
+        { "range": [9, 9], "title": "Notorious Heretic" },
+        { "range": [10, 10], "title": "Cacogen Mystic" },
+        { "range": [11, 11], "title": "Faa Nomad Ancestors" },
+        { "range": [12, 12], "title": "Faa Nomad Prophet" },
+        { "range": [13, 13], "title": "Powerful Psychic" },
+        { "range": [14, 14], "title": "Famed Swordsman" },
+        { "range": [15, 15], "title": "Bandit King" },
+        { "range": [16, 16], "title": "Hegemony Rangers" },
+        { "range": [17, 17], "title": "Massacred Faa Nomads" },
+        { "range": [18, 18], "title": "Hegemony Exultant" },
+        { "range": [19, 19], "title": "Autarch" },
+        { "range": [20, 20], "title": "Extra-Solar Explorers" }
+      ]
+    },
+    {
+      "name": "Burial Method",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Upside Down" },
+        { "range": [2, 2], "title": "In Salted Earth" },
+        { "range": [3, 3], "title": "In Decorated Urn" },
+        { "range": [4, 4], "title": "Mummified" },
+        { "range": [5, 5], "title": "Laminated" },
+        { "range": [6, 6], "title": "Held in Preservation Tank" },
+        { "range": [7, 7], "title": "Held in Anti-Entropy Sphere" },
+        { "range": [8, 8], "title": "Cryogenic Pod" },
+        { "range": [9, 9], "title": "Surrounded by Grave Goods" },
+        { "range": [10, 10], "title": "Crystal Coffin" },
+        { "range": [11, 11], "title": "Biotech Sarcophagus" },
+        { "range": [12, 12], "title": "Wearing Lifelike Death Mask" },
+        { "range": [13, 13], "title": "Sky Burial" },
+        { "range": [14, 14], "title": "Consumed by Fungus" },
+        { "range": [15, 15], "title": "Food for Sacred Flower" },
+        { "range": [16, 16], "title": "Below Cairn" },
+        { "range": [17, 17], "title": "Inside Stone Cube" },
+        { "range": [18, 18], "title": "Inside Hypergeometric Artefact" },
+        { "range": [19, 19], "title": "Frozen Outside Time-stream" },
+        { "range": [20, 20], "title": "Not Really Dead" }
+      ]
+    },
+    {
+      "name": "Grave Quirk",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Has Been Desecrated" },
+        { "range": [2, 2], "title": "Believed Cursed" },
+        { "range": [3, 3], "title": "Has Been Robbed" },
+        { "range": [4, 4], "title": "Visited by Ghouls" },
+        { "range": [5, 5], "title": "Home to Rare Animal" },
+        { "range": [6, 6], "title": "Believed Haunted" },
+        { "range": [7, 7], "title": "Coins Left In Tribute" },
+        { "range": [8, 8], "title": "Food Left In Tribute" },
+        { "range": [9, 9], "title": "Swords Left In Tribute" },
+        { "range": [10, 10], "title": "Candles Burning" },
+        { "range": [11, 11], "title": "Memorial Tree" },
+        { "range": [12, 12], "title": "Engraved Mantra" },
+        { "range": [13, 13], "title": "Memorial Fountain (Dry)" },
+        { "range": [14, 14], "title": "Ritual Artwork (Ugly)" },
+        { "range": [15, 15], "title": "Ritual Artwork (Good)" },
+        { "range": [16, 16], "title": "Site of Pilgrimage" },
+        { "range": [17, 17], "title": "Synthetic Grave Keeper" },
+        { "range": [18, 18], "title": "Hideout for Bandits" },
+        { "range": [19, 19], "title": "Entrance to Vault" },
+        { "range": [20, 20], "title": "Monster Lair" }
+      ]
+    }
+  ]
+}

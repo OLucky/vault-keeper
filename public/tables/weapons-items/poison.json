@@ -1,0 +1,85 @@
+{
+  "name": "Poison",
+  "tables": [
+    {
+      "name": "Colour",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Crimson" },
+        { "range": [2, 2], "title": "Azure" },
+        { "range": [3, 3], "title": "Ochre" },
+        { "range": [4, 4], "title": "Ash-grey" },
+        { "range": [5, 5], "title": "Black" },
+        { "range": [6, 6], "title": "White" },
+        { "range": [7, 7], "title": "Jade" },
+        { "range": [8, 8], "title": "Golden" },
+        { "range": [9, 9], "title": "Silver" },
+        { "range": [10, 10], "title": "Brassy" },
+        { "range": [11, 11], "title": "Colourless" },
+        { "range": [12, 12], "title": "Pink" },
+        { "range": [13, 13], "title": "Indigo" },
+        { "range": [14, 14], "title": "Purple" },
+        { "range": [15, 15], "title": "Iridescent" },
+        { "range": [16, 16], "title": "Orange" },
+        { "range": [17, 17], "title": "Teal" },
+        { "range": [18, 18], "title": "Brown" },
+        { "range": [19, 19], "title": "Turquoise" },
+        { "range": [20, 20], "title": "Octarine" }
+      ]
+    },
+    {
+      "name": "Form",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 3], "title": "Liquid" },
+        { "range": [4, 6], "title": "Oil" },
+        { "range": [7, 9], "title": "Powder" },
+        { "range": [10, 12], "title": "Paste" },
+        { "range": [13, 14], "title": "Sand" },
+        { "range": [15, 15], "title": "Glass" },
+        { "range": [16, 16], "title": "Leaf" },
+        { "range": [17, 17], "title": "Blood" },
+        { "range": [18, 18], "title": "Crystal" },
+        { "range": [19, 19], "title": "Fungus" },
+        { "range": [20, 20], "title": "Sugar" }
+      ]
+    },
+    {
+      "name": "Delivery Method",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 5], "title": "Must be ingested" },
+        { "range": [6, 10], "title": "Contact with skin" },
+        { "range": [11, 13], "title": "Airborne" },
+        { "range": [14, 18], "title": "Coated on weapon" },
+        { "range": [19, 20], "title": "Harmless until mixed with catalyst" }
+      ]
+    },
+    {
+      "name": "Effect",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "D6 TOX damage" },
+        { "range": [2, 2], "title": "D8 TOX damage" },
+        { "range": [3, 3], "title": "D10 TOX damage" },
+        { "range": [4, 4], "title": "D12 TOX damage" },
+        { "range": [5, 5], "title": "D20 TOX damage" },
+        { "range": [6, 6], "title": "D4 STR loss / d10 STR loss" },
+        { "range": [7, 7], "title": "D4 DEX loss / d10 DEX loss" },
+        { "range": [8, 8], "title": "D4 CON loss / d10 CON loss" },
+        { "range": [9, 9], "title": "D4 PSY loss / d10 PSY loss" },
+        { "range": [10, 10], "title": "D4 EGO loss / d10 EGO loss" },
+        { "range": [11, 11], "title": "Hallucinations", "description": "Hallucinations for d6 days / d8 INT + PSY loss" },
+        { "range": [12, 12], "title": "D6 INT loss / d10 INT loss" },
+        { "range": [13, 13], "title": "Loss of Language", "description": "D6 INT loss / Permanent Loss of Language" },
+        { "range": [14, 14], "title": "Blindness", "description": "Blindness for d8 days / Permanent blindness" },
+        { "range": [15, 15], "title": "Vomiting", "description": "Vomiting for d6 days, cannot eat to recover HP / Lose d12 CON" },
+        { "range": [16, 16], "title": "Mystic Suppression", "description": "Unable to use Mystic Gifts for d6 days" },
+        { "range": [17, 17], "title": "Paralysis", "description": "Paralysis for d6 days" },
+        { "range": [18, 18], "title": "Domination", "description": "Must EGO save to refuse direct commands" },
+        { "range": [19, 19], "title": "Vulnerability", "description": "Take double damage from all sources" },
+        { "range": [20, 20], "title": "Lethal", "description": "Lose d8 Max HP / Death" }
+      ]
+    }
+  ]
+}

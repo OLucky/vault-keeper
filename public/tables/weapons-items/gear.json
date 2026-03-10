@@ -1,0 +1,57 @@
+{
+  "name": "Gear",
+  "tables": [
+    {
+      "name": "Gear A",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Flashbang (x5)" },
+        { "range": [2, 2], "title": "Magnetic Boots" },
+        { "range": [3, 3], "title": "Grappling Hook & Rope" },
+        { "range": [4, 4], "title": "Flare (x5)" },
+        { "range": [5, 5], "title": "Smoke Bomb (x5)" },
+        { "range": [6, 6], "title": "Flask of Oil" },
+        { "range": [7, 7], "title": "Portable Stove" },
+        { "range": [8, 8], "title": "Caltrops (x5)" },
+        { "range": [9, 9], "title": "Vial of Acid (x3)" },
+        { "range": [10, 10], "title": "Animal Trap (x3)" },
+        { "range": [11, 11], "title": "Handheld Drill" },
+        { "range": [12, 12], "title": "Chain & Manacles" },
+        { "range": [13, 13], "title": "Hand Mirror" },
+        { "range": [14, 14], "title": "Motion Sensor" },
+        { "range": [15, 15], "title": "Crowbar" },
+        { "range": [16, 16], "title": "EMP Grenade (x3)" },
+        { "range": [17, 17], "title": "Skin of Wine" },
+        { "range": [18, 18], "title": "Tube of Glue (Ud8)" },
+        { "range": [19, 19], "title": "Ball Bearings (Ud20)" },
+        { "range": [20, 20], "title": "Glowstone" }
+      ]
+    },
+    {
+      "name": "Gear B",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Sleeping Gas Bomb (x5)" },
+        { "range": [2, 2], "title": "Oxygen Mask (Ud6)" },
+        { "range": [3, 3], "title": "Cast Iron Skillet" },
+        { "range": [4, 4], "title": "Black Clay (Ud8)" },
+        { "range": [5, 5], "title": "Loaded Dice" },
+        { "range": [6, 6], "title": "Raucous Whistle" },
+        { "range": [7, 7], "title": "Luminous Paint (Ud8)" },
+        { "range": [8, 8], "title": "Drug (consult p.xx)" },
+        { "range": [9, 9], "title": "Poison Pill (d10 TOX)" },
+        { "range": [10, 10], "title": "Autoglot Translator Unit" },
+        { "range": [11, 11], "title": "Lock Picks" },
+        { "range": [12, 12], "title": "Mortar & Pestle" },
+        { "range": [13, 13], "title": "Strong Liquor" },
+        { "range": [14, 14], "title": "Hourglass" },
+        { "range": [15, 15], "title": "Hammer & Chisel" },
+        { "range": [16, 16], "title": "Anti-venom (x3)" },
+        { "range": [17, 17], "title": "Welding Torch (Ud8)" },
+        { "range": [18, 18], "title": "Thermal Goggles" },
+        { "range": [19, 19], "title": "Fungicide Bomb (x5)" },
+        { "range": [20, 20], "title": "Canary in Cage" }
+      ]
+    }
+  ]
+}

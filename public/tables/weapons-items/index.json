@@ -1,1 +1,1 @@
-{ "name": "Weapons & Items", "tableSets": ["weapon-generator.json", "trade-goods.json"] }
+{ "name": "Weapons & Items", "tableSets": ["weapon-generator.json", "trade-goods.json", "basic-weapon.json", "advanced-weapon.json", "exotic-weapon.json", "mutation.json", "armour.json", "bloomboon.json", "gear.json", "cybernetics.json", "exotica.json", "mystic-gift.json", "alchemical-crucible.json", "generate-mystic-gift.json", "elixir.json", "poison.json", "hypergeometric-equation.json"] }

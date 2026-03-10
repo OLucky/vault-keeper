@@ -1,0 +1,31 @@
+{
+  "name": "Bloomboon",
+  "tables": [
+    {
+      "name": "Bloomboon",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Plated Bark", "description": "Gain +2 base AV." },
+        { "range": [2, 2], "title": "Mirrored Leaves", "description": "DEX save to reflect Beam attacks back at the source. DIS when hiding." },
+        { "range": [3, 3], "title": "Barbed Bark", "description": "Opponents who miss melee attacks against you suffer d4 damage." },
+        { "range": [4, 4], "title": "Shield Vines", "description": "Spend two points of DEX to grow a Shield Vine, adding +1 Armour Defence. DEX loss cannot heal until you choose to shed all vines." },
+        { "range": [5, 5], "title": "Lashing Vines", "description": "Spend two points of STR to grow a Lashing Vine, adding +1 melee attack (d6) per round. STR loss cannot heal until you choose to shed all vines." },
+        { "range": [6, 6], "title": "Vantablooms", "description": "Your light-absorbing vantablooms create a cloud of shadows around you. Ranged attacks have DIS to hit you. You have ADV to hide from pursuers." },
+        { "range": [7, 7], "title": "Empathogen Pollen", "description": "Once per day, release a cloud of empathogenic pollen. Biological creatures caught in the cloud must EGO save or become friendly and harmless for d6 rounds." },
+        { "range": [8, 8], "title": "Soporific Pollen", "description": "Once per day, release a cloud of soporific pollen. Biological creatures caught in the cloud must EGO save or fall asleep for d6 rounds." },
+        { "range": [9, 9], "title": "Neurotoxic Pollen", "description": "Once per day, release a cloud of neurotoxic pollen. Biological creatures caught in the cloud must CON save or be reduced to 1 HP." },
+        { "range": [10, 10], "title": "Toxic Sap", "description": "You emit one dose of a poisonous (d10 TOX) sap per day. Creatures who bite you or eat any part of your body must CON save vs a d10 TOX attack." },
+        { "range": [11, 11], "title": "Vampiric Roots", "description": "You can root yourself on Biological creatures, dealing d4 damage per round. You heal HP equal to the damage caused. The target must STR save to tear you off." },
+        { "range": [12, 12], "title": "Luftpods", "description": "You sprout pods full of lighter-than-air gas. You can fly in the air, slowly and predictably, and can act as a parachute to one other character." },
+        { "range": [13, 13], "title": "Tesla Blossom", "description": "Spend two points of CON to grow a Tesla Blossom, which makes an extra ranged electrical attack (d6, ADV to hit Synthetic creatures) every combat round. CON loss cannot heal until you shed all Tesla Blossoms." },
+        { "range": [14, 14], "title": "Seed Cannon", "description": "Spend two points of DEX to grow a Seed Cannon, which makes an extra ranged attack (d6) every combat round. DEX loss cannot heal until you shed all Seed Cannons." },
+        { "range": [15, 15], "title": "Medicinal Fruit", "description": "Each day you sprout a golden fruit. It can be eaten as a food ration, healing d10 + CON bonus HP. Your maximum fruit cannot exceed your Level. You cannot eat your own fruit." },
+        { "range": [16, 16], "title": "Sticky Sap", "description": "You emit one dose of a glutinous sap per day. When spread on a surface, it acts as a strong contact glue. Creatures must STR save or be stuck fast to the surface. Saltwater dissolves the bond." },
+        { "range": [17, 17], "title": "Sapling Retainers", "description": "Spend d4 points of CON to create an equal number of Sapling Retainers (Lvl 1, AV 12, ML +1, Atk d6). They serve you for the rest of the day before withering." },
+        { "range": [18, 18], "title": "Blast Pods", "description": "Each day you sprout an explosive pod (d10, blast). Your maximum pods cannot exceed your Level." },
+        { "range": [19, 19], "title": "Grafting", "description": "You may graft part of a Biological creature to your branches or trunk, gaining whatever extra attack or bonus is appropriate. For each day the grafted part stays alive, lose 1 point of CON." },
+        { "range": [20, 20], "title": "Puppeteer Roots", "description": "You may burrow your roots into the nervous system of a Biological creature. If the target fails an EGO save, you can control their movements. Damage taken by the controlled creature is split between both entities." }
+      ]
+    }
+  ]
+}

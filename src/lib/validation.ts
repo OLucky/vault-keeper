@@ -1,5 +1,5 @@
 import { ZodError } from 'zod'
-import { TableSetSchema, DIE_MAX } from './types'
+import { TableSetSchema, getDieMax } from './types'
 import type { Entry, TableSet } from './types'
 
 export function validateRangeCoverage(
@@ -68,7 +68,8 @@ export function validateTableSet(
   const tableSet = result.data
 
   for (const table of tableSet.tables) {
-    const dieMax = DIE_MAX[table.die]
+    if (table.type === 'computed') continue
+    const dieMax = getDieMax(table.die)
     const coverage = validateRangeCoverage(table.entries, dieMax)
     if (!coverage.valid) {
       return {

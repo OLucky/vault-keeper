@@ -44,7 +44,7 @@ export function ResultCard({ result, tableSet, onFieldReroll, isSaved, onSave, o
               )}
             </span>
           )}
-          {!field.error && !field.triggered && onFieldReroll && tableSet && (
+          {!field.error && !field.triggered && !field.computed && onFieldReroll && tableSet && (
             <RerollButton
               onReroll={() => onFieldReroll(result.id, index)}
               label={`Re-roll ${field.tableName}`}

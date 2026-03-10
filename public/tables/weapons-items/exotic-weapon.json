@@ -1,0 +1,83 @@
+{
+  "name": "Exotic Weapon",
+  "tables": [
+    {
+      "name": "Melee Weapon Base",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Dagger", "description": "d6, 1 slot" },
+        { "range": [2, 2], "title": "Flail", "description": "d6, 1 slot" },
+        { "range": [3, 3], "title": "Whip", "description": "d6, 1 slot" },
+        { "range": [4, 4], "title": "Axe", "description": "d6, 1 slot" },
+        { "range": [5, 5], "title": "Club", "description": "d6, 1 slot" },
+        { "range": [6, 6], "title": "Fleshripper", "description": "d6, Electrical, 1 slot" },
+        { "range": [7, 7], "title": "Shock Baton", "description": "d6, Electrical, 1 slot" },
+        { "range": [8, 8], "title": "Razordisk", "description": "d6, 1 slot" },
+        { "range": [9, 9], "title": "War Fan", "description": "d6, 1 slot" },
+        { "range": [10, 10], "title": "Scythe", "description": "d6, 1 slot" },
+        { "range": [11, 11], "title": "Sword", "description": "d8, 2 slots" },
+        { "range": [12, 12], "title": "Mace", "description": "d8, 2 slots" },
+        { "range": [13, 13], "title": "Rapier", "description": "d8, 2 slots" },
+        { "range": [14, 14], "title": "Spear", "description": "d8, 2 slots" },
+        { "range": [15, 15], "title": "Quarterstaff", "description": "d8, 2 slots" },
+        { "range": [16, 16], "title": "War Hammer", "description": "d8, 2 slots" },
+        { "range": [17, 17], "title": "Great Mace", "description": "d10, 3 slots" },
+        { "range": [18, 18], "title": "Great Axe", "description": "d10, 3 slots" },
+        { "range": [19, 19], "title": "Halberd", "description": "d10, 3 slots" },
+        { "range": [20, 20], "title": "Great Sword", "description": "d10, 3 slots" }
+      ]
+    },
+    {
+      "name": "Ranged Weapon Base",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Sling", "description": "d4, 1 slot, Ud20" },
+        { "range": [2, 2], "title": "Revolver", "description": "d6, 1 slot, Ud10" },
+        { "range": [3, 3], "title": "Pistol", "description": "d6, 1 slot, Ud10" },
+        { "range": [4, 4], "title": "Musket", "description": "d8, 2 slots, Ud8" },
+        { "range": [5, 5], "title": "Shotgun", "description": "d8, 2 slots, Ud8" },
+        { "range": [6, 6], "title": "Crossbow", "description": "d8, 2 slots, Ud8" },
+        { "range": [7, 7], "title": "Longbow", "description": "d8, 2 slots, Ud10" },
+        { "range": [8, 8], "title": "Rifle", "description": "d8, 2 slots, Ud10" },
+        { "range": [9, 9], "title": "Laser Pistol", "description": "d6, Beam, 1 slot, Ud12" },
+        { "range": [10, 10], "title": "Hand Cannon", "description": "d8, 2 slots, Ud8" },
+        { "range": [11, 11], "title": "Shock Bow", "description": "d8, Electrical, 2 slots, Ud8" },
+        { "range": [12, 12], "title": "Auto-Rifle", "description": "d8, 2 slots, Ud8" },
+        { "range": [13, 13], "title": "Scattergun", "description": "d8, 2 slots, Ud10" },
+        { "range": [14, 14], "title": "Laser Rifle", "description": "d8, Beam, 2 slots, Ud12" },
+        { "range": [15, 15], "title": "Concussion Rifle", "description": "d10, Concussive, 3 slots, Ud8" },
+        { "range": [16, 16], "title": "Spore Thrower", "description": "d10, Blast, Fungal, 3 slots, Ud8" },
+        { "range": [17, 17], "title": "Grenade Launcher", "description": "d10, Blast, 3 slots, Ud6" },
+        { "range": [18, 18], "title": "Laser Cannon", "description": "d10, Beam, 3 slots, Ud6" },
+        { "range": [19, 19], "title": "Port-A-Cannon", "description": "d12, Blast, 5 slots, Ud4" },
+        { "range": [20, 20], "title": "Railgun", "description": "d12, Piercing, 5 slots, Ud4" }
+      ]
+    },
+    {
+      "name": "Exotic Weapon Tag",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Aegis-Bearing", "description": "Projects a personal warding field. Grants +5 AV while held." },
+        { "range": [2, 2], "title": "Annihilating", "description": "Target must CON save or crumble to dust. Wielder loses 1 max HP each time this weapon is drawn." },
+        { "range": [3, 3], "title": "Autarch's", "description": "Weapon once belonged to ancient Autarch. Of highest quality, deals triple base damage and has five times its base trade value." },
+        { "range": [4, 4], "title": "Blood-Rapturous", "description": "When a Biological creature is killed with this weapon, the user heals for the victim's maximum HP." },
+        { "range": [5, 5], "title": "Colossal", "description": "The weapons deals triple base damage, has triple base slot weight. Minimum STR +6 to use." },
+        { "range": [6, 6], "title": "Extra-Dimensional", "description": "The weapon was forged in another dimension. It has the Hypergeometric and Anti-Paradoxical tags, and five times its base trade value." },
+        { "range": [7, 7], "title": "Hard Light", "description": "The weapon is made from hard light, projected from a wrist-mounted prism. It has a slot weight of 0." },
+        { "range": [8, 8], "title": "Heat-Seeking", "description": "No to-hit roll when targeting warm-blooded creatures." },
+        { "range": [9, 9], "title": "Indestructible", "description": "Weapon cannot be broken or destroyed by any means, natural or supernatural." },
+        { "range": [10, 10], "title": "Lithifying", "description": "Targets take d8 DEX damage and gain +1 AV. At 0 DEX they turn to stone." },
+        { "range": [11, 11], "title": "Nano-edged", "description": "Weapon deals three times base damage." },
+        { "range": [12, 12], "title": "Necrotic", "description": "Biological targets suffer d6 STR damage alongside base damage." },
+        { "range": [13, 13], "title": "Neurotoxic", "description": "Biological targets CON save vs death." },
+        { "range": [14, 14], "title": "Polymorphic", "description": "Weapon can swap between two forms at will. Choose an alternate base melee type or base ranged type." },
+        { "range": [15, 15], "title": "Reflecting", "description": "Missed attacks against the wielder damage the attacker instead." },
+        { "range": [16, 16], "title": "Psionic", "description": "Operated using psychic power. To-hit rolls made with PSY bonus, EGO bonus added to damage." },
+        { "range": [17, 17], "title": "Rocket Boosted", "description": "Weapon contains a small rocket-pack. +d10 damage when charging into melee range. Can be used to gain altitude." },
+        { "range": [18, 18], "title": "Stim-Boosting", "description": "Weapon boosts wielder's reaction times. Make one extra combat action per round." },
+        { "range": [19, 19], "title": "Ultra-Corrosive", "description": "Reduces AV by -2 on a hit. Targets take d8 CON damage alongside base damage." },
+        { "range": [20, 20], "title": "Vibroactive", "description": "The weapon or its projectiles vibrate at an atomic frequency inimical to solid-state armour. The weapon hits as though the target was unarmoured." }
+      ]
+    }
+  ]
+}

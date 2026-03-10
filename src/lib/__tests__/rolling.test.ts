@@ -340,3 +340,102 @@ describe('rollTableSet triggers', () => {
     expect(result.fields).toHaveLength(1)
   })
 })
+
+describe('rollTableSet computed tables', () => {
+  const mockRollFn = () => 1
+
+  it('handles a mix of lookup and computed tables', async () => {
+    const tableSet: TableSet = {
+      name: 'Character',
+      tables: [
+        {
+          name: 'Background',
+          die: 'd4',
+          entries: [
+            { range: [1, 2], title: 'Scholar' },
+            { range: [3, 4], title: 'Soldier' },
+          ],
+        },
+        {
+          name: 'Strength',
+          type: 'computed' as const,
+          compute: { dice: '3d6', method: 'lowest' as const },
+        },
+      ],
+    }
+
+    const result = await rollTableSet(tableSet, 'Character', mockRollFn)
+
+    expect(result.fields).toHaveLength(2)
+
+    // Lookup field works as before
+    expect(result.fields[0].tableName).toBe('Background')
+    expect(result.fields[0].entry.title).toBe('Scholar')
+    expect(result.fields[0].computed).toBeUndefined()
+
+    // Computed field
+    expect(result.fields[1].tableName).toBe('Strength')
+    expect(result.fields[1].computed).toBe(true)
+    expect(result.fields[1].tableIndex).toBe(1)
+    // The title should be a numeric string between 1 and 6
+    const value = parseInt(result.fields[1].entry.title, 10)
+    expect(value).toBeGreaterThanOrEqual(1)
+    expect(value).toBeLessThanOrEqual(6)
+  })
+
+  it('computed field entry.title is a numeric string', async () => {
+    const tableSet: TableSet = {
+      name: 'Abilities',
+      tables: [
+        {
+          name: 'Dexterity',
+          type: 'computed' as const,
+          compute: { dice: '3d6', method: 'lowest' as const },
+        },
+      ],
+    }
+
+    const result = await rollTableSet(tableSet, 'Character', mockRollFn)
+
+    expect(result.fields).toHaveLength(1)
+    expect(result.fields[0].computed).toBe(true)
+    // Title must be parseable as a number
+    expect(Number.isNaN(Number(result.fields[0].entry.title))).toBe(false)
+  })
+
+  it('computed tables are not skipped (unlike conditional tables)', async () => {
+    const tableSet: TableSet = {
+      name: 'Mixed',
+      tables: [
+        {
+          name: 'Lookup',
+          die: 'd4',
+          entries: [
+            { range: [1, 4], title: 'Result' },
+          ],
+        },
+        {
+          name: 'Conditional',
+          die: 'd4',
+          conditional: true,
+          entries: [
+            { range: [1, 4], title: 'Hidden' },
+          ],
+        },
+        {
+          name: 'Ego',
+          type: 'computed' as const,
+          compute: { dice: '3d6', method: 'lowest' as const },
+        },
+      ],
+    }
+
+    const result = await rollTableSet(tableSet, 'Test', mockRollFn)
+
+    // Lookup + Computed = 2 fields (conditional skipped)
+    expect(result.fields).toHaveLength(2)
+    expect(result.fields[0].tableName).toBe('Lookup')
+    expect(result.fields[1].tableName).toBe('Ego')
+    expect(result.fields[1].computed).toBe(true)
+  })
+})

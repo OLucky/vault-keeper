@@ -18,7 +18,9 @@ _Vault Keeper is a fully client-side web application with no backend server. All
 
 ## 2. Data & Persistence
 
-- **Table Data (Static):** JSON files served from the `/public` directory, fetched at runtime on demand. This allows adding or editing tables without rebuilding the app.
+- **Table Data (Static):** JSON files served from the `/public` directory, fetched at runtime on demand. This allows adding or editing tables without rebuilding the app. The table schema supports two types:
+  - **Lookup tables** (default): Define a `die` type and an array of `entries` with ranges. A die is rolled and the result is matched to an entry by range.
+  - **Computed tables**: Define a `compute` object with a `dice` expression (e.g., `"3d6"`) and an aggregation `method` (e.g., `"lowest"`). Dice are rolled and the method produces a numeric result directly — no entry lookup. Used for ability score generation.
 - **Session Log (Persistent):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Entries survive page refreshes and tab closures; only cleared when the user explicitly clears the log.
 - **Saved Results (Persistent, Phase 2):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Individual results are saved/removed by the user.
 - **Favorites/Pinned Tables (Persistent, Phase 3):** Persisted to browser `localStorage` using Zustand's `persist` middleware. Pinned table sets with drag-to-reorder via React Aria DnD.

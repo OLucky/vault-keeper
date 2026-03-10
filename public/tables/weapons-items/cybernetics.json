@@ -1,0 +1,31 @@
+{
+  "name": "Cybernetics",
+  "tables": [
+    {
+      "name": "Cybernetics",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Air Current Microsensor", "description": "PSY. You suffer no navigation or combat penalties from blindness or darkness." },
+        { "range": [2, 2], "title": "Alluring Fakeface", "description": "EGO. You are extraordinarily beautiful. EGO save to enthrall a Biological creature. They will never harm you." },
+        { "range": [3, 3], "title": "Autoglot HeadBank", "description": "INT. +2 to INT. You understand all languages." },
+        { "range": [4, 4], "title": "Backup Heart", "description": "CON. +2 to CON. +5 max HP." },
+        { "range": [5, 5], "title": "Carbide Knucklebones", "description": "STR. Your bare fists deal 2d4 damage." },
+        { "range": [6, 6], "title": "Cyberliver", "description": "CON. You gain immunity to all poisons. You cannot get drunk." },
+        { "range": [7, 7], "title": "Dazzleskin Filaments", "description": "CON. You are immune to laser beams and energy weapons. DIS when hiding." },
+        { "range": [8, 8], "title": "Dopamine Synthesizer", "description": "EGO. +2 to EGO. You are immune to fear, panic, and embarrassment." },
+        { "range": [9, 9], "title": "Dorsal Jump-pack", "description": "DEX. You have hover-jets mounted on your back. You fly slowly and loudly." },
+        { "range": [10, 10], "title": "Ferrosteel Exo-Skeleton", "description": "STR. Add +2 to AV and STR. Subtract -4 DEX. You cannot swim." },
+        { "range": [11, 11], "title": "Finger Syringe", "description": "DEX. One finger is a hidden injector. You can load it with any elixir or poison." },
+        { "range": [12, 12], "title": "Hydraulic Biceps", "description": "STR. Add STR bonus to melee weapon damage." },
+        { "range": [13, 13], "title": "Hyper-elastic Tendons", "description": "DEX. +2 to DEX. You can jump across huge distances like a frog." },
+        { "range": [14, 14], "title": "Merciless Cybereyes", "description": "DEX. Add DEX bonus to ranged weapon damage." },
+        { "range": [15, 15], "title": "Mercurial Fakeface", "description": "EGO. Your face can alter its features and colour at will." },
+        { "range": [16, 16], "title": "Subdermal Ceramic Plating", "description": "CON. +2 to base AV. Cannot be removed." },
+        { "range": [17, 17], "title": "Subdermal Insulation", "description": "CON. Immunity to damage from flames, cold, and electricity. Cannot be removed." },
+        { "range": [18, 18], "title": "Tactical Bioscanner", "description": "PSY. You know the Level, AV, and current HP of any Biological or Fungal creature." },
+        { "range": [19, 19], "title": "Tactical Technoscanner", "description": "INT. You know the Level, AV, and current HP of any Synthetic creature." },
+        { "range": [20, 20], "title": "Trauma-Response Rig", "description": "CON. Negate the effects of a Wound. Can be activated once per day." }
+      ]
+    }
+  ]
+}

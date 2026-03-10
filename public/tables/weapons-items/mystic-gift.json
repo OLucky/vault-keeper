@@ -1,0 +1,57 @@
+{
+  "name": "Mystic Gift",
+  "tables": [
+    {
+      "name": "Source of Power",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Mystical Crystal" },
+        { "range": [2, 2], "title": "Ritual Cannibalism" },
+        { "range": [3, 3], "title": "Psychoactive Fungus" },
+        { "range": [4, 4], "title": "Nanomachine Infection" },
+        { "range": [5, 5], "title": "Irradiated at Birth" },
+        { "range": [6, 6], "title": "Meditation" },
+        { "range": [7, 7], "title": "Dream Quest" },
+        { "range": [8, 8], "title": "Parasitic Spirit Entity" },
+        { "range": [9, 9], "title": "Mental Mutation" },
+        { "range": [10, 10], "title": "Addictive Rare Drug" },
+        { "range": [11, 11], "title": "Brain Implants" },
+        { "range": [12, 12], "title": "Devouring Memories" },
+        { "range": [13, 13], "title": "Brain Surgery" },
+        { "range": [14, 14], "title": "Secret Religion" },
+        { "range": [15, 15], "title": "Ancient Mask" },
+        { "range": [16, 16], "title": "Cursed Ring" },
+        { "range": [17, 17], "title": "Born During Eclipse" },
+        { "range": [18, 18], "title": "Found Weird Orb" },
+        { "range": [19, 19], "title": "Beheld Azathoth, the Daemon Sultan" },
+        { "range": [20, 20], "title": "Studied in Lost Archives" }
+      ]
+    },
+    {
+      "name": "Gift",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Telekinesis" },
+        { "range": [2, 2], "title": "Pyrokinesis" },
+        { "range": [3, 3], "title": "Telepathy" },
+        { "range": [4, 4], "title": "Memory Extraction" },
+        { "range": [5, 5], "title": "Mind Control" },
+        { "range": [6, 6], "title": "Invisibility" },
+        { "range": [7, 7], "title": "Astral Projection" },
+        { "range": [8, 8], "title": "Healing Hands" },
+        { "range": [9, 9], "title": "Paralysing Touch" },
+        { "range": [10, 10], "title": "Eye Lasers" },
+        { "range": [11, 11], "title": "Augury" },
+        { "range": [12, 12], "title": "Inhuman Speed" },
+        { "range": [13, 13], "title": "Second Sight" },
+        { "range": [14, 14], "title": "Force Wall" },
+        { "range": [15, 15], "title": "Generate Lightning" },
+        { "range": [16, 16], "title": "Ultrasonic Scream" },
+        { "range": [17, 17], "title": "Create Paradox-Clone" },
+        { "range": [18, 18], "title": "Summon Orbs" },
+        { "range": [19, 19], "title": "Cryokinesis" },
+        { "range": [20, 20], "title": "Induce Sleep" }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type { Entry, Table, TableSet, GeneratedResult, ResultField, Trigger, DieType } from './types'
-import { rollDie } from './dice'
+import { rollDie, rollComputed } from './dice'
 
 export function findEntry(entries: Entry[], roll: number): Entry {
   const entry = entries.find(
@@ -33,6 +33,20 @@ function rollSingleTable(
   tableIndex: number,
   rollFn: (die: DieType) => number
 ): { field: ResultField; entry: Entry } {
+  // Computed tables: use rollComputed instead of lookup
+  if (table.type === 'computed' && 'compute' in table) {
+    const value = rollComputed(table.compute.dice, table.compute.method)
+    const field: ResultField = {
+      tableName: table.name,
+      entry: { title: String(value) },
+      tableIndex,
+      computed: true,
+    }
+    // Synthetic entry with no triggers
+    const syntheticEntry: Entry = { range: [1, 1], title: String(value) }
+    return { field, entry: syntheticEntry }
+  }
+
   const roll = rollFn(table.die)
   const entry = findEntry(table.entries, roll)
   const field: ResultField = {

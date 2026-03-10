@@ -1,0 +1,31 @@
+{
+  "name": "Elixir",
+  "tables": [
+    {
+      "name": "Elixir",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Babel Beer", "description": "Component: A sapient creature's tongue. Potency: 1. Allows drinker to temporarily speak the languages known by the tongue's owner. However, they will do so in the slurring, incoherent manner of one intoxicated." },
+        { "range": [2, 2], "title": "Lumensoup", "description": "Component: The fur of a Lambent Lynx. Potency: 1. Drinker's flesh begins to glow. They can be used as a light source underground. Lasts an hour." },
+        { "range": [3, 3], "title": "Oblivion Brew", "description": "Component: A Memory Eater's stomach. Potency: 1. Drinker forgets the last hour of their life." },
+        { "range": [4, 4], "title": "Glassflesh Paste", "description": "Component: A Glass Tiger's skin. Potency: 1. Apply to flesh to become transparent for the next hour. While immobile you are invisible. You take minimum damage from beam weapons." },
+        { "range": [5, 5], "title": "Doppeldraught", "description": "Component: The flesh of a Dopplegeller. Potency: 2. Drinker vomits up a jelly-clone of themselves. It resembles them but is translucent and mute. It will follow instructions, but dissolves after an hour." },
+        { "range": [6, 6], "title": "Spineskin Syrup", "description": "Component: The flesh of a Quill-Spider. Potency: 2. Drinker explosively grows quills, gaining +2 AV and destroying their current clothing. Missed melee attacks against them deal d4 damage. The quills shed after d4 hours." },
+        { "range": [7, 7], "title": "Hilarious Strength", "description": "Component: The tooth of a Harlequin Serpent. Potency: 2. Drinker gains +5 STR and loses -5 EGO. They cannot stop laughing, giving DIS on Encounter rolls. Lasts d4 hours." },
+        { "range": [8, 8], "title": "Squishflesh Balm", "description": "Component: A Squishwolf's skin. Potency: 2. Drinker becomes jellylike and flexible. DIS on physical Saves, but can fit through narrow gaps and immune to crushing or fall damage." },
+        { "range": [9, 9], "title": "Skulk Salve", "description": "Component: The synth-skin of a Subtle Stalker. Potency: 3. Apply to flesh or objects to make them invisible to all spectrums of light for the next d6 hours." },
+        { "range": [10, 10], "title": "Berserker Brew", "description": "Component: A Cacklemaw's liver. Potency: 3. Drinker enters a state of battle frenzy. They deal and receive double damage and must always attack the closest living being." },
+        { "range": [11, 11], "title": "Phasing Potion", "description": "Component: A Phase Panther's heart. Potency: 3. Drinker phases out of reality, becoming incorporeal and invincible. Lasts one hour." },
+        { "range": [12, 12], "title": "Lithification Syrup", "description": "Component: A Lithling's crystalline flesh. Potency: 3. Drinker's flesh turns to living crystal. They gain +5 AV and the Mineral creature type, including all damage immunities. The effect lasts d6 hours." },
+        { "range": [13, 13], "title": "Geneshock Tonic", "description": "Component: The heart of a Cacogen. Potency: 3. Drinker gains a new, permanent mutation, matching that of the heart's original owner." },
+        { "range": [14, 14], "title": "Regeneration Serum", "description": "Component: The flesh of a Regenerator. Potency: 4. Drinker regains d6 HP per combat round, unless damaged by fire or acid. The effect lasts for d6 hours." },
+        { "range": [15, 15], "title": "Obsession Philtre", "description": "Component: The fang of a Gorgon. Potency: 4. Drinker falls madly in love with the next character they see. The effect lasts as long as they stay within sight of their love object." },
+        { "range": [16, 16], "title": "Broodling Broth", "description": "Component: The egg-sac of a Brood Mother. Potency: 4. Drinker's stomach distends grotesquely. They birth 2d6 Broodlings [Lvl 0 (1hp), AV 12, Bite (d4)]. The Broodlings are somewhat like spiders and somewhat like their host. They are loyal to their 'mother' and follow them until killed." },
+        { "range": [17, 17], "title": "Transcendence Tonic", "description": "Component: The brain of a Mystic. Potency: 5. Drinker gains a new, permanent Mystic Gift, matching that of the brain's original owner." },
+        { "range": [18, 18], "title": "Recursive Infusion", "description": "Component: The eye of a Fractalisk. Potency: 5. Drinker gains a new Mystic Gift: Recursive Gaze. A single target fixed with the Recursive Gaze must repeat their action they just took, with no save allowed. This effect is broken if the PC's gaze is interrupted." },
+        { "range": [19, 19], "title": "Planeyfication Potion", "description": "Component: The flesh of a Planeyperson. Potency: 5. Drinker permanently becomes a hypergeometric entity. They gain the Hypergeometric creature type and follow the special rules given for the Planeyfolk Ancestry." },
+        { "range": [20, 20], "title": "Immortality Injector", "description": "Component: The mercurial war-flesh of a Quicksilver Exterminator. Potency: 5. A biological creature injected with this fizzing froth of nanomachinery cannot die. It can be damaged beyond recognition, but the life will not leave its frame. This effect lasts for one day." }
+      ]
+    }
+  ]
+}
