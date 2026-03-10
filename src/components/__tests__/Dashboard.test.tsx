@@ -54,21 +54,21 @@ describe('CategoryCard', () => {
 
   it('renders a link to the correct route', async () => {
     renderWithRouter(() => (
-      <CategoryCard name="Weapons & Items" categoryId="weapons-items" />
+      <CategoryCard name="Equipment" categoryId="equipment" />
     ))
-    const link = await screen.findByRole('link', { name: 'Weapons & Items' })
-    expect(link).toHaveAttribute('href', '/weapons-items')
+    const link = await screen.findByRole('link', { name: 'Equipment' })
+    expect(link).toHaveAttribute('href', '/equipment')
   })
 
   it('renders multiple category cards', async () => {
     renderWithRouter(() => (
       <div>
         <CategoryCard name="NPCs" categoryId="npcs" />
-        <CategoryCard name="Weapons & Items" categoryId="weapons-items" />
+        <CategoryCard name="Equipment" categoryId="equipment" />
       </div>
     ))
     expect(await screen.findByText('NPCs')).toBeInTheDocument()
-    expect(screen.getByText('Weapons & Items')).toBeInTheDocument()
+    expect(screen.getByText('Equipment')).toBeInTheDocument()
   })
 })
 
@@ -91,7 +91,7 @@ describe('Dashboard filtering', () => {
     const categories = [
       { id: 'npcs', name: 'NPCs', tableSets: ['npc-generator.json'] },
       { id: 'empty-cat', name: 'Empty Category', tableSets: [] },
-      { id: 'weapons-items', name: 'Weapons & Items', tableSets: ['weapon-generator.json'] },
+      { id: 'equipment', name: 'Equipment', tableSets: ['basic-weapon.json'] },
     ]
 
     const visible = categories.filter((c) => c.tableSets.length > 0)
@@ -105,7 +105,7 @@ describe('Dashboard filtering', () => {
     ))
 
     expect(await screen.findByText('NPCs')).toBeInTheDocument()
-    expect(screen.getByText('Weapons & Items')).toBeInTheDocument()
+    expect(screen.getByText('Equipment')).toBeInTheDocument()
     expect(screen.queryByText('Empty Category')).not.toBeInTheDocument()
   })
 
@@ -113,15 +113,15 @@ describe('Dashboard filtering', () => {
     renderWithRouter(() => (
       <div>
         <CategoryCard name="NPCs" categoryId="npcs" />
-        <CategoryCard name="Weapons & Items" categoryId="weapons-items" />
+        <CategoryCard name="Equipment" categoryId="equipment" />
       </div>
     ))
 
     const npcsLink = await screen.findByRole('link', { name: 'NPCs' })
     expect(npcsLink).toHaveAttribute('href', '/npcs')
 
-    const weaponsLink = screen.getByRole('link', { name: 'Weapons & Items' })
-    expect(weaponsLink).toHaveAttribute('href', '/weapons-items')
+    const weaponsLink = screen.getByRole('link', { name: 'Equipment' })
+    expect(weaponsLink).toHaveAttribute('href', '/equipment')
   })
 })
 

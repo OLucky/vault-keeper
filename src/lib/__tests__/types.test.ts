@@ -214,9 +214,9 @@ describe('CategoryIndexSchema', () => {
 describe('ManifestSchema', () => {
   it('accepts a valid manifest', () => {
     const manifest = ManifestSchema.parse({
-      categories: ['npcs', 'weapons-items'],
+      categories: ['npcs', 'equipment'],
     })
-    expect(manifest.categories).toEqual(['npcs', 'weapons-items'])
+    expect(manifest.categories).toEqual(['npcs', 'equipment'])
   })
 
   it('rejects missing categories', () => {

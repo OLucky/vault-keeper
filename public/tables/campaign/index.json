@@ -1,0 +1,1 @@
+{ "name": "Campaign", "tableSets": ["story-seed.json", "minor-faction.json"] }

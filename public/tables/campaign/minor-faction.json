@@ -1,0 +1,57 @@
+{
+  "name": "Minor Faction",
+  "tables": [
+    {
+      "name": "Faction Flavour",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Venerable" },
+        { "range": [2, 2], "title": "Power-Hungry" },
+        { "range": [3, 3], "title": "Untrustworthy" },
+        { "range": [4, 4], "title": "Morbid" },
+        { "range": [5, 5], "title": "Corrupt" },
+        { "range": [6, 6], "title": "Thuggish" },
+        { "range": [7, 7], "title": "Refined" },
+        { "range": [8, 8], "title": "Charitable" },
+        { "range": [9, 9], "title": "Pious" },
+        { "range": [10, 10], "title": "Reliable" },
+        { "range": [11, 11], "title": "Upstart" },
+        { "range": [12, 12], "title": "Fast-Growing" },
+        { "range": [13, 13], "title": "Secretive" },
+        { "range": [14, 14], "title": "Collapsing" },
+        { "range": [15, 15], "title": "Snobbish" },
+        { "range": [16, 16], "title": "Bloodthirsty" },
+        { "range": [17, 17], "title": "Quarrelsome" },
+        { "range": [18, 18], "title": "Sinister" },
+        { "range": [19, 19], "title": "Greedy" },
+        { "range": [20, 20], "title": "Paranoid" }
+      ]
+    },
+    {
+      "name": "Faction Type",
+      "die": "d20",
+      "entries": [
+        { "range": [1, 1], "title": "Alchemical College" },
+        { "range": [2, 2], "title": "Water Prospectors' Guild" },
+        { "range": [3, 3], "title": "Mystic College" },
+        { "range": [4, 4], "title": "Death Cult" },
+        { "range": [5, 5], "title": "Mercenary Regiment" },
+        { "range": [6, 6], "title": "Guild of Philosophers" },
+        { "range": [7, 7], "title": "Merchant Cartel" },
+        { "range": [8, 8], "title": "Trade Union" },
+        { "range": [9, 9], "title": "Autarch Cult" },
+        { "range": [10, 10], "title": "Monastic Order" },
+        { "range": [11, 11], "title": "Bounty Hunters' Guild" },
+        { "range": [12, 12], "title": "Circus" },
+        { "range": [13, 13], "title": "Sky Pirate Crew" },
+        { "range": [14, 14], "title": "Fungusmongers' Guild" },
+        { "range": [15, 15], "title": "Scrap Scavengers' Guild" },
+        { "range": [16, 16], "title": "Science-Witch Coven" },
+        { "range": [17, 17], "title": "Exorcist's Circle" },
+        { "range": [18, 18], "title": "Quantum Daemon Cult" },
+        { "range": [19, 19], "title": "Orchard Keeper's Association" },
+        { "range": [20, 20], "title": "Fool's Guild" }
+      ]
+    }
+  ]
+}

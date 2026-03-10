@@ -18,7 +18,7 @@
       "entries": [
         { "range": [1, 1], "title": "True-Kin", "description": "Pure human lineage" },
         { "range": [2, 3], "title": "Cacogen/Mutant", "description": "Twisted by the Vaults", "triggers": [{ "tableId": "mutations" }] },
-        { "range": [4, 4], "title": "Synth", "description": "Artificial being", "triggers": [{ "tableSet": "weapons-items/weapon-generator" }] },
+        { "range": [4, 4], "title": "Synth", "description": "Artificial being", "triggers": [{ "tableSet": "equipment/basic-weapon" }] },
         { "range": [5, 5], "title": "Newbeast", "description": "Uplifted animal" },
         { "range": [6, 6], "title": "Mycomorph", "description": "Fungal humanoid" }
       ]
