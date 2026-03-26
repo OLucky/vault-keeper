@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vite-plus/test";
 import { QueryClient } from "@tanstack/react-query";
 import type { QueryFunctionContext, QueryKey } from "@tanstack/react-query";
 import { manifestQueryOptions, categoryQueryOptions, tableSetQueryOptions } from "../loader";

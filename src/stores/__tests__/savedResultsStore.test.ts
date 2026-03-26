@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach } from "vite-plus/test";
 import { useSavedResultsStore } from "../savedResultsStore";
 import type { GeneratedResult } from "../../lib/types";
 

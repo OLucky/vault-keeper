@@ -6,7 +6,7 @@ _Vault Keeper is a fully client-side web application with no backend server. All
 
 ## 1. Application & Technology Stack
 
-- **Build Tool:** Vite
+- **Build Tool:** Vite+ (unified toolchain — dev, build, test, lint, fmt via `vp` CLI; Vite 8 under the hood)
 - **Language:** TypeScript
 - **UI Framework:** React
 - **Routing:** TanStack Router (file-based, type-safe routing)
@@ -31,6 +31,6 @@ _Vault Keeper is a fully client-side web application with no backend server. All
 ## 3. Infrastructure & Deployment
 
 - **Hosting:** GitHub Pages (free static site hosting, deployed from git).
-- **Build Output:** Vite produces a static `/dist` folder with HTML, JS, CSS, and JSON assets.
-- **CI/CD:** GitHub Actions workflow to build and deploy on push to the main branch.
+- **Build Output:** Vite+ produces a static `/dist` folder with HTML, JS, CSS, and JSON assets.
+- **CI/CD:** GitHub Actions workflow (`vp install`, `vp build`) on Node 22, deployed on push to the main branch.
 - **No backend, no server, no database** — the entire app runs in the browser.

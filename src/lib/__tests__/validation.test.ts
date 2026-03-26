@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect } from "vite-plus/test";
 import { z, ZodError } from "zod";
 import { validateRangeCoverage, formatValidationError, validateTableSet } from "../validation";
 import { ComputeSchema } from "../types";
