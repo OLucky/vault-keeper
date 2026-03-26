@@ -13,23 +13,24 @@ This skill covers modern TypeScript best practices for writing clean, type-safe 
 Always enable `strict: true` in `tsconfig.json`. Never disable individual strict flags. This is non-negotiable — it catches entire categories of bugs at compile time.
 
 Key strict behaviors:
+
 - `null` and `undefined` are distinct types (no implicit null)
 - Every value must have a known type (no implicit `any`)
 - Catch clause variables are `unknown`, not `any`
 
 ## Naming Conventions
 
-| Construct | Convention | Example |
-|---|---|---|
-| Variables, functions | camelCase | `getUserName`, `isActive` |
-| Classes | PascalCase | `UserService`, `HttpClient` |
-| Interfaces | PascalCase (no `I` prefix) | `User`, not `IUser` |
-| Type aliases | PascalCase | `ApiResponse`, `EventMap` |
-| Constants | camelCase or UPPER_SNAKE | `maxRetries` or `MAX_RETRIES` |
-| Enum-like objects | PascalCase key, camelCase/string values | `Status.Active` |
-| Generic parameters | Single uppercase or descriptive | `T`, `TResult`, `K extends keyof T` |
-| File names | kebab-case | `user-service.ts`, `api-client.ts` |
-| Boolean variables | Prefix with `is`, `has`, `can`, `should` | `isValid`, `hasPermission` |
+| Construct            | Convention                               | Example                             |
+| -------------------- | ---------------------------------------- | ----------------------------------- |
+| Variables, functions | camelCase                                | `getUserName`, `isActive`           |
+| Classes              | PascalCase                               | `UserService`, `HttpClient`         |
+| Interfaces           | PascalCase (no `I` prefix)               | `User`, not `IUser`                 |
+| Type aliases         | PascalCase                               | `ApiResponse`, `EventMap`           |
+| Constants            | camelCase or UPPER_SNAKE                 | `maxRetries` or `MAX_RETRIES`       |
+| Enum-like objects    | PascalCase key, camelCase/string values  | `Status.Active`                     |
+| Generic parameters   | Single uppercase or descriptive          | `T`, `TResult`, `K extends keyof T` |
+| File names           | kebab-case                               | `user-service.ts`, `api-client.ts`  |
+| Boolean variables    | Prefix with `is`, `has`, `can`, `should` | `isValid`, `hasPermission`          |
 
 ## Type Annotations
 
@@ -74,7 +75,9 @@ Use `unknown` instead of `any` for values of uncertain type. Narrow with type gu
 
 ```typescript
 // Bad
-function parse(input: any): string { return input.name; }
+function parse(input: any): string {
+  return input.name;
+}
 
 // Good
 function parse(input: unknown): string {
@@ -108,11 +111,16 @@ function assertNever(value: never): never {
 
 function render<T>(state: LoadingState<T>): string {
   switch (state.status) {
-    case "idle": return "Ready";
-    case "loading": return "Loading...";
-    case "success": return String(state.data);
-    case "error": return state.error.message;
-    default: return assertNever(state);
+    case "idle":
+      return "Ready";
+    case "loading":
+      return "Loading...";
+    case "success":
+      return String(state.data);
+    case "error":
+      return state.error.message;
+    default:
+      return assertNever(state);
   }
 }
 ```
@@ -155,9 +163,7 @@ class AppError extends Error {
 For expected failure paths, prefer a typed `Result` over throwing:
 
 ```typescript
-type Result<T, E = Error> =
-  | { ok: true; value: T }
-  | { ok: false; error: E };
+type Result<T, E = Error> = { ok: true; value: T } | { ok: false; error: E };
 ```
 
 ## Const Objects Over Enums
@@ -185,10 +191,7 @@ type Status = (typeof Status)[keyof typeof Status];
 
 ```typescript
 async function fetchUserData(id: string): Promise<UserData> {
-  const [profile, orders] = await Promise.all([
-    fetchProfile(id),
-    fetchOrders(id),
-  ]);
+  const [profile, orders] = await Promise.all([fetchProfile(id), fetchOrders(id)]);
   return { profile, orders };
 }
 ```
@@ -216,30 +219,31 @@ This prevents circular dependency issues and ensures types are erased at compile
 When using `"type": "module"` in `package.json` with `"module": "Node16"`, all relative imports must include the `.js` extension — even in `.ts` source files:
 
 ```typescript
-import { helper } from "./utils.js";   // Correct
-import { helper } from "./utils";      // Wrong — fails at runtime
+import { helper } from "./utils.js"; // Correct
+import { helper } from "./utils"; // Wrong — fails at runtime
 ```
 
 ## Quick Reference: Common Mistakes
 
-| Mistake | Fix |
-|---|---|
-| Using `any` | Use `unknown` and narrow with type guards |
-| Missing return type on exports | Add explicit return type annotation |
-| `enum` for string constants | Use `as const` object + derived union type |
-| Mutable function parameters | Mark arrays/objects as `readonly` |
-| Bare `catch (error)` | Use `catch (error: unknown)` and narrow |
-| Missing `.js` in ESM imports | Add `.js` extension to all relative imports |
-| `strict: false` in tsconfig | Always use `strict: true` |
-| `I` prefix on interfaces | Drop the prefix: `User`, not `IUser` |
-| Optional props for distinct states | Use discriminated unions |
-| Type assertions (`as T`) | Prefer type guards and narrowing |
+| Mistake                            | Fix                                         |
+| ---------------------------------- | ------------------------------------------- |
+| Using `any`                        | Use `unknown` and narrow with type guards   |
+| Missing return type on exports     | Add explicit return type annotation         |
+| `enum` for string constants        | Use `as const` object + derived union type  |
+| Mutable function parameters        | Mark arrays/objects as `readonly`           |
+| Bare `catch (error)`               | Use `catch (error: unknown)` and narrow     |
+| Missing `.js` in ESM imports       | Add `.js` extension to all relative imports |
+| `strict: false` in tsconfig        | Always use `strict: true`                   |
+| `I` prefix on interfaces           | Drop the prefix: `User`, not `IUser`        |
+| Optional props for distinct states | Use discriminated unions                    |
+| Type assertions (`as T`)           | Prefer type guards and narrowing            |
 
 ## Additional Resources
 
 ### Reference Files
 
 For detailed type system features and advanced patterns, consult:
+
 - **`references/type-system.md`** — Generics, utility types, conditional types, mapped types, template literal types, type guards, discriminated unions, branded types, satisfies operator, const assertions, declaration merging
 - **`references/patterns.md`** — Immutability patterns, error handling (Result type, custom errors), async patterns (generators, concurrency), builder pattern, type-safe event emitter, overloaded functions, module patterns, enum alternatives, assertion functions, narrowing patterns
 - **`references/project-structure.md`** — tsconfig.json essentials (strict mode flags, module config, safety flags), ESM/CJS setup, directory layout, organizing types, barrel exports, declaration files, import organization, path aliases, gitignore

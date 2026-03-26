@@ -53,12 +53,12 @@ Pure functions, fully unit-testable:
 Direction mapping (from book's diagram):
 | d6 | Direction |
 |----|-----------|
-| 1  | Upper-left |
-| 2  | Upper-right |
-| 3  | Right |
-| 4  | Lower-right |
-| 5  | Lower-left |
-| 6  | Left |
+| 1 | Upper-left |
+| 2 | Upper-right |
+| 3 | Right |
+| 4 | Lower-right |
+| 5 | Lower-left |
+| 6 | Left |
 
 ### Zustand Store (`src/stores/weatherStore.ts`)
 
@@ -95,6 +95,7 @@ Add a "Weather" card/link on the dashboard. This could be a new "Tools" section 
 ### SVG Hex Rendering Approach
 
 Each hex is a flat-top or pointy-top regular hexagon rendered as an SVG `<polygon>`. Key calculations:
+
 - Hex center position derived from `(row, col)` using standard offset-coordinate formulas.
 - Hex `points` attribute computed from center + radius.
 - Weather type determines fill color (using CSS custom properties for consistency with the app's dark theme).

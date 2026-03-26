@@ -59,20 +59,20 @@ const result: PaginatedResult<User> = { items: [], total: 0, meta: {} };
 
 ### Built-in utility types
 
-| Type | Description | Example |
-|---|---|---|
-| `Partial<T>` | All properties optional | `Partial<User>` for update payloads |
-| `Required<T>` | All properties required | `Required<Config>` for validated config |
-| `Readonly<T>` | All properties readonly | `Readonly<State>` for immutable state |
-| `Pick<T, K>` | Subset of properties | `Pick<User, "id" \| "name">` |
-| `Omit<T, K>` | Exclude properties | `Omit<User, "password">` |
-| `Record<K, V>` | Object with key type K and value type V | `Record<string, number>` |
-| `Extract<T, U>` | Members of T assignable to U | `Extract<Status, "active" \| "pending">` |
-| `Exclude<T, U>` | Members of T not assignable to U | `Exclude<Status, "deleted">` |
-| `NonNullable<T>` | Remove null and undefined | `NonNullable<string \| null>` → `string` |
-| `ReturnType<T>` | Return type of function | `ReturnType<typeof fetchUser>` |
-| `Parameters<T>` | Parameter types as tuple | `Parameters<typeof fetchUser>` |
-| `Awaited<T>` | Unwrap Promise type | `Awaited<Promise<User>>` → `User` |
+| Type             | Description                             | Example                                  |
+| ---------------- | --------------------------------------- | ---------------------------------------- |
+| `Partial<T>`     | All properties optional                 | `Partial<User>` for update payloads      |
+| `Required<T>`    | All properties required                 | `Required<Config>` for validated config  |
+| `Readonly<T>`    | All properties readonly                 | `Readonly<State>` for immutable state    |
+| `Pick<T, K>`     | Subset of properties                    | `Pick<User, "id" \| "name">`             |
+| `Omit<T, K>`     | Exclude properties                      | `Omit<User, "password">`                 |
+| `Record<K, V>`   | Object with key type K and value type V | `Record<string, number>`                 |
+| `Extract<T, U>`  | Members of T assignable to U            | `Extract<Status, "active" \| "pending">` |
+| `Exclude<T, U>`  | Members of T not assignable to U        | `Exclude<Status, "deleted">`             |
+| `NonNullable<T>` | Remove null and undefined               | `NonNullable<string \| null>` → `string` |
+| `ReturnType<T>`  | Return type of function                 | `ReturnType<typeof fetchUser>`           |
+| `Parameters<T>`  | Parameter types as tuple                | `Parameters<typeof fetchUser>`           |
+| `Awaited<T>`     | Unwrap Promise type                     | `Awaited<Promise<User>>` → `User`        |
 
 ### Combining utility types
 
@@ -181,12 +181,11 @@ type Endpoint = `${HttpMethod} ${ApiRoute}`;
 type UpperEvent = Uppercase<"click" | "submit">;
 // "CLICK" | "SUBMIT"
 
-type CamelToSnake<S extends string> =
-  S extends `${infer Head}${infer Tail}`
-    ? Tail extends Uncapitalize<Tail>
-      ? `${Lowercase<Head>}${CamelToSnake<Tail>}`
-      : `${Lowercase<Head>}_${CamelToSnake<Tail>}`
-    : S;
+type CamelToSnake<S extends string> = S extends `${infer Head}${infer Tail}`
+  ? Tail extends Uncapitalize<Tail>
+    ? `${Lowercase<Head>}${CamelToSnake<Tail>}`
+    : `${Lowercase<Head>}_${CamelToSnake<Tail>}`
+  : S;
 ```
 
 ## Type Guards
@@ -268,9 +267,7 @@ function area(shape: Shape): number {
 Every member shares a literal `kind` (or `type`, `tag`) property:
 
 ```typescript
-type Result<T, E = Error> =
-  | { ok: true; value: T }
-  | { ok: false; error: E };
+type Result<T, E = Error> = { ok: true; value: T } | { ok: false; error: E };
 
 function processResult<T>(result: Result<T>): T {
   if (result.ok) {
@@ -322,12 +319,14 @@ function createOrderId(id: string): OrderId {
   return id as OrderId;
 }
 
-function fetchUser(id: UserId): Promise<User> { /* ... */ }
+function fetchUser(id: UserId): Promise<User> {
+  /* ... */
+}
 
 const userId = createUserId("u-123");
 const orderId = createOrderId("o-456");
 
-fetchUser(userId);   // OK
+fetchUser(userId); // OK
 // fetchUser(orderId); // Error: OrderId not assignable to UserId
 ```
 

@@ -13,6 +13,7 @@ Responsive Layout is primarily a **CSS-only adaptation** of the existing UI. Two
 No state management, routing, data model, or business logic changes are required.
 
 **Files affected:**
+
 - `src/styles/global.css` — typography scaling via :root overrides
 - `src/routes/Root.module.css` — header, main content, sidebar layout
 - `src/routes/__root.tsx` — render HamburgerMenu + sidebar close button
@@ -35,11 +36,11 @@ No state management, routing, data model, or business logic changes are required
 
 Two breakpoints, implemented as `@media` queries in individual CSS Module files:
 
-| Label   | Query                           | Applies to      |
-|---------|---------------------------------|-----------------|
-| Phone   | `@media (max-width: 640px)`     | ≤640px screens  |
-| Tablet  | `@media (max-width: 960px)`     | 641px–960px *   |
-| Desktop | No query (default styles)       | >960px          |
+| Label   | Query                       | Applies to     |
+| ------- | --------------------------- | -------------- |
+| Phone   | `@media (max-width: 640px)` | ≤640px screens |
+| Tablet  | `@media (max-width: 960px)` | 641px–960px \* |
+| Desktop | No query (default styles)   | >960px         |
 
 \* Tablet query uses `max-width: 960px` and phone-specific overrides use `max-width: 640px`. Since phone rules are more specific (narrower), they are placed after tablet rules to naturally override them via source order.
 
@@ -53,6 +54,7 @@ Two breakpoints, implemented as `@media` queries in individual CSS Module files:
 - Clicking a link calls `close()` on the popover and navigates.
 
 **Root layout changes** (`__root.tsx` / `Root.module.css`):
+
 - Render both inline nav links and `<HamburgerMenu />` in the header.
 - CSS hides/shows them based on breakpoint:
   - `≤960px`: `.navLink { display: none }`, `.hamburger { display: block }`
@@ -61,6 +63,7 @@ Two breakpoints, implemented as `@media` queries in individual CSS Module files:
 ### 2.3 Session Log Sidebar — Full-Screen Overlay
 
 **CSS changes** (`SessionLogSidebar.module.css`):
+
 ```css
 @media (max-width: 960px) {
   .sidebar {
@@ -74,12 +77,14 @@ Two breakpoints, implemented as `@media` queries in individual CSS Module files:
 ```
 
 **Component change** (`SessionLogSidebar.tsx`):
+
 - Add a close button (✕) in `.headerActions` that calls `toggleSidebar()` from the Zustand store.
 - The close button is hidden on desktop via CSS (`display: none` above 960px).
 
 ### 2.4 Main Content Area
 
 **CSS changes** (`Root.module.css`):
+
 ```css
 @media (max-width: 960px) {
   .main {
@@ -97,6 +102,7 @@ Two breakpoints, implemented as `@media` queries in individual CSS Module files:
 ### 2.5 Dashboard Category Grid
 
 **CSS changes** (`Dashboard.module.css`):
+
 ```css
 @media (max-width: 640px) {
   .categoriesGrid {
@@ -104,37 +110,41 @@ Two breakpoints, implemented as `@media` queries in individual CSS Module files:
   }
 }
 ```
+
 Tablet: the existing `auto-fill, minmax(240px, 1fr)` adapts naturally — no change needed.
 
 ### 2.6 Touch Targets (≤960px)
 
 All interactive elements get a minimum 44×44px tap area on phone and tablet. Changes are made via `@media (max-width: 960px)` in each component's CSS Module:
 
-| Component           | File                              | Current Size | Change                              |
-|---------------------|-----------------------------------|-------------|-------------------------------------|
-| RerollButton        | RerollButton.module.css           | 24×24px     | `min-width: 44px; min-height: 44px` |
-| Bookmark (ResultCard)| ResultCard.module.css            | No minimum  | `min-width: 44px; min-height: 44px` |
-| Bookmark (LogEntry) | SessionLogEntry.module.css        | No minimum  | `min-width: 44px; min-height: 44px` |
-| Delete (LogEntry)   | SessionLogEntry.module.css        | No minimum  | `min-width: 44px; min-height: 44px` |
-| Delete (SavedCard)  | SavedResultCard.module.css        | No minimum  | `min-width: 44px; min-height: 44px` |
-| SidebarToggle       | SidebarToggle.module.css          | ~30px       | `min-width: 44px; min-height: 44px` |
+| Component             | File                       | Current Size | Change                              |
+| --------------------- | -------------------------- | ------------ | ----------------------------------- |
+| RerollButton          | RerollButton.module.css    | 24×24px      | `min-width: 44px; min-height: 44px` |
+| Bookmark (ResultCard) | ResultCard.module.css      | No minimum   | `min-width: 44px; min-height: 44px` |
+| Bookmark (LogEntry)   | SessionLogEntry.module.css | No minimum   | `min-width: 44px; min-height: 44px` |
+| Delete (LogEntry)     | SessionLogEntry.module.css | No minimum   | `min-width: 44px; min-height: 44px` |
+| Delete (SavedCard)    | SavedResultCard.module.css | No minimum   | `min-width: 44px; min-height: 44px` |
+| SidebarToggle         | SidebarToggle.module.css   | ~30px        | `min-width: 44px; min-height: 44px` |
 
 ### 2.7 Typography Scaling
 
 **CSS changes** (`global.css`) — override `:root` custom properties:
+
 ```css
 @media (max-width: 640px) {
   :root {
-    --text-3xl: 1.5rem;  /* 32px → 24px */
+    --text-3xl: 1.5rem; /* 32px → 24px */
     --text-2xl: 1.25rem; /* 24px → 20px */
   }
 }
 ```
+
 All components using these variables automatically scale. Body text (`--text-base`) is unchanged.
 
 ### 2.8 Saved Results Page
 
 **CSS changes** (`Saved.module.css`):
+
 ```css
 @media (max-width: 640px) {
   .header {
@@ -142,6 +152,7 @@ All components using these variables automatically scale. Body text (`--text-bas
   }
 }
 ```
+
 Cards already use flex layout and fill available width.
 
 ---
@@ -149,18 +160,19 @@ Cards already use flex layout and fill available width.
 ## 3. Impact and Risk Analysis
 
 **System Dependencies:**
+
 - Zustand store: sidebar toggle state is reused; no store changes needed.
 - React Aria: `react-aria-components` is already installed (v1.16.0). HamburgerMenu adds `DialogTrigger` + `Popover`.
 - TanStack Router: nav `<Link>` components are reused in the hamburger menu.
 
 **Potential Risks & Mitigations:**
 
-| Risk | Impact | Mitigation |
-|------|--------|------------|
-| Sidebar z-index conflicts with ConfirmDialog | Dialog could appear behind overlay | Sidebar uses `z-index: 50`; ConfirmDialog already uses `z-index: 100` |
-| CSS source order matters for breakpoint overrides | Phone styles might not override tablet | Place phone queries (`≤640px`) after tablet queries (`≤960px`) in each file |
-| Touch target expansion affects visual layout | Buttons may look too large or shift spacing | Use `min-width`/`min-height` only, preserving visual size where possible; use padding for hit area expansion |
-| No functional changes | Low regression risk | Purely CSS + one new presentational component |
+| Risk                                              | Impact                                      | Mitigation                                                                                                   |
+| ------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Sidebar z-index conflicts with ConfirmDialog      | Dialog could appear behind overlay          | Sidebar uses `z-index: 50`; ConfirmDialog already uses `z-index: 100`                                        |
+| CSS source order matters for breakpoint overrides | Phone styles might not override tablet      | Place phone queries (`≤640px`) after tablet queries (`≤960px`) in each file                                  |
+| Touch target expansion affects visual layout      | Buttons may look too large or shift spacing | Use `min-width`/`min-height` only, preserving visual size where possible; use padding for hit area expansion |
+| No functional changes                             | Low regression risk                         | Purely CSS + one new presentational component                                                                |
 
 ---
 

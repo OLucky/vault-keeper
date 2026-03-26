@@ -1,69 +1,74 @@
-import { useCallback, useState } from 'react'
-import { Button } from 'react-aria-components'
-import { useQueryClient } from '@tanstack/react-query'
-import type { GeneratedResult, TableSet } from '../../lib/types'
-import { rollTableSet, rerollFieldWithTriggers } from '../../lib/rolling'
-import { tableSetQueryOptions } from '../../lib/loader'
-import { useRollStore } from '../../stores/rollStore'
-import { useSessionLogStore } from '../../stores/sessionLogStore'
-import { useSavedResultsStore } from '../../stores/savedResultsStore'
-import { useFavoritesStore } from '../../stores/favoritesStore'
-import { ResultCard } from '../ResultCard/ResultCard'
-import styles from './TableSetEntry.module.css'
+import { useCallback, useState } from "react";
+import { Button } from "react-aria-components";
+import { useQueryClient } from "@tanstack/react-query";
+import type { GeneratedResult, TableSet } from "../../lib/types";
+import { rollTableSet, rerollFieldWithTriggers } from "../../lib/rolling";
+import { tableSetQueryOptions } from "../../lib/loader";
+import { useRollStore } from "../../stores/rollStore";
+import { useSessionLogStore } from "../../stores/sessionLogStore";
+import { useSavedResultsStore } from "../../stores/savedResultsStore";
+import { useFavoritesStore } from "../../stores/favoritesStore";
+import { ResultCard } from "../ResultCard/ResultCard";
+import styles from "./TableSetEntry.module.css";
 
-const EMPTY_RESULTS: GeneratedResult[] = []
+const EMPTY_RESULTS: GeneratedResult[] = [];
 
 interface TableSetEntryProps {
-  tableSet: TableSet
-  categoryId: string
-  fileName?: string
-  categoryName?: string
+  tableSet: TableSet;
+  categoryId: string;
+  fileName?: string;
+  categoryName?: string;
 }
 
-export function TableSetEntry({ tableSet, categoryId, fileName = '', categoryName = '' }: TableSetEntryProps) {
-  const storeKey = `${categoryId}/${fileName}`
-  const savedResults = useSavedResultsStore((s) => s.savedResults)
-  const addRoll = useRollStore((s) => s.addRoll)
-  const rerollField = useRollStore((s) => s.rerollField)
+export function TableSetEntry({
+  tableSet,
+  categoryId,
+  fileName = "",
+  categoryName = "",
+}: TableSetEntryProps) {
+  const storeKey = `${categoryId}/${fileName}`;
+  const savedResults = useSavedResultsStore((s) => s.savedResults);
+  const addRoll = useRollStore((s) => s.addRoll);
+  const rerollField = useRollStore((s) => s.rerollField);
   const stackedResults = useRollStore(
     useCallback(
       (s: { stackedResults: Record<string, GeneratedResult[]> }) =>
         s.stackedResults[storeKey] ?? EMPTY_RESULTS,
       [storeKey],
     ),
-  )
+  );
 
-  const isPinned = useFavoritesStore((s) => s.isPinned(categoryId, fileName))
-  const addPinned = useFavoritesStore((s) => s.addPinned)
-  const removePinned = useFavoritesStore((s) => s.removePinned)
+  const isPinned = useFavoritesStore((s) => s.isPinned(categoryId, fileName));
+  const addPinned = useFavoritesStore((s) => s.addPinned);
+  const removePinned = useFavoritesStore((s) => s.removePinned);
 
-  const queryClient = useQueryClient()
-  const [isRolling, setIsRolling] = useState(false)
+  const queryClient = useQueryClient();
+  const [isRolling, setIsRolling] = useState(false);
 
   const fetchTableSetFn = async (catId: string, file: string): Promise<TableSet> => {
-    return queryClient.fetchQuery(tableSetQueryOptions(catId, file))
-  }
+    return queryClient.fetchQuery(tableSetQueryOptions(catId, file));
+  };
 
   const handleRoll = async () => {
-    setIsRolling(true)
+    setIsRolling(true);
     try {
-      const result = await rollTableSet(tableSet, categoryId, undefined, fetchTableSetFn, storeKey)
-      addRoll(storeKey, result)
-      useSessionLogStore.getState().addEntry(result, categoryId)
+      const result = await rollTableSet(tableSet, categoryId, undefined, fetchTableSetFn, storeKey);
+      addRoll(storeKey, result);
+      useSessionLogStore.getState().addEntry(result, categoryId);
     } finally {
-      setIsRolling(false)
+      setIsRolling(false);
     }
-  }
+  };
 
   const handleFieldReroll = async (resultId: string, fieldIndex: number) => {
     // Find the result to get the field's tableIndex
-    const result = stackedResults.find((r) => r.id === resultId)
-    if (!result) return
-    const field = result.fields[fieldIndex]
-    if (!field) return
+    const result = stackedResults.find((r) => r.id === resultId);
+    if (!result) return;
+    const field = result.fields[fieldIndex];
+    if (!field) return;
 
-    const table = tableSet.tables[field.tableIndex]
-    if (!table) return
+    const table = tableSet.tables[field.tableIndex];
+    if (!table) return;
 
     const newFields = await rerollFieldWithTriggers(
       table,
@@ -72,28 +77,30 @@ export function TableSetEntry({ tableSet, categoryId, fileName = '', categoryNam
       undefined,
       fetchTableSetFn,
       storeKey,
-    )
-    rerollField(storeKey, resultId, fieldIndex, newFields)
-  }
+    );
+    rerollField(storeKey, resultId, fieldIndex, newFields);
+  };
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.entry}>
         <span className={styles.name}>{tableSet.name}</span>
         <Button
-          className={`${styles.pinButton} ${isPinned ? styles.pinned : ''}`}
-          aria-label={isPinned ? 'Unpin' : 'Pin'}
+          className={`${styles.pinButton} ${isPinned ? styles.pinned : ""}`}
+          aria-label={isPinned ? "Unpin" : "Pin"}
           onPress={() => {
             if (isPinned) {
-              removePinned(categoryId, fileName)
+              removePinned(categoryId, fileName);
             } else {
-              addPinned({ categoryId, fileName, tableSetName: tableSet.name, categoryName })
+              addPinned({ categoryId, fileName, tableSetName: tableSet.name, categoryName });
             }
           }}
         >
-          {isPinned ? '★' : '☆'}
+          {isPinned ? "★" : "☆"}
         </Button>
-        <Button className={styles.rollButton} onPress={handleRoll} isDisabled={isRolling}>Roll</Button>
+        <Button className={styles.rollButton} onPress={handleRoll} isDisabled={isRolling}>
+          Roll
+        </Button>
       </div>
       {stackedResults.length > 0 && (
         <div className={styles.results}>
@@ -111,5 +118,5 @@ export function TableSetEntry({ tableSet, categoryId, fileName = '', categoryNam
         </div>
       )}
     </div>
-  )
+  );
 }

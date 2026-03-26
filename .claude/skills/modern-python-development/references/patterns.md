@@ -307,6 +307,7 @@ class Temperature:
 ```
 
 Use properties when:
+
 - Validation is needed on attribute assignment
 - A derived value should look like a simple attribute
 - Migrating from a public attribute to computed access without breaking API
@@ -325,6 +326,7 @@ class Point:
 ```
 
 Benefits:
+
 - Lower memory usage per instance
 - Faster attribute access
 - Prevents accidental attribute creation
@@ -362,6 +364,7 @@ class Vector:
 ```
 
 Rules:
+
 - Always implement `__repr__` for debuggability.
 - Return `NotImplemented` (not `raise`) from comparison dunders for unsupported types.
 - If `__eq__` is defined, also define `__hash__` (or set `__hash__ = None` for unhashable).

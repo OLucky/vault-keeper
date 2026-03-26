@@ -79,11 +79,13 @@ match command:
 ### When to use match/case vs if/elif
 
 Prefer `match`/`case` when:
+
 - Destructuring data structures (dicts, tuples, dataclasses)
 - Dispatching on type + structure simultaneously
 - Multiple related conditions on the same value
 
 Prefer `if`/`elif` when:
+
 - Simple boolean conditions on unrelated expressions
 - Only one or two branches
 - Conditions are not structural (e.g., `x > 10 and y < 5`)
@@ -185,6 +187,7 @@ class Child(Base):
 ```
 
 Always use `@override` when overriding. It catches:
+
 - Typos in method names
 - Accidental signature mismatches
 - Base class API changes that silently break subclasses

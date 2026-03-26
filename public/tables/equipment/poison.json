@@ -69,15 +69,43 @@
         { "range": [8, 8], "title": "D4 CON loss / d10 CON loss" },
         { "range": [9, 9], "title": "D4 PSY loss / d10 PSY loss" },
         { "range": [10, 10], "title": "D4 EGO loss / d10 EGO loss" },
-        { "range": [11, 11], "title": "Hallucinations", "description": "Hallucinations for d6 days / d8 INT + PSY loss" },
+        {
+          "range": [11, 11],
+          "title": "Hallucinations",
+          "description": "Hallucinations for d6 days / d8 INT + PSY loss"
+        },
         { "range": [12, 12], "title": "D6 INT loss / d10 INT loss" },
-        { "range": [13, 13], "title": "Loss of Language", "description": "D6 INT loss / Permanent Loss of Language" },
-        { "range": [14, 14], "title": "Blindness", "description": "Blindness for d8 days / Permanent blindness" },
-        { "range": [15, 15], "title": "Vomiting", "description": "Vomiting for d6 days, cannot eat to recover HP / Lose d12 CON" },
-        { "range": [16, 16], "title": "Mystic Suppression", "description": "Unable to use Mystic Gifts for d6 days" },
+        {
+          "range": [13, 13],
+          "title": "Loss of Language",
+          "description": "D6 INT loss / Permanent Loss of Language"
+        },
+        {
+          "range": [14, 14],
+          "title": "Blindness",
+          "description": "Blindness for d8 days / Permanent blindness"
+        },
+        {
+          "range": [15, 15],
+          "title": "Vomiting",
+          "description": "Vomiting for d6 days, cannot eat to recover HP / Lose d12 CON"
+        },
+        {
+          "range": [16, 16],
+          "title": "Mystic Suppression",
+          "description": "Unable to use Mystic Gifts for d6 days"
+        },
         { "range": [17, 17], "title": "Paralysis", "description": "Paralysis for d6 days" },
-        { "range": [18, 18], "title": "Domination", "description": "Must EGO save to refuse direct commands" },
-        { "range": [19, 19], "title": "Vulnerability", "description": "Take double damage from all sources" },
+        {
+          "range": [18, 18],
+          "title": "Domination",
+          "description": "Must EGO save to refuse direct commands"
+        },
+        {
+          "range": [19, 19],
+          "title": "Vulnerability",
+          "description": "Take double damage from all sources"
+        },
         { "range": [20, 20], "title": "Lethal", "description": "Lose d8 Max HP / Death" }
       ]
     }

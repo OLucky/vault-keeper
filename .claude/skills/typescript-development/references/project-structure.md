@@ -14,16 +14,16 @@
 
 `strict: true` enables all strict checks at once:
 
-| Flag | What it enforces |
-|---|---|
-| `strictNullChecks` | `null` and `undefined` are distinct types |
-| `noImplicitAny` | Every value must have a known type |
-| `strictFunctionTypes` | Contravariant function parameter checks |
-| `strictBindCallApply` | Type-safe `bind`, `call`, `apply` |
-| `strictPropertyInitialization` | Class properties must be initialized |
-| `noImplicitThis` | `this` must have an explicit type |
-| `useUnknownInCatchVariables` | Catch clause variables are `unknown` |
-| `alwaysStrict` | Emit `"use strict"` in every file |
+| Flag                           | What it enforces                          |
+| ------------------------------ | ----------------------------------------- |
+| `strictNullChecks`             | `null` and `undefined` are distinct types |
+| `noImplicitAny`                | Every value must have a known type        |
+| `strictFunctionTypes`          | Contravariant function parameter checks   |
+| `strictBindCallApply`          | Type-safe `bind`, `call`, `apply`         |
+| `strictPropertyInitialization` | Class properties must be initialized      |
+| `noImplicitThis`               | `this` must have an explicit type         |
+| `useUnknownInCatchVariables`   | Catch clause variables are `unknown`      |
+| `alwaysStrict`                 | Emit `"use strict"` in every file         |
 
 ### Recommended base configuration
 
@@ -64,19 +64,20 @@
 }
 ```
 
-| Flag | Effect |
-|---|---|
-| `noUncheckedIndexedAccess` | Array/record indexing returns `T \| undefined` |
+| Flag                         | Effect                                                       |
+| ---------------------------- | ------------------------------------------------------------ |
+| `noUncheckedIndexedAccess`   | Array/record indexing returns `T \| undefined`               |
 | `exactOptionalPropertyTypes` | `undefined` not assignable to optional props unless explicit |
-| `noImplicitReturns` | Every code path must return |
-| `noFallthroughCasesInSwitch` | Switch cases must break/return |
-| `noImplicitOverride` | Require `override` keyword on overridden methods |
+| `noImplicitReturns`          | Every code path must return                                  |
+| `noFallthroughCasesInSwitch` | Switch cases must break/return                               |
+| `noImplicitOverride`         | Require `override` keyword on overridden methods             |
 
 ## Module Configuration
 
 ### ESM setup (type: "module")
 
 In `package.json`:
+
 ```json
 {
   "type": "module"
@@ -84,6 +85,7 @@ In `package.json`:
 ```
 
 In `tsconfig.json`:
+
 ```json
 {
   "compilerOptions": {
@@ -180,6 +182,7 @@ export type { UserFilter } from "./user.js";
 ```
 
 **Guidelines for barrel exports:**
+
 - Use barrel files at module boundaries (one level deep)
 - Avoid deep nesting of barrel files (re-exporting from re-exports)
 - Use `export type` for type-only re-exports
@@ -259,6 +262,7 @@ import { createUser, type User } from "./models.js";
 ```
 
 **When to use `import type`:**
+
 - Importing interfaces, type aliases, or enums used only as types
 - Prevents circular dependency issues at runtime
 - Enforced with `"verbatimModuleSyntax": true` in tsconfig
@@ -268,6 +272,7 @@ import { createUser, type User } from "./models.js";
 ### Setting up aliases
 
 In `tsconfig.json`:
+
 ```json
 {
   "compilerOptions": {

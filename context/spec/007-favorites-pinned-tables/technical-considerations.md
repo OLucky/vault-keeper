@@ -13,6 +13,7 @@ Favorites/Pinned Tables adds a **new Zustand store** for pinned table set refere
 No changes to existing data models, APIs, or routing. The feature is entirely additive.
 
 **Files affected:**
+
 - **New:** `src/stores/favoritesStore.ts` — Zustand store with persist middleware
 - **New:** `src/components/PinnedTableCard/PinnedTableCard.tsx` + `.module.css`
 - `src/components/TableSetEntry/TableSetEntry.tsx` + `.module.css` — add pin toggle button
@@ -31,29 +32,30 @@ Follows the existing Zustand persist pattern (same as `sessionLogStore` and `sav
 
 **State shape:**
 
-| Field | Type | Description |
-|-------|------|-------------|
+| Field             | Type               | Description                   |
+| ----------------- | ------------------ | ----------------------------- |
 | `pinnedTableSets` | `PinnedTableSet[]` | Ordered array of pinned items |
 
 **PinnedTableSet type:**
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `categoryId` | `string` | Category folder name (e.g., "npcs") |
-| `fileName` | `string` | Table set file name (e.g., "npc-generator.json") |
-| `tableSetName` | `string` | Display name (cached from TableSet data) |
+| Field          | Type     | Description                                       |
+| -------------- | -------- | ------------------------------------------------- |
+| `categoryId`   | `string` | Category folder name (e.g., "npcs")               |
+| `fileName`     | `string` | Table set file name (e.g., "npc-generator.json")  |
+| `tableSetName` | `string` | Display name (cached from TableSet data)          |
 | `categoryName` | `string` | Category display name (cached from CategoryIndex) |
 
 **Actions:**
 
-| Action | Signature | Description |
-|--------|-----------|-------------|
-| `addPinned` | `(item: PinnedTableSet) => void` | Appends to end of array (guards against duplicates) |
-| `removePinned` | `(categoryId: string, fileName: string) => void` | Removes by composite key |
-| `reorder` | `(items: PinnedTableSet[]) => void` | Replaces array with new order |
-| `isPinned` | `(categoryId: string, fileName: string) => boolean` | Checks if a table set is pinned |
+| Action         | Signature                                           | Description                                         |
+| -------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `addPinned`    | `(item: PinnedTableSet) => void`                    | Appends to end of array (guards against duplicates) |
+| `removePinned` | `(categoryId: string, fileName: string) => void`    | Removes by composite key                            |
+| `reorder`      | `(items: PinnedTableSet[]) => void`                 | Replaces array with new order                       |
+| `isPinned`     | `(categoryId: string, fileName: string) => boolean` | Checks if a table set is pinned                     |
 
 **Persistence config:**
+
 - LocalStorage key: `"vault-keeper-favorites"`
 - Partialize: only persist `pinnedTableSets`
 
@@ -92,12 +94,12 @@ Similar to `CategoryCard` but with additional content:
 
 **Props:**
 
-| Prop | Type | Description |
-|------|------|-------------|
-| `categoryId` | `string` | For navigation link |
-| `fileName` | `string` | For removePinned identification |
-| `tableSetName` | `string` | Display name |
-| `categoryName` | `string` | Subtitle text |
+| Prop           | Type     | Description                     |
+| -------------- | -------- | ------------------------------- |
+| `categoryId`   | `string` | For navigation link             |
+| `fileName`     | `string` | For removePinned identification |
+| `tableSetName` | `string` | Display name                    |
+| `categoryName` | `string` | Subtitle text                   |
 
 **Styling:** Follow `CategoryCard` pattern — same padding, background, border, hover/focus states. Unpin button positioned absolutely in top-right (similar to bookmark button on ResultCard).
 
@@ -125,6 +127,7 @@ Use React Aria's `useDragAndDrop` hook with `GridList` for accessible drag-and-d
 - Touch support: React Aria handles long-press to initiate drag on touch devices
 
 The `useDragAndDrop` hook is configured with:
+
 - `acceptedDragTypes: ['pinned-table']`
 - `getItems`: returns drag data for each pinned card
 - `onReorder`: handler that reorders the array and calls `store.reorder()`
@@ -134,18 +137,19 @@ The `useDragAndDrop` hook is configured with:
 ## 3. Impact and Risk Analysis
 
 **System Dependencies:**
+
 - Zustand store: new store, no changes to existing stores.
 - React Aria: `useDragAndDrop` from `react-aria-components` (already installed v1.16.0). First DnD usage in the codebase.
 - TanStack Router: uses existing `<Link to="/$categoryId">` pattern.
 
 **Potential Risks & Mitigations:**
 
-| Risk | Impact | Mitigation |
-|------|--------|------------|
-| Stale cached names in store | Pinned card shows old name if JSON data changes | Low risk — table data is static. Could add sync later if needed |
-| React Aria DnD learning curve | First DnD in codebase, may need iteration | Keep implementation minimal — reorder only, no cross-container DnD |
-| Touch DnD on mobile | Must work on phone/tablet | React Aria handles touch events natively (long-press to drag) |
-| Pin button too close to Roll button | Accidental taps on mobile | Ensure 44×44px minimum touch targets (already enforced by responsive CSS) |
+| Risk                                | Impact                                          | Mitigation                                                                |
+| ----------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------- |
+| Stale cached names in store         | Pinned card shows old name if JSON data changes | Low risk — table data is static. Could add sync later if needed           |
+| React Aria DnD learning curve       | First DnD in codebase, may need iteration       | Keep implementation minimal — reorder only, no cross-container DnD        |
+| Touch DnD on mobile                 | Must work on phone/tablet                       | React Aria handles touch events natively (long-press to drag)             |
+| Pin button too close to Roll button | Accidental taps on mobile                       | Ensure 44×44px minimum touch targets (already enforced by responsive CSS) |
 
 ---
 

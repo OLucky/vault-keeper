@@ -1,75 +1,79 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { useQuery } from '@tanstack/react-query'
-import { Button, GridList, GridListItem, useDragAndDrop } from 'react-aria-components'
-import { manifestQueryOptions, categoryQueryOptions } from '../lib/loader'
-import { CategoryCard } from '../components/CategoryCard/CategoryCard'
-import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage'
-import { useRollStore } from '../stores/rollStore'
-import { useFavoritesStore } from '../stores/favoritesStore'
-import { ResultCard } from '../components/ResultCard/ResultCard'
-import { PinnedTableCard } from '../components/PinnedTableCard/PinnedTableCard'
-import styles from './Dashboard.module.css'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { Button, GridList, GridListItem, useDragAndDrop } from "react-aria-components";
+import { manifestQueryOptions, categoryQueryOptions } from "../lib/loader";
+import { CategoryCard } from "../components/CategoryCard/CategoryCard";
+import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
+import { useRollStore } from "../stores/rollStore";
+import { useFavoritesStore } from "../stores/favoritesStore";
+import { ResultCard } from "../components/ResultCard/ResultCard";
+import { PinnedTableCard } from "../components/PinnedTableCard/PinnedTableCard";
+import styles from "./Dashboard.module.css";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   loader: async ({ context: { queryClient } }) => {
-    const manifest = await queryClient.ensureQueryData(manifestQueryOptions())
+    const manifest = await queryClient.ensureQueryData(manifestQueryOptions());
     await Promise.all(
       manifest.categories.map((categoryId) =>
         queryClient.ensureQueryData(categoryQueryOptions(categoryId)),
       ),
-    )
+    );
   },
   component: Dashboard,
-})
+});
 
 function CategoryCardFromId({ categoryId }: { categoryId: string }) {
-  const { data, isError, error } = useQuery(categoryQueryOptions(categoryId))
+  const { data, isError, error } = useQuery(categoryQueryOptions(categoryId));
   if (isError) {
-    return <ErrorMessage message={`Failed to load category "${categoryId}": ${error?.message}`} />
+    return <ErrorMessage message={`Failed to load category "${categoryId}": ${error?.message}`} />;
   }
   if (!data || data.tableSets.length === 0) {
-    return null
+    return null;
   }
-  return <CategoryCard categoryId={categoryId} name={data.name} />
+  return <CategoryCard categoryId={categoryId} name={data.name} />;
 }
 
-function PinnedSection({ pinnedTableSets }: { pinnedTableSets: ReturnType<typeof useFavoritesStore.getState>['pinnedTableSets'] }) {
+function PinnedSection({
+  pinnedTableSets,
+}: {
+  pinnedTableSets: ReturnType<typeof useFavoritesStore.getState>["pinnedTableSets"];
+}) {
   const itemsWithIds = pinnedTableSets.map((item) => ({
     ...item,
     id: `${item.categoryId}/${item.fileName}`,
-  }))
+  }));
 
   const { dragAndDropHooks } = useDragAndDrop({
     getItems(keys) {
       return [...keys].map((key) => ({
-        'text/plain': String(key),
-      }))
+        "text/plain": String(key),
+      }));
     },
     onReorder(e) {
-      const reorder = useFavoritesStore.getState().reorder
-      const items = [...pinnedTableSets]
-      const movedKeys = [...e.keys].map(String)
+      const reorder = useFavoritesStore.getState().reorder;
+      const items = [...pinnedTableSets];
+      const movedKeys = [...e.keys].map(String);
 
       const movedItems = items.filter((item) =>
         movedKeys.includes(`${item.categoryId}/${item.fileName}`),
-      )
+      );
       const remaining = items.filter(
         (item) => !movedKeys.includes(`${item.categoryId}/${item.fileName}`),
-      )
+      );
 
-      const targetKey = String(e.target.key)
+      const targetKey = String(e.target.key);
       let targetIndex = remaining.findIndex(
         (item) => `${item.categoryId}/${item.fileName}` === targetKey,
-      )
+      );
 
-      if (e.target.dropPosition === 'after') {
-        targetIndex++
+      if (e.target.dropPosition === "after") {
+        targetIndex++;
       }
 
-      remaining.splice(targetIndex, 0, ...movedItems)
-      reorder(remaining)
+      remaining.splice(targetIndex, 0, ...movedItems);
+      reorder(remaining);
     },
-  })
+  });
 
   return (
     <section className={styles.section}>
@@ -87,7 +91,9 @@ function PinnedSection({ pinnedTableSets }: { pinnedTableSets: ReturnType<typeof
             textValue={item.tableSetName}
             className={styles.pinnedGridItem}
           >
-            <Button slot="drag" className={styles.dragHandle} aria-label="Reorder">⠿</Button>
+            <Button slot="drag" className={styles.dragHandle} aria-label="Reorder">
+              ⠿
+            </Button>
             <PinnedTableCard
               categoryId={item.categoryId}
               fileName={item.fileName}
@@ -98,13 +104,13 @@ function PinnedSection({ pinnedTableSets }: { pinnedTableSets: ReturnType<typeof
         )}
       </GridList>
     </section>
-  )
+  );
 }
 
 function Dashboard() {
-  const manifestQuery = useQuery(manifestQueryOptions())
-  const recentRolls = useRollStore((state) => state.recentRolls)
-  const pinnedTableSets = useFavoritesStore((state) => state.pinnedTableSets)
+  const manifestQuery = useQuery(manifestQueryOptions());
+  const recentRolls = useRollStore((state) => state.recentRolls);
+  const pinnedTableSets = useFavoritesStore((state) => state.pinnedTableSets);
 
   if (manifestQuery.isError) {
     return (
@@ -112,10 +118,10 @@ function Dashboard() {
         <h1>Dashboard</h1>
         <ErrorMessage message={`Failed to load categories: ${manifestQuery.error.message}`} />
       </div>
-    )
+    );
   }
 
-  const categories = manifestQuery.data?.categories ?? []
+  const categories = manifestQuery.data?.categories ?? [];
 
   return (
     <div>
@@ -134,9 +140,7 @@ function Dashboard() {
         </div>
       </section>
 
-      {pinnedTableSets.length > 0 && (
-        <PinnedSection pinnedTableSets={pinnedTableSets} />
-      )}
+      {pinnedTableSets.length > 0 && <PinnedSection pinnedTableSets={pinnedTableSets} />}
 
       <section className={styles.section}>
         <h2>Categories</h2>
@@ -161,5 +165,5 @@ function Dashboard() {
         </section>
       )}
     </div>
-  )
+  );
 }

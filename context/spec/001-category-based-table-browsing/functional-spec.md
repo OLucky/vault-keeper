@@ -27,6 +27,7 @@ Vault Keeper's core value is speed — a GM needs to generate content without br
 - The recent rolls section is empty on first visit with no placeholder message needed — it simply doesn't render until there are results.
 
 **Acceptance Criteria:**
+
 - [x] When the user opens the app, they see a dashboard with a list of categories and a recent rolls section.
 - [x] Only categories with at least one table set are displayed.
 - [x] Each category shows its name only.
@@ -44,6 +45,7 @@ Vault Keeper's core value is speed — a GM needs to generate content without br
 - A back/home navigation element is present to return to the dashboard.
 
 **Acceptance Criteria:**
+
 - [x] When the user navigates to a category page, they see a list of all table sets in that category.
 - [x] Each table set entry displays its name and a Roll button.
 - [x] A text filter input is present at the top of the table set list.
@@ -58,6 +60,7 @@ Vault Keeper's core value is speed — a GM needs to generate content without br
 - The initial sample data ships with two categories: **NPCs** and **Weapons/Items**.
 
 **Acceptance Criteria:**
+
 - [x] Categories displayed in the app are derived from the JSON data files, not hardcoded.
 - [x] Adding a new JSON data file with a new category causes that category to appear in the app without code changes.
 - [x] Categories with no table sets are hidden from the UI entirely.

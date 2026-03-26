@@ -26,32 +26,32 @@ Export is handled by a pure utility function that formats the store data as plai
 
 The store manages a flat array of log entries, each referencing its source category and table set. Grouping and ordering are derived at render time, not stored.
 
-| Field | Type | Description |
-|---|---|---|
-| `entries` | `SessionLogEntry[]` | All logged results |
-| `sidebarOpen` | `boolean` | Whether the sidebar is currently visible |
-| `unseenCount` | `number` | Count of entries added while sidebar was closed |
+| Field         | Type                | Description                                     |
+| ------------- | ------------------- | ----------------------------------------------- |
+| `entries`     | `SessionLogEntry[]` | All logged results                              |
+| `sidebarOpen` | `boolean`           | Whether the sidebar is currently visible        |
+| `unseenCount` | `number`            | Count of entries added while sidebar was closed |
 
 **`SessionLogEntry` shape:**
 
-| Field | Type | Description |
-|---|---|---|
-| `id` | `string` | Unique ID (reuse the `GeneratedResult.id`) |
-| `timestamp` | `number` | `Date.now()` at time of logging |
-| `categoryId` | `string` | Source category slug (e.g., `"npcs"`) |
-| `categoryName` | `string` | Display name (e.g., `"NPCs"`) |
-| `tableSetName` | `string` | Display name of the table set |
-| `fields` | `ResultField[]` | The generated result fields (same shape as existing) |
+| Field          | Type            | Description                                          |
+| -------------- | --------------- | ---------------------------------------------------- |
+| `id`           | `string`        | Unique ID (reuse the `GeneratedResult.id`)           |
+| `timestamp`    | `number`        | `Date.now()` at time of logging                      |
+| `categoryId`   | `string`        | Source category slug (e.g., `"npcs"`)                |
+| `categoryName` | `string`        | Display name (e.g., `"NPCs"`)                        |
+| `tableSetName` | `string`        | Display name of the table set                        |
+| `fields`       | `ResultField[]` | The generated result fields (same shape as existing) |
 
 **Store actions:**
 
-| Action | Description |
-|---|---|
+| Action                                                  | Description                                                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | `addEntry(result: GeneratedResult, categoryId: string)` | Adds a new entry with timestamp. Increments `unseenCount` if sidebar is closed. |
-| `removeEntry(id: string)` | Removes a single entry by ID. |
-| `clearAll()` | Removes all entries and resets count. |
-| `toggleSidebar()` | Toggles `sidebarOpen`. Resets `unseenCount` to 0 when opening. |
-| `openSidebar()` | Opens sidebar and resets `unseenCount`. |
+| `removeEntry(id: string)`                               | Removes a single entry by ID.                                                   |
+| `clearAll()`                                            | Removes all entries and resets count.                                           |
+| `toggleSidebar()`                                       | Toggles `sidebarOpen`. Resets `unseenCount` to 0 when opening.                  |
+| `openSidebar()`                                         | Opens sidebar and resets `unseenCount`.                                         |
 
 **Persistence:** Uses Zustand `persist` middleware with key `"vault-keeper-session-log"`. The `sidebarOpen` and `unseenCount` fields should be excluded from persistence via `partialize` (only `entries` persists).
 
@@ -65,12 +65,12 @@ In the `handleRoll` function, after `addRoll(storeKey, result)`, add a call to `
 
 **New components:**
 
-| Component | File | Responsibility |
-|---|---|---|
-| `SessionLogSidebar` | `src/components/SessionLogSidebar/SessionLogSidebar.tsx` | Top-level sidebar container. Renders header (with count, clear, export actions) and the grouped entry list. |
-| `SessionLogGroup` | `src/components/SessionLogSidebar/SessionLogGroup.tsx` | Renders a single category → table set group with its heading and entries. |
-| `SessionLogEntry` | `src/components/SessionLogSidebar/SessionLogEntry.tsx` | Renders a single log entry with its fields and a delete button. Reuses the same field display pattern as `ResultCard`. |
-| `SidebarToggle` | `src/components/SidebarToggle/SidebarToggle.tsx` | Button in the header that toggles the sidebar. Shows unseen count badge when sidebar is closed and new entries exist. |
+| Component           | File                                                     | Responsibility                                                                                                         |
+| ------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `SessionLogSidebar` | `src/components/SessionLogSidebar/SessionLogSidebar.tsx` | Top-level sidebar container. Renders header (with count, clear, export actions) and the grouped entry list.            |
+| `SessionLogGroup`   | `src/components/SessionLogSidebar/SessionLogGroup.tsx`   | Renders a single category → table set group with its heading and entries.                                              |
+| `SessionLogEntry`   | `src/components/SessionLogSidebar/SessionLogEntry.tsx`   | Renders a single log entry with its fields and a delete button. Reuses the same field display pattern as `ResultCard`. |
+| `SidebarToggle`     | `src/components/SidebarToggle/SidebarToggle.tsx`         | Button in the header that toggles the sidebar. Shows unseen count badge when sidebar is closed and new entries exist.  |
 
 **Styling:** Each component gets a co-located CSS Module (`.module.css`).
 
@@ -79,10 +79,13 @@ In the `handleRoll` function, after `addRoll(storeKey, result)`, add a call to `
 **Modified file:** `src/routes/__root.tsx`
 
 The root layout changes from:
+
 ```
 header → main
 ```
+
 to:
+
 ```
 header → [main | sidebar]
 ```
@@ -108,10 +111,12 @@ Grouping is computed at render time in `SessionLogSidebar` using a derived selec
 **New file:** `src/lib/exportSessionLog.ts`
 
 A pure function `formatSessionLogAsText(entries: SessionLogEntry[]): string` that:
+
 1. Groups and orders entries (same logic as the sidebar)
 2. Produces plain text with category/table set headers and results listed underneath
 
 Example output:
+
 ```
 NPCs — Vaarn NPC Generator
   Name: Zara, Trait: Paranoid, Motivation: Revenge
@@ -122,6 +127,7 @@ Weapons/Items — Weapon Generator
 ```
 
 Two UI actions use this function:
+
 - **Copy to Clipboard:** Calls `navigator.clipboard.writeText(text)` and shows a brief "Copied!" confirmation.
 - **Download:** Creates a `Blob`, generates an object URL, and triggers a download via a temporary `<a>` element.
 
@@ -137,12 +143,12 @@ Two UI actions use this function:
 
 ### Potential Risks & Mitigations
 
-| Risk | Mitigation |
-|---|---|
-| **localStorage size limits** (~5–10MB) | Session log entries are small (text only). Even hundreds of entries would be well under 100KB. No immediate concern, but a future enhancement could add a max entry cap. |
-| **Sidebar layout breaking existing pages** | The sidebar is rendered at the root level and is independent of route content. Test on both the dashboard and category pages. |
-| **Performance with many entries** | Grouping/sorting in `useMemo` with `entries` as dependency. For realistic session sizes (tens of entries), this is negligible. |
-| **persist middleware hydration flash** | Zustand `persist` hydrates asynchronously. Use `onRehydrateStorage` or the `hasHydrated` pattern if needed to avoid a flash of empty state on load. |
+| Risk                                       | Mitigation                                                                                                                                                               |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **localStorage size limits** (~5–10MB)     | Session log entries are small (text only). Even hundreds of entries would be well under 100KB. No immediate concern, but a future enhancement could add a max entry cap. |
+| **Sidebar layout breaking existing pages** | The sidebar is rendered at the root level and is independent of route content. Test on both the dashboard and category pages.                                            |
+| **Performance with many entries**          | Grouping/sorting in `useMemo` with `entries` as dependency. For realistic session sizes (tens of entries), this is negligible.                                           |
+| **persist middleware hydration flash**     | Zustand `persist` hydrates asynchronously. Use `onRehydrateStorage` or the `hasHydrated` pattern if needed to avoid a flash of empty state on load.                      |
 
 ---
 

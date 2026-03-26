@@ -8,7 +8,7 @@
 
 ## 1. Overview and Rationale (The "Why")
 
-Rolling on random tables is the single most important action in Vault Keeper. During a live session, a GM needs a new NPC, weapon, or other element *right now* — not after flipping pages, finding a table, rolling physical dice, and cross-referencing results. This spec defines how the user triggers a roll, sees the result, re-rolls individual fields, and manages multiple generated results — all without leaving the category page.
+Rolling on random tables is the single most important action in Vault Keeper. During a live session, a GM needs a new NPC, weapon, or other element _right now_ — not after flipping pages, finding a table, rolling physical dice, and cross-referencing results. This spec defines how the user triggers a roll, sees the result, re-rolls individual fields, and manages multiple generated results — all without leaving the category page.
 
 **Success looks like:** The user clicks Roll and sees a complete, multi-field result in under 2 seconds. They can tweak individual fields with per-field re-rolls and generate multiple options by rolling again, all inline.
 
@@ -27,6 +27,7 @@ Rolling on random tables is the single most important action in Vault Keeper. Du
 - The roll is instant — no loading state or animation is required, though a subtle transition is acceptable.
 
 **Acceptance Criteria:**
+
 - [x] Clicking the Roll button on a table set generates a result from all tables in the set.
 - [x] The result appears inline below the table set entry on the category page.
 - [x] Each field shows a label (table name) and the selected entry's title.
@@ -41,6 +42,7 @@ Rolling on random tables is the single most important action in Vault Keeper. Du
 - All other fields in the result remain unchanged.
 
 **Acceptance Criteria:**
+
 - [x] Each field in a result has a re-roll button.
 - [x] Clicking a field's re-roll button replaces only that field with a new random entry from the same table.
 - [x] Other fields in the result are not affected by a per-field re-roll.
@@ -53,6 +55,7 @@ Rolling on random tables is the single most important action in Vault Keeper. Du
 - Stacked results persist as long as the user remains on the category page. **Navigating away from the category page clears all stacked results.**
 
 **Acceptance Criteria:**
+
 - [x] Rolling again on the same table set adds a new result above the previous one.
 - [x] Results are displayed newest first.
 - [x] A maximum of 10 results are visible per table set. The oldest is removed when a new one exceeds the limit.
@@ -64,6 +67,7 @@ Rolling on random tables is the single most important action in Vault Keeper. Du
 - Per-field re-rolls do NOT create new entries in recent rolls — they update the existing result in place.
 
 **Acceptance Criteria:**
+
 - [x] Each full roll adds an entry to the dashboard's recent rolls list.
 - [x] Per-field re-rolls do not add new entries to the recent rolls list.
 - [x] The recent rolls list shows the most current state of each result (reflecting any per-field re-rolls).

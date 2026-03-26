@@ -5,52 +5,192 @@
       "name": "Codex Appearance",
       "die": "d20",
       "entries": [
-        { "range": [1, 1], "title": "A goblet so black it drinks in light, the inner rim of which is inlaid with spiralling equations." },
-        { "range": [2, 2], "title": "The dried skin of a toad, tattooed with hypergeometric proofs." },
-        { "range": [3, 3], "title": "A book cast from iron, the pages of which must be turned with a mechanical crank." },
-        { "range": [4, 4], "title": "A tablet carved from pale lunar stone, which feels as light as a feather." },
-        { "range": [5, 5], "title": "A tall hat scaled with coins, the inverse sides of which are carved with hypergeometric sigils." },
-        { "range": [6, 6], "title": "A lump of pink crystal, veined with hypergeometric glyphs when one holds it up to the light." },
-        { "range": [7, 7], "title": "The foot-long fang of a gigantic Ur-Snake, carved with frantic equations." },
-        { "range": [8, 8], "title": "A broken mirror, which displays the equation as though written upon the observer's reflected face." },
-        { "range": [9, 9], "title": "A lump of amber; the contorted shapes of insects trapped within spell out the equation's proofs." },
-        { "range": [10, 10], "title": "A ring set with polychrome gemstones; the equation is printed on the inner curve, hiding it while worn." },
-        { "range": [11, 11], "title": "A child's drawing tablet, the equation scribbled in chalk amongst naive doodles." },
-        { "range": [12, 12], "title": "An ancient set of binoculars; when raised to the eyes all one can see is the hypergeometric proof, written across the sky in mile-high letters of divine fire." },
-        { "range": [13, 13], "title": "A black book the size of a thumbnail yet heavy as sin; the pages must be turned with tweezers." },
-        { "range": [14, 14], "title": "A human heart, blue with putrescence yet still beating; the equation is written upon the muscle with luminous ink." },
-        { "range": [15, 15], "title": "A chrome skull, its brain cavity filled with scraps of burned paper on which the equation is repeated endlessly." },
-        { "range": [16, 16], "title": "A broken sword, the blade molten and warped into the shape of hypergeometric proofs." },
-        { "range": [17, 17], "title": "An ordinary looking wine-jar, sealed with a stopper made from black wax. Remove the stopper and a voice whispers from within the jar, endlessly repeating the equation." },
-        { "range": [18, 18], "title": "A dining plate, painted with innumerable dancing blue and red figures; stare at the plate with an empty mind and an equation begins to emerge from the whirl of colour." },
-        { "range": [19, 19], "title": "An ornate lady's fan, on which the equation is painted in the flowery court script of the Fallen Autarchy." },
-        { "range": [20, 20], "title": "An infinite mobius strip made from ancient parchment; the equation is written along the paradoxical coiling faces." }
+        {
+          "range": [1, 1],
+          "title": "A goblet so black it drinks in light, the inner rim of which is inlaid with spiralling equations."
+        },
+        {
+          "range": [2, 2],
+          "title": "The dried skin of a toad, tattooed with hypergeometric proofs."
+        },
+        {
+          "range": [3, 3],
+          "title": "A book cast from iron, the pages of which must be turned with a mechanical crank."
+        },
+        {
+          "range": [4, 4],
+          "title": "A tablet carved from pale lunar stone, which feels as light as a feather."
+        },
+        {
+          "range": [5, 5],
+          "title": "A tall hat scaled with coins, the inverse sides of which are carved with hypergeometric sigils."
+        },
+        {
+          "range": [6, 6],
+          "title": "A lump of pink crystal, veined with hypergeometric glyphs when one holds it up to the light."
+        },
+        {
+          "range": [7, 7],
+          "title": "The foot-long fang of a gigantic Ur-Snake, carved with frantic equations."
+        },
+        {
+          "range": [8, 8],
+          "title": "A broken mirror, which displays the equation as though written upon the observer's reflected face."
+        },
+        {
+          "range": [9, 9],
+          "title": "A lump of amber; the contorted shapes of insects trapped within spell out the equation's proofs."
+        },
+        {
+          "range": [10, 10],
+          "title": "A ring set with polychrome gemstones; the equation is printed on the inner curve, hiding it while worn."
+        },
+        {
+          "range": [11, 11],
+          "title": "A child's drawing tablet, the equation scribbled in chalk amongst naive doodles."
+        },
+        {
+          "range": [12, 12],
+          "title": "An ancient set of binoculars; when raised to the eyes all one can see is the hypergeometric proof, written across the sky in mile-high letters of divine fire."
+        },
+        {
+          "range": [13, 13],
+          "title": "A black book the size of a thumbnail yet heavy as sin; the pages must be turned with tweezers."
+        },
+        {
+          "range": [14, 14],
+          "title": "A human heart, blue with putrescence yet still beating; the equation is written upon the muscle with luminous ink."
+        },
+        {
+          "range": [15, 15],
+          "title": "A chrome skull, its brain cavity filled with scraps of burned paper on which the equation is repeated endlessly."
+        },
+        {
+          "range": [16, 16],
+          "title": "A broken sword, the blade molten and warped into the shape of hypergeometric proofs."
+        },
+        {
+          "range": [17, 17],
+          "title": "An ordinary looking wine-jar, sealed with a stopper made from black wax. Remove the stopper and a voice whispers from within the jar, endlessly repeating the equation."
+        },
+        {
+          "range": [18, 18],
+          "title": "A dining plate, painted with innumerable dancing blue and red figures; stare at the plate with an empty mind and an equation begins to emerge from the whirl of colour."
+        },
+        {
+          "range": [19, 19],
+          "title": "An ornate lady's fan, on which the equation is painted in the flowery court script of the Fallen Autarchy."
+        },
+        {
+          "range": [20, 20],
+          "title": "An infinite mobius strip made from ancient parchment; the equation is written along the paradoxical coiling faces."
+        }
       ]
     },
     {
       "name": "Equation",
       "die": "d20",
       "entries": [
-        { "range": [1, 1], "title": "Antithetical Copy", "description": "Creates a daemonic, insanely evil copy of a target entity. The copy is alive and violently opposed to the existence of the original — if it makes physical contact with the original, both entities are explosively destroyed. The antithesis crumbles to ash after [INT] hours." },
-        { "range": [2, 2], "title": "Diminish", "description": "The reader or another targeted entity shrinks to half of their original size and mass. This effect lasts [INT] hours." },
-        { "range": [3, 3], "title": "Erase Paradox", "description": "Targeted Hypergeometric or Outsider-type entity must EGO save vs 10 + [INT]. On failure the entity accepts the fundamental implausibility of their presence and ceases to exist." },
-        { "range": [4, 4], "title": "Exchange Coordinates", "description": "The reader swaps physical positions with a targeted entity." },
-        { "range": [5, 5], "title": "Expand", "description": "The reader or another targeted entity grows to double their original size and mass. This effect lasts [INT] hours." },
-        { "range": [6, 6], "title": "Flatten", "description": "The reader or another targeted entity is transformed into a 2D hypergeometric entity. This effect lasts [INT] hours." },
-        { "range": [7, 7], "title": "Golem", "description": "Imbues a nearby inanimate object with mobility and sentience. It obediently serves you for [INT] hours." },
-        { "range": [8, 8], "title": "Imperfect Copy", "description": "Creates [INT] copies of a target entity. They are colourless and lifeless, resembling sculptures made from ash." },
-        { "range": [9, 9], "title": "Increase Gravity", "description": "Target entity feels the effects of gravity at ten times the usual force. They are unable to move or fight. This lasts [INT] combat rounds." },
-        { "range": [10, 10], "title": "Invert Gravity", "description": "Target entity has its gravitational polarity reversed for [INT] combat rounds, falling towards the sky. When the effect ends, they take d8 falling damage for each round they fell skywards." },
-        { "range": [11, 11], "title": "Kinetic Ward", "description": "Creates an invisible wall of hypergeometric force that negates all physical attacks. The barrier can protect one entity for [INT] combat rounds, or [INT] entities for one combat round." },
-        { "range": [12, 12], "title": "Perfect Copy", "description": "Creates a perfect copy of a target entity. The copy resembles the original in all respects. It crumbles to ash after [INT] hours." },
-        { "range": [13, 13], "title": "Phase", "description": "The reader or another targeted entity is placed out of sync with the material realm. They are visible but cannot touch anything (except other phased entities). This effect lasts [INT] combat rounds." },
-        { "range": [14, 14], "title": "Portal", "description": "The reader creates a pair of portals, linking two flat surfaces that they can see. The portals persist for [INT] combat rounds." },
-        { "range": [15, 15], "title": "Return Fixed Coordinates", "description": "The reader and/or [INT] other entities are transported to a predetermined point in space. The codex only connects to this pre-written point in space." },
-        { "range": [16, 16], "title": "Return Random Coordinates", "description": "The reader and/or [INT] other entities are transported to a random point in space which the reader has previously occupied." },
-        { "range": [17, 17], "title": "Singularity", "description": "Creates a miniature black hole for [INT] combat rounds, which draws in all unsecured entities in the room. Anything engulfed by the singularity is destroyed. Living beings must STR save vs 10 + [INT] to avoid being drawn into the black hole." },
-        { "range": [18, 18], "title": "Stasis", "description": "A single entity is stranded outside the flow of time for [INT] combat rounds. They cannot be moved, harmed, or interacted with in any way." },
-        { "range": [19, 19], "title": "Summon", "description": "The reader plucks a creature from the manifold halls of creation. Roll on the Monster Generator tables to determine the nature and disposition of the entity." },
-        { "range": [20, 20], "title": "Vanish", "description": "The reader or another targeted entity is no longer visible in the normal spectrum of light. Infrared vision will still detect the hidden entity. This effect lasts [INT] hours." }
+        {
+          "range": [1, 1],
+          "title": "Antithetical Copy",
+          "description": "Creates a daemonic, insanely evil copy of a target entity. The copy is alive and violently opposed to the existence of the original — if it makes physical contact with the original, both entities are explosively destroyed. The antithesis crumbles to ash after [INT] hours."
+        },
+        {
+          "range": [2, 2],
+          "title": "Diminish",
+          "description": "The reader or another targeted entity shrinks to half of their original size and mass. This effect lasts [INT] hours."
+        },
+        {
+          "range": [3, 3],
+          "title": "Erase Paradox",
+          "description": "Targeted Hypergeometric or Outsider-type entity must EGO save vs 10 + [INT]. On failure the entity accepts the fundamental implausibility of their presence and ceases to exist."
+        },
+        {
+          "range": [4, 4],
+          "title": "Exchange Coordinates",
+          "description": "The reader swaps physical positions with a targeted entity."
+        },
+        {
+          "range": [5, 5],
+          "title": "Expand",
+          "description": "The reader or another targeted entity grows to double their original size and mass. This effect lasts [INT] hours."
+        },
+        {
+          "range": [6, 6],
+          "title": "Flatten",
+          "description": "The reader or another targeted entity is transformed into a 2D hypergeometric entity. This effect lasts [INT] hours."
+        },
+        {
+          "range": [7, 7],
+          "title": "Golem",
+          "description": "Imbues a nearby inanimate object with mobility and sentience. It obediently serves you for [INT] hours."
+        },
+        {
+          "range": [8, 8],
+          "title": "Imperfect Copy",
+          "description": "Creates [INT] copies of a target entity. They are colourless and lifeless, resembling sculptures made from ash."
+        },
+        {
+          "range": [9, 9],
+          "title": "Increase Gravity",
+          "description": "Target entity feels the effects of gravity at ten times the usual force. They are unable to move or fight. This lasts [INT] combat rounds."
+        },
+        {
+          "range": [10, 10],
+          "title": "Invert Gravity",
+          "description": "Target entity has its gravitational polarity reversed for [INT] combat rounds, falling towards the sky. When the effect ends, they take d8 falling damage for each round they fell skywards."
+        },
+        {
+          "range": [11, 11],
+          "title": "Kinetic Ward",
+          "description": "Creates an invisible wall of hypergeometric force that negates all physical attacks. The barrier can protect one entity for [INT] combat rounds, or [INT] entities for one combat round."
+        },
+        {
+          "range": [12, 12],
+          "title": "Perfect Copy",
+          "description": "Creates a perfect copy of a target entity. The copy resembles the original in all respects. It crumbles to ash after [INT] hours."
+        },
+        {
+          "range": [13, 13],
+          "title": "Phase",
+          "description": "The reader or another targeted entity is placed out of sync with the material realm. They are visible but cannot touch anything (except other phased entities). This effect lasts [INT] combat rounds."
+        },
+        {
+          "range": [14, 14],
+          "title": "Portal",
+          "description": "The reader creates a pair of portals, linking two flat surfaces that they can see. The portals persist for [INT] combat rounds."
+        },
+        {
+          "range": [15, 15],
+          "title": "Return Fixed Coordinates",
+          "description": "The reader and/or [INT] other entities are transported to a predetermined point in space. The codex only connects to this pre-written point in space."
+        },
+        {
+          "range": [16, 16],
+          "title": "Return Random Coordinates",
+          "description": "The reader and/or [INT] other entities are transported to a random point in space which the reader has previously occupied."
+        },
+        {
+          "range": [17, 17],
+          "title": "Singularity",
+          "description": "Creates a miniature black hole for [INT] combat rounds, which draws in all unsecured entities in the room. Anything engulfed by the singularity is destroyed. Living beings must STR save vs 10 + [INT] to avoid being drawn into the black hole."
+        },
+        {
+          "range": [18, 18],
+          "title": "Stasis",
+          "description": "A single entity is stranded outside the flow of time for [INT] combat rounds. They cannot be moved, harmed, or interacted with in any way."
+        },
+        {
+          "range": [19, 19],
+          "title": "Summon",
+          "description": "The reader plucks a creature from the manifold halls of creation. Roll on the Monster Generator tables to determine the nature and disposition of the entity."
+        },
+        {
+          "range": [20, 20],
+          "title": "Vanish",
+          "description": "The reader or another targeted entity is no longer visible in the normal spectrum of light. Infrared vision will still detect the hidden entity. This effect lasts [INT] hours."
+        }
       ]
     }
   ]

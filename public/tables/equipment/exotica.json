@@ -5,26 +5,106 @@
       "name": "Exotica",
       "die": "d20",
       "entries": [
-        { "range": [1, 1], "title": "A Fool's Head", "description": "The severed head of a synthetic jester. Not in great condition but can still remember some jokes." },
-        { "range": [2, 2], "title": "Agoniser", "description": "A barbaric relic. Silver needle that causes unbearable pain to organic creatures without leaving a mark." },
-        { "range": [3, 3], "title": "All-Purpose Idol", "description": "Imbued with powerful neuro-active programming. Observers always believe the idol represents the deity they worship." },
-        { "range": [4, 4], "title": "Black Heart", "description": "Repulsive twitching cyborg organ. Will slowly and painfully revive a single dead body." },
-        { "range": [5, 5], "title": "Blasphemies of the Binary Demon", "description": "A tablet engraved with a series of quantum-logical propositions. Poses little threat to organic life but can be deadly to sentient machines." },
-        { "range": [6, 6], "title": "Chameleon Cloak", "description": "Perfectly matches the colour of its surroundings." },
-        { "range": [7, 7], "title": "Desiccated Mycomorph", "description": "Tiny dried out fungus-man. A drop of blood will revive him." },
-        { "range": [8, 8], "title": "Dried Crypt Lotus", "description": "Grim flower that sprouts from the forehead of corpses. Sometimes kept as a keepsake of a lost companion." },
-        { "range": [9, 9], "title": "Flesh of the Honeyed Lamb", "description": "Stolen from the Cult of the Honeyed Lamb; ancient meat imbued with a powerful medicinal psychedelic." },
-        { "range": [10, 10], "title": "Midas Bomb", "description": "Transforms organic matter into gold." },
-        { "range": [11, 11], "title": "Mirror Ring", "description": "Projects a hologram copy of the wearer that mimics their actions." },
-        { "range": [12, 12], "title": "Nightmare Box", "description": "Small cube of unbreakable, dark-tinted glass. Has one small peephole. Those that look inside are paralysed by horror." },
-        { "range": [13, 13], "title": "Pale Blade of Amun-Oh", "description": "Priests of Amun-Oh pledge never to take a life; their white knives will cut through anything except living flesh." },
-        { "range": [14, 14], "title": "Sandworm Horn", "description": "Blow outdoors to summon a sandworm, if you are bold enough." },
-        { "range": [15, 15], "title": "Singing Crystal", "description": "When struck, sings loudly and beautifully for up to an hour." },
-        { "range": [16, 16], "title": "Sky-seeking Salve", "description": "Reverses effect of gravity on object it coats. Take care when outdoors." },
-        { "range": [17, 17], "title": "Ulfire Candle", "description": "Ulfire is the ninth colour; its light has the unusual quality of shining through solid objects. It is blocked by lead." },
-        { "range": [18, 18], "title": "Unbearable Wax", "description": "Black wax that increases in weight one hundred times as it dries. Single dose." },
-        { "range": [19, 19], "title": "Vial of ICE-9", "description": "One dose of an alchemical substance that transforms all water it touches into un-meltable ice." },
-        { "range": [20, 20], "title": "Visualiser Helm", "description": "Golden bubble-helmet that projects imagery of the wearer's thoughts, whether they want it to or not." }
+        {
+          "range": [1, 1],
+          "title": "A Fool's Head",
+          "description": "The severed head of a synthetic jester. Not in great condition but can still remember some jokes."
+        },
+        {
+          "range": [2, 2],
+          "title": "Agoniser",
+          "description": "A barbaric relic. Silver needle that causes unbearable pain to organic creatures without leaving a mark."
+        },
+        {
+          "range": [3, 3],
+          "title": "All-Purpose Idol",
+          "description": "Imbued with powerful neuro-active programming. Observers always believe the idol represents the deity they worship."
+        },
+        {
+          "range": [4, 4],
+          "title": "Black Heart",
+          "description": "Repulsive twitching cyborg organ. Will slowly and painfully revive a single dead body."
+        },
+        {
+          "range": [5, 5],
+          "title": "Blasphemies of the Binary Demon",
+          "description": "A tablet engraved with a series of quantum-logical propositions. Poses little threat to organic life but can be deadly to sentient machines."
+        },
+        {
+          "range": [6, 6],
+          "title": "Chameleon Cloak",
+          "description": "Perfectly matches the colour of its surroundings."
+        },
+        {
+          "range": [7, 7],
+          "title": "Desiccated Mycomorph",
+          "description": "Tiny dried out fungus-man. A drop of blood will revive him."
+        },
+        {
+          "range": [8, 8],
+          "title": "Dried Crypt Lotus",
+          "description": "Grim flower that sprouts from the forehead of corpses. Sometimes kept as a keepsake of a lost companion."
+        },
+        {
+          "range": [9, 9],
+          "title": "Flesh of the Honeyed Lamb",
+          "description": "Stolen from the Cult of the Honeyed Lamb; ancient meat imbued with a powerful medicinal psychedelic."
+        },
+        {
+          "range": [10, 10],
+          "title": "Midas Bomb",
+          "description": "Transforms organic matter into gold."
+        },
+        {
+          "range": [11, 11],
+          "title": "Mirror Ring",
+          "description": "Projects a hologram copy of the wearer that mimics their actions."
+        },
+        {
+          "range": [12, 12],
+          "title": "Nightmare Box",
+          "description": "Small cube of unbreakable, dark-tinted glass. Has one small peephole. Those that look inside are paralysed by horror."
+        },
+        {
+          "range": [13, 13],
+          "title": "Pale Blade of Amun-Oh",
+          "description": "Priests of Amun-Oh pledge never to take a life; their white knives will cut through anything except living flesh."
+        },
+        {
+          "range": [14, 14],
+          "title": "Sandworm Horn",
+          "description": "Blow outdoors to summon a sandworm, if you are bold enough."
+        },
+        {
+          "range": [15, 15],
+          "title": "Singing Crystal",
+          "description": "When struck, sings loudly and beautifully for up to an hour."
+        },
+        {
+          "range": [16, 16],
+          "title": "Sky-seeking Salve",
+          "description": "Reverses effect of gravity on object it coats. Take care when outdoors."
+        },
+        {
+          "range": [17, 17],
+          "title": "Ulfire Candle",
+          "description": "Ulfire is the ninth colour; its light has the unusual quality of shining through solid objects. It is blocked by lead."
+        },
+        {
+          "range": [18, 18],
+          "title": "Unbearable Wax",
+          "description": "Black wax that increases in weight one hundred times as it dries. Single dose."
+        },
+        {
+          "range": [19, 19],
+          "title": "Vial of ICE-9",
+          "description": "One dose of an alchemical substance that transforms all water it touches into un-meltable ice."
+        },
+        {
+          "range": [20, 20],
+          "title": "Visualiser Helm",
+          "description": "Golden bubble-helmet that projects imagery of the wearer's thoughts, whether they want it to or not."
+        }
       ]
     }
   ]

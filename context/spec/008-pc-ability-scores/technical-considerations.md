@@ -13,6 +13,7 @@ Introduce a **computed table type** to the existing JSON-driven table system. Cu
 The Player Character table set (`public/tables/character/player-character.json`) will gain six computed tables — one per ability score. The rolling engine will detect computed tables and delegate to a new dice computation function. The UI requires no changes since `ResultField.entry.title` already renders as a generic string.
 
 **Affected files:**
+
 - `src/lib/types.ts` — schema changes (new table variant)
 - `src/lib/dice.ts` — new computed dice function
 - `src/lib/rolling.ts` — handle computed tables in `rollSingleTable()`
@@ -32,10 +33,10 @@ Add a discriminated union for tables using an optional `type` field:
 
 **`compute` object shape:**
 
-| Field    | Type   | Description                           |
-|----------|--------|---------------------------------------|
+| Field    | Type   | Description                          |
+| -------- | ------ | ------------------------------------ |
 | `dice`   | string | Dice expression, e.g. `"3d6"`        |
-| `method` | string | Aggregation: `"lowest"` (extensible)  |
+| `method` | string | Aggregation: `"lowest"` (extensible) |
 
 The `TableSchema` becomes a Zod discriminated union on the `type` field. Existing tables without a `type` field default to `"lookup"` behavior.
 
@@ -63,6 +64,7 @@ Computed table fields will have **no reroll button**. This is achieved by markin
 ### 2.4 Validation (`src/lib/validation.ts`)
 
 Update `validateTableSet()` to skip range coverage validation for computed tables (they have no entries/ranges to validate). Validate the `compute` object shape instead:
+
 - `dice` matches format `NdX` (e.g. `"3d6"`)
 - `method` is one of the supported values (`"lowest"`)
 
@@ -84,11 +86,13 @@ Add six computed tables after the existing Ancestry table:
 ## 3. Impact and Risk Analysis
 
 **System Dependencies:**
+
 - `ResultCard` component reads `field.entry.title` and optionally shows a reroll button. Adding a `computed` flag to `ResultField` means updating the reroll-button visibility check (minor).
 - Session log, saved results, and dashboard recent rolls all render `ResultField` — they work unchanged since they display `entry.title` generically.
 - `rerollFieldWithTriggers()` is not called for computed fields (no reroll button), so no changes needed there.
 
 **Potential Risks & Mitigations:**
+
 - **Schema backward compatibility:** Existing JSON files have no `type` field. Mitigation: the Zod schema defaults missing `type` to `"lookup"`, so no existing files break.
 - **Validation bypass:** Computed tables skip range coverage checks. Mitigation: validate `compute` object shape (dice format, known method) to catch malformed data.
 - **Future extensibility:** The `method` field is a string enum. New methods (e.g., `"highest"`, `"sum"`) can be added later without schema changes.

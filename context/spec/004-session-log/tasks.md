@@ -1,6 +1,7 @@
 # Tasks: Session Log
 
 ## Slice 1: Session Log Store with Persistence
+
 _Create the store and verify it persists data to localStorage._
 
 - [x] **Slice 1: Session Log Store**
@@ -9,6 +10,7 @@ _Create the store and verify it persists data to localStorage._
   - [x] Run tests and verify all pass. **[Agent: typescript-expert]**
 
 ## Slice 2: Sidebar Toggle Button in Header
+
 _Add a toggle button to the header that opens/closes an empty sidebar panel. The app remains fully functional._
 
 - [x] **Slice 2: Sidebar Layout & Toggle**
@@ -19,6 +21,7 @@ _Add a toggle button to the header that opens/closes an empty sidebar panel. The
   - [x] Verify: app starts, toggle button appears in header, clicking it shows/hides an empty sidebar panel, main content reflows. Existing pages (dashboard, category) still work. **[Agent: browser-mcp]**
 
 ## Slice 3: Auto-Capture Rolls to Session Log
+
 _Rolling on a table set adds the result to the sidebar. Results are visible in the sidebar._
 
 - [x] **Slice 3: Capture & Display Entries**
@@ -29,6 +32,7 @@ _Rolling on a table set adds the result to the sidebar. Results are visible in t
   - [x] Verify: roll on a table set, result appears in sidebar, count updates, badge shows when sidebar is closed during a roll. Refresh page — entries persist. **[Agent: browser-mcp]**
 
 ## Slice 4: Grouped Display
+
 _Entries in the sidebar are grouped by category and table set, ordered by most recent activity._
 
 - [x] **Slice 4: Grouping & Ordering**
@@ -37,6 +41,7 @@ _Entries in the sidebar are grouped by category and table set, ordered by most r
   - [x] Verify: roll across multiple categories/table sets, confirm results appear grouped with correct headings and ordering. Rolling on a table set moves its group to the top. **[Agent: browser-mcp]**
 
 ## Slice 5: Delete Entry & Clear All
+
 _User can remove individual entries and clear the entire log with confirmation._
 
 - [x] **Slice 5: Delete & Clear**
@@ -47,6 +52,7 @@ _User can remove individual entries and clear the entire log with confirmation._
   - [x] Verify: delete individual entries, confirm group disappears when empty, clear all with confirmation works, count resets. **[Agent: browser-mcp]**
 
 ## Slice 6: Export as Text
+
 _User can copy the session log to clipboard or download as .txt file._
 
 - [x] **Slice 6: Export**

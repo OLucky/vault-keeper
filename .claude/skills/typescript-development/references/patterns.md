@@ -79,9 +79,7 @@ class ValidationError extends AppError {
 Represent success/failure without exceptions:
 
 ```typescript
-type Result<T, E = Error> =
-  | { ok: true; value: T }
-  | { ok: false; error: E };
+type Result<T, E = Error> = { ok: true; value: T } | { ok: false; error: E };
 
 function ok<T>(value: T): Result<T, never> {
   return { ok: true, value };
@@ -142,16 +140,10 @@ async function fetchData(id: string): Promise<Data> {
 
 ```typescript
 // Run in parallel, fail if any fails
-const [users, orders] = await Promise.all([
-  fetchUsers(),
-  fetchOrders(),
-]);
+const [users, orders] = await Promise.all([fetchUsers(), fetchOrders()]);
 
 // Run in parallel, get individual results
-const results = await Promise.allSettled([
-  fetchUsers(),
-  fetchOrders(),
-]);
+const results = await Promise.allSettled([fetchUsers(), fetchOrders()]);
 
 for (const result of results) {
   if (result.status === "fulfilled") {
@@ -209,9 +201,7 @@ class QueryBuilder<T> {
   }
 
   execute(items: T[]): T[] {
-    let result = items.filter((item) =>
-      this.filters.every((f) => f(item)),
-    );
+    let result = items.filter((item) => this.filters.every((f) => f(item)));
 
     if (this.sortKey !== undefined) {
       const key = this.sortKey;
@@ -236,10 +226,7 @@ type EventMap = Record<string, unknown[]>;
 class TypedEmitter<Events extends EventMap> {
   private listeners = new Map<keyof Events, Set<Function>>();
 
-  on<K extends keyof Events>(
-    event: K,
-    handler: (...args: Events[K]) => void,
-  ): void {
+  on<K extends keyof Events>(event: K, handler: (...args: Events[K]) => void): void {
     if (!this.listeners.has(event)) {
       this.listeners.set(event, new Set());
     }
@@ -255,10 +242,7 @@ class TypedEmitter<Events extends EventMap> {
     }
   }
 
-  off<K extends keyof Events>(
-    event: K,
-    handler: (...args: Events[K]) => void,
-  ): void {
+  off<K extends keyof Events>(event: K, handler: (...args: Events[K]) => void): void {
     this.listeners.get(event)?.delete(handler);
   }
 }
@@ -271,7 +255,9 @@ interface AppEvents extends EventMap {
 }
 
 const emitter = new TypedEmitter<AppEvents>();
-emitter.on("userLogin", (userId, timestamp) => { /* ... */ });
+emitter.on("userLogin", (userId, timestamp) => {
+  /* ... */
+});
 emitter.emit("userLogin", "u-123", Date.now());
 ```
 
@@ -286,8 +272,8 @@ function parse(input: string, asNumber: boolean): number | string {
   return asNumber ? Number(input) : input;
 }
 
-const num = parse("42", true);    // number
-const str = parse("42", false);   // string
+const num = parse("42", true); // number
+const str = parse("42", false); // string
 ```
 
 ### Method overloads in classes
@@ -372,10 +358,7 @@ type LogLevel = "debug" | "info" | "warn" | "error";
 ## Assertion Functions
 
 ```typescript
-function assertDefined<T>(
-  value: T | null | undefined,
-  name: string,
-): asserts value is T {
+function assertDefined<T>(value: T | null | undefined, name: string): asserts value is T {
   if (value === null || value === undefined) {
     throw new Error(`Expected ${name} to be defined, got ${value}`);
   }
@@ -388,10 +371,14 @@ function assertNever(value: never, message?: string): never {
 // Usage — exhaustive switch
 function handleStatus(status: Status): string {
   switch (status) {
-    case "active": return "Active";
-    case "inactive": return "Inactive";
-    case "pending": return "Pending";
-    default: assertNever(status);
+    case "active":
+      return "Active";
+    case "inactive":
+      return "Inactive";
+    case "pending":
+      return "Pending";
+    default:
+      assertNever(status);
   }
 }
 ```
@@ -401,8 +388,12 @@ function handleStatus(status: Status): string {
 ### In operator narrowing
 
 ```typescript
-interface Fish { swim(): void }
-interface Bird { fly(): void }
+interface Fish {
+  swim(): void;
+}
+interface Bird {
+  fly(): void;
+}
 
 function move(animal: Fish | Bird): void {
   if ("swim" in animal) {

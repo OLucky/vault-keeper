@@ -26,6 +26,7 @@ The entire content of Vault Keeper — every category, table set, and rollable e
 - A **root manifest** at `public/tables/manifest.json` lists all category folder names. The app reads this to discover categories.
 
 **File structure:**
+
 ```
 public/tables/
   manifest.json
@@ -40,6 +41,7 @@ public/tables/
 ```
 
 **Acceptance Criteria:**
+
 - [x] A root `manifest.json` exists at `public/tables/manifest.json` listing all category folder names.
 - [x] Each category folder contains an `index.json` and one or more table set JSON files.
 - [x] The app reads `manifest.json` to discover category folders, then reads each folder's `index.json` to discover table sets.
@@ -56,6 +58,7 @@ public/tables/
 - **`categories`** — an array of folder names under `public/tables/`. Each entry corresponds to a category subfolder.
 
 **Acceptance Criteria:**
+
 - [x] The app fetches and parses `manifest.json` on startup.
 - [x] Only categories listed in `manifest.json` are loaded.
 
@@ -64,10 +67,7 @@ public/tables/
 ```json
 {
   "name": "NPCs",
-  "tableSets": [
-    "npc-generator.json",
-    "npc-background.json"
-  ]
+  "tableSets": ["npc-generator.json", "npc-background.json"]
 }
 ```
 
@@ -75,6 +75,7 @@ public/tables/
 - **`tableSets`** — an array of table set file names within this folder.
 
 **Acceptance Criteria:**
+
 - [x] The app fetches each category's `index.json` to get the display name and list of table set files.
 - [x] The category name in the UI matches the `name` field from `index.json`.
 - [x] Only table sets listed in `tableSets` are loaded.
@@ -93,10 +94,7 @@ public/tables/
         {
           "range": [3, 4],
           "title": "Cacogen (Mutant)",
-          "triggers": [
-            { "tableId": "mutations" },
-            { "tableSet": "mutations/mutation-generator" }
-          ]
+          "triggers": [{ "tableId": "mutations" }, { "tableSet": "mutations/mutation-generator" }]
         },
         { "range": [5, 6], "title": "Synth" }
       ]
@@ -134,10 +132,12 @@ public/tables/
 ```
 
 **Table set fields:**
+
 - **`name`** — the display name of the table set (shown on the category page).
 - **`tables`** — an array of individual tables. A table set can contain one or many tables.
 
 **Table fields:**
+
 - **`name`** — the label for this table (shown as the field label in results).
 - **`id`** — optional. A unique identifier within the table set, used by triggers to reference this table.
 - **`die`** — the die type: `d4`, `d6`, `d8`, `d10`, `d12`, `d20`, or `d100`.
@@ -145,6 +145,7 @@ public/tables/
 - **`entries`** — an array of entry objects. Entries must collectively cover all values from 1 to the die's maximum (no gaps, no overlaps).
 
 **Entry fields:**
+
 - **`range`** — `[min, max]` (inclusive). A single die result uses `[n, n]`. A multi-result entry uses `[min, max]` (e.g., `[1, 2]` means die results 1 and 2 both map to this entry).
 - **`title`** — required. The primary text of the entry.
 - **`description`** — optional. Additional detail about the entry.
@@ -159,6 +160,7 @@ A trigger object can reference tables in three ways:
 3. **Cross-file entire table set:** `{ "tableSet": "mutations/mutation-generator" }` — rolls all non-conditional tables in the referenced table set.
 
 **Acceptance Criteria:**
+
 - [x] The app correctly parses table set files with the structure defined above.
 - [x] Tables support die types: d4, d6, d8, d10, d12, d20, d100.
 - [x] Entries use `range` to map one or more die results to a single entry.
@@ -185,6 +187,7 @@ A trigger object can reference tables in three ways:
 - A single broken file should not crash the entire app — other categories and table sets should still function.
 
 **Acceptance Criteria:**
+
 - [x] If a JSON file fails to parse, a user-friendly error is shown where that content would appear.
 - [x] If required fields are missing, an error is shown identifying the issue.
 - [x] If a die type is not one of the supported values, an error is shown.
@@ -200,6 +203,7 @@ A trigger object can reference tables in three ways:
 - Sample data uses a variety of die sizes (d6, d10, d20) and entry formats (single-result ranges, multi-result ranges, entries with and without descriptions, conditional tables with triggers) to exercise the full schema.
 
 **Acceptance Criteria:**
+
 - [x] The app ships with at least 2 sample table sets for the NPCs category.
 - [x] The app ships with at least 2 sample table sets for the Weapons/Items category.
 - [x] Sample data includes tables with different die sizes.

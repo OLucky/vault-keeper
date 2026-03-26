@@ -11,10 +11,10 @@
     <script>
       // GitHub Pages SPA support: restore the original URL after 404.html redirect
       (function () {
-        var redirect = sessionStorage.getItem('redirect');
+        var redirect = sessionStorage.getItem("redirect");
         if (redirect) {
-          sessionStorage.removeItem('redirect');
-          history.replaceState(null, '', redirect);
+          sessionStorage.removeItem("redirect");
+          history.replaceState(null, "", redirect);
         }
       })();
     </script>

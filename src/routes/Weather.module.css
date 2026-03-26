@@ -31,7 +31,9 @@
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-lg);
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .secondaryButton:hover {
