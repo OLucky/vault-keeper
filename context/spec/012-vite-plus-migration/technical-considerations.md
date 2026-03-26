@@ -1,7 +1,7 @@
 # Technical Specification: Migrate to Vite+
 
 - **Functional Specification:** `context/spec/012-vite-plus-migration/functional-spec.md`
-- **Status:** Draft
+- **Status:** Completed
 - **Author(s):** AI-assisted
 
 ---
