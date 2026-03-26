@@ -3,6 +3,7 @@
 _Prerequisite: Session Log (004) tasks must be completed first._
 
 ## Slice 1: Saved Results Store with Persistence
+
 _Create the store and verify it persists data to localStorage independently from session log._
 
 - [x] **Slice 1: Saved Results Store**
@@ -11,6 +12,7 @@ _Create the store and verify it persists data to localStorage independently from
   - [x] Run tests and verify all pass. **[Agent: typescript-expert]**
 
 ## Slice 2: Bookmark Icon on ResultCard
+
 _Add a save/unsave bookmark icon to ResultCard. Visible in both roll view and session log sidebar._
 
 - [x] **Slice 2: Save Action on Results**
@@ -20,6 +22,7 @@ _Add a save/unsave bookmark icon to ResultCard. Visible in both roll view and se
   - [x] Verify: roll a result, bookmark icon appears. Click to save — icon fills. Icon state is consistent between roll view and session log. Click filled icon — confirmation dialog appears, confirm unsaves. Refresh — saved state persists. **[Agent: browser-mcp]**
 
 ## Slice 3: Saved Results Page with Grouped Display
+
 _A dedicated /saved route showing all saved results grouped by category and table set._
 
 - [x] **Slice 3: Saved Results Page**
@@ -29,6 +32,7 @@ _A dedicated /saved route showing all saved results grouped by category and tabl
   - [x] Verify: save some results from the roll view, navigate to /saved via header link, results appear grouped. Delete a saved result with confirmation. Empty state shows when all are removed. **[Agent: browser-mcp]**
 
 ## Slice 4: Inline Note Editing
+
 _User can add and edit notes on saved results from the Saved page._
 
 - [x] **Slice 4: Notes**
@@ -37,6 +41,7 @@ _User can add and edit notes on saved results from the Saved page._
   - [x] Verify: save a result, go to /saved, click "Add a note...", type a note, click away — note persists. Edit an existing note. Refresh — note is still there. **[Agent: browser-mcp]**
 
 ## Slice 5: Export Saved Results as Text
+
 _User can copy saved results to clipboard or download as .txt file, including notes._
 
 - [x] **Slice 5: Export**

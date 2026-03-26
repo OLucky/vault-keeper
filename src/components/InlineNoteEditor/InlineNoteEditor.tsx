@@ -1,32 +1,32 @@
-import { useState, useRef } from 'react'
-import { useSavedResultsStore } from '../../stores/savedResultsStore'
-import styles from './InlineNoteEditor.module.css'
+import { useState, useRef } from "react";
+import { useSavedResultsStore } from "../../stores/savedResultsStore";
+import styles from "./InlineNoteEditor.module.css";
 
 interface InlineNoteEditorProps {
-  resultId: string
-  note: string
+  resultId: string;
+  note: string;
 }
 
 export function InlineNoteEditor({ resultId, note }: InlineNoteEditorProps) {
-  const [value, setValue] = useState(note)
-  const lastSaved = useRef(note)
+  const [value, setValue] = useState(note);
+  const lastSaved = useRef(note);
 
   const save = () => {
-    const trimmed = value.trim()
+    const trimmed = value.trim();
     if (trimmed !== lastSaved.current) {
-      useSavedResultsStore.getState().updateNote(resultId, trimmed)
-      lastSaved.current = trimmed
+      useSavedResultsStore.getState().updateNote(resultId, trimmed);
+      lastSaved.current = trimmed;
     }
-    setValue(trimmed)
-  }
+    setValue(trimmed);
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      save()
-      ;(e.target as HTMLTextAreaElement).blur()
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      save();
+      (e.target as HTMLTextAreaElement).blur();
     }
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -41,5 +41,5 @@ export function InlineNoteEditor({ resultId, note }: InlineNoteEditorProps) {
         aria-label="Note"
       />
     </div>
-  )
+  );
 }

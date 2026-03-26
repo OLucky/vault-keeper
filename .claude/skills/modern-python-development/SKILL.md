@@ -10,18 +10,18 @@ Pure Python best practices for writing clean, idiomatic, and type-safe code. All
 
 ## Naming Conventions
 
-| Element          | Convention        | Example                       |
-|------------------|-------------------|-------------------------------|
-| Module           | `snake_case`      | `data_loader.py`              |
-| Package          | `lowercase`       | `utils/`, `core/`             |
-| Class            | `PascalCase`      | `UserAccount`                 |
-| Function/Method  | `snake_case`      | `get_user_by_id()`            |
-| Variable         | `snake_case`      | `retry_count`                 |
-| Constant         | `UPPER_SNAKE`     | `MAX_RETRIES`                 |
-| Type alias       | `PascalCase`      | `type UserId = int`           |
-| Private          | `_leading`        | `_internal_cache`             |
-| Name-mangled     | `__double`        | `__secret` (rarely needed)    |
-| Dunder           | `__name__`        | Reserved for Python protocols |
+| Element         | Convention    | Example                       |
+| --------------- | ------------- | ----------------------------- |
+| Module          | `snake_case`  | `data_loader.py`              |
+| Package         | `lowercase`   | `utils/`, `core/`             |
+| Class           | `PascalCase`  | `UserAccount`                 |
+| Function/Method | `snake_case`  | `get_user_by_id()`            |
+| Variable        | `snake_case`  | `retry_count`                 |
+| Constant        | `UPPER_SNAKE` | `MAX_RETRIES`                 |
+| Type alias      | `PascalCase`  | `type UserId = int`           |
+| Private         | `_leading`    | `_internal_cache`             |
+| Name-mangled    | `__double`    | `__secret` (rarely needed)    |
+| Dunder          | `__name__`    | Reserved for Python protocols |
 
 Prefix boolean variables and functions with `is_`, `has_`, `can_`, or `should_`.
 
@@ -29,16 +29,16 @@ Prefix boolean variables and functions with `is_`, `has_`, `can_`, or `should_`.
 
 ### Prefer modern constructs over legacy equivalents
 
-| Legacy                              | Modern (3.12+)                    |
-|-------------------------------------|-----------------------------------|
-| `Union[X, Y]`                       | `X \| Y`                         |
-| `Optional[X]`                       | `X \| None`                      |
-| `TypeAlias = ...`                   | `type Alias = ...`               |
-| `List[str]`, `Dict[str, int]`      | `list[str]`, `dict[str, int]`    |
-| `Tuple[int, ...]`                   | `tuple[int, ...]`                |
-| `if/elif/elif` chains on a value    | `match`/`case`                   |
-| `os.path.join()`                    | `pathlib.Path`                   |
-| `"{}".format(x)`                    | `f"{x}"`                         |
+| Legacy                           | Modern (3.12+)                |
+| -------------------------------- | ----------------------------- |
+| `Union[X, Y]`                    | `X \| Y`                      |
+| `Optional[X]`                    | `X \| None`                   |
+| `TypeAlias = ...`                | `type Alias = ...`            |
+| `List[str]`, `Dict[str, int]`    | `list[str]`, `dict[str, int]` |
+| `Tuple[int, ...]`                | `tuple[int, ...]`             |
+| `if/elif/elif` chains on a value | `match`/`case`                |
+| `os.path.join()`                 | `pathlib.Path`                |
+| `"{}".format(x)`                 | `f"{x}"`                      |
 
 ### Structural pattern matching
 
@@ -72,6 +72,7 @@ def calculate_total(items: list[float], *, tax_rate: float = 0.0) -> float:
 ```
 
 Key rules:
+
 - Use built-in generics: `list[str]`, `dict[str, int]`, `tuple[int, ...]`, `set[str]`
 - Use `X | None` instead of `Optional[X]`
 - Use `type` statement for aliases, not bare assignment
@@ -158,6 +159,7 @@ project-name/
 ```
 
 Key conventions:
+
 - Single source of truth for version and metadata in `pyproject.toml`.
 - The `src/` layout prevents accidental imports from the working directory.
 - Keep `__init__.py` files minimal — define the public API, not implementation.
@@ -202,6 +204,7 @@ For comprehensive patterns including Protocols, ABCs, descriptors, context manag
 ### Reference Files
 
 For detailed guidance beyond this overview, consult:
+
 - **`references/modern-syntax.md`** — Structural pattern matching, `type` statement, exception groups, `@override`, f-string details
 - **`references/type-hints.md`** — Generics, Protocol, TypeGuard, TypeVar, ParamSpec, Self, Overload
 - **`references/patterns.md`** — Idiomatic patterns: Protocols, enums, context managers, generators, pathlib, ABC

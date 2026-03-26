@@ -45,9 +45,21 @@
         { "range": [12, 12], "title": "Auto-Rifle", "description": "d8, 2 slots, Ud8" },
         { "range": [13, 13], "title": "Scattergun", "description": "d8, 2 slots, Ud10" },
         { "range": [14, 14], "title": "Laser Rifle", "description": "d8, Beam, 2 slots, Ud12" },
-        { "range": [15, 15], "title": "Concussion Rifle", "description": "d10, Concussive, 3 slots, Ud8" },
-        { "range": [16, 16], "title": "Spore Thrower", "description": "d10, Blast, Fungal, 3 slots, Ud8" },
-        { "range": [17, 17], "title": "Grenade Launcher", "description": "d10, Blast, 3 slots, Ud6" },
+        {
+          "range": [15, 15],
+          "title": "Concussion Rifle",
+          "description": "d10, Concussive, 3 slots, Ud8"
+        },
+        {
+          "range": [16, 16],
+          "title": "Spore Thrower",
+          "description": "d10, Blast, Fungal, 3 slots, Ud8"
+        },
+        {
+          "range": [17, 17],
+          "title": "Grenade Launcher",
+          "description": "d10, Blast, 3 slots, Ud6"
+        },
         { "range": [18, 18], "title": "Laser Cannon", "description": "d10, Beam, 3 slots, Ud6" },
         { "range": [19, 19], "title": "Port-A-Cannon", "description": "d12, Blast, 5 slots, Ud4" },
         { "range": [20, 20], "title": "Railgun", "description": "d12, Piercing, 5 slots, Ud4" }
@@ -59,23 +71,75 @@
       "entries": [
         { "range": [1, 1], "title": "Ancient", "description": "Half base trade value" },
         { "range": [2, 2], "title": "Bejewelled", "description": "Triple base trade value" },
-        { "range": [3, 3], "title": "Blasphemous", "description": "Cursed by a religious leader. DIS on reaction rolls when encountering followers of said religion." },
-        { "range": [4, 4], "title": "Bone", "description": "Double trade value with Cacklemaw and Ghouls." },
+        {
+          "range": [3, 3],
+          "title": "Blasphemous",
+          "description": "Cursed by a religious leader. DIS on reaction rolls when encountering followers of said religion."
+        },
+        {
+          "range": [4, 4],
+          "title": "Bone",
+          "description": "Double trade value with Cacklemaw and Ghouls."
+        },
         { "range": [5, 5], "title": "Corroded", "description": "Half base trade value." },
-        { "range": [6, 6], "title": "Crystalline", "description": "If natural 1 is rolled, the weapon shatters beyond repair. Double base trade value." },
-        { "range": [7, 7], "title": "Delicate", "description": "Half base slot weight, minimum one slot, breaks on a to-hit roll of 1–2." },
-        { "range": [8, 8], "title": "Elegant", "description": "Half base slot weight, minimum one slot." },
-        { "range": [9, 9], "title": "Fungal", "description": "Deals no damage to Fungal creatures. Regains an Ammo die step when fed decaying animal or vegetable matter." },
+        {
+          "range": [6, 6],
+          "title": "Crystalline",
+          "description": "If natural 1 is rolled, the weapon shatters beyond repair. Double base trade value."
+        },
+        {
+          "range": [7, 7],
+          "title": "Delicate",
+          "description": "Half base slot weight, minimum one slot, breaks on a to-hit roll of 1–2."
+        },
+        {
+          "range": [8, 8],
+          "title": "Elegant",
+          "description": "Half base slot weight, minimum one slot."
+        },
+        {
+          "range": [9, 9],
+          "title": "Fungal",
+          "description": "Deals no damage to Fungal creatures. Regains an Ammo die step when fed decaying animal or vegetable matter."
+        },
         { "range": [10, 10], "title": "Gilded", "description": "Double base trade value." },
-        { "range": [11, 11], "title": "Laquered", "description": "Double base trade value. Cannot rust or be corroded." },
-        { "range": [12, 12], "title": "Luminous", "description": "Can be used as light source, double base trade value." },
-        { "range": [13, 13], "title": "Nomad's", "description": "Made by Faa Nomads, double trade value with Faa nomads." },
+        {
+          "range": [11, 11],
+          "title": "Laquered",
+          "description": "Double base trade value. Cannot rust or be corroded."
+        },
+        {
+          "range": [12, 12],
+          "title": "Luminous",
+          "description": "Can be used as light source, double base trade value."
+        },
+        {
+          "range": [13, 13],
+          "title": "Nomad's",
+          "description": "Made by Faa Nomads, double trade value with Faa nomads."
+        },
         { "range": [14, 14], "title": "Ornate", "description": "Double base trade value." },
         { "range": [15, 15], "title": "Polychrome", "description": "Double base trade value." },
-        { "range": [16, 16], "title": "Quicksilver", "description": "Half base slot weight, minimum one slot." },
-        { "range": [17, 17], "title": "Ritual", "description": "Used in an occult ritual. Double trade value with Mystics." },
-        { "range": [18, 18], "title": "Sacred", "description": "Blessed by a religious leader. ADV on reaction rolls when encountering followers of said religion." },
-        { "range": [19, 19], "title": "Shoddy", "description": "Damage dice one step smaller (minimum d4)." },
+        {
+          "range": [16, 16],
+          "title": "Quicksilver",
+          "description": "Half base slot weight, minimum one slot."
+        },
+        {
+          "range": [17, 17],
+          "title": "Ritual",
+          "description": "Used in an occult ritual. Double trade value with Mystics."
+        },
+        {
+          "range": [18, 18],
+          "title": "Sacred",
+          "description": "Blessed by a religious leader. ADV on reaction rolls when encountering followers of said religion."
+        },
+        {
+          "range": [19, 19],
+          "title": "Shoddy",
+          "description": "Damage dice one step smaller (minimum d4)."
+        },
         { "range": [20, 20], "title": "Translucent", "description": "Double base trade value." }
       ]
     }

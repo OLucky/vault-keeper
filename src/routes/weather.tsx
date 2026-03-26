@@ -1,23 +1,23 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { GRID_CELLS } from '../lib/weatherGrid'
-import { findCell } from '../lib/weatherMovement'
-import { useWeatherStore } from '../stores/weatherStore'
-import { HexGrid } from '../components/HexGrid/HexGrid'
-import { WeatherEffect } from '../components/WeatherEffect/WeatherEffect'
-import styles from './Weather.module.css'
+import { createFileRoute } from "@tanstack/react-router";
+import { GRID_CELLS } from "../lib/weatherGrid";
+import { findCell } from "../lib/weatherMovement";
+import { useWeatherStore } from "../stores/weatherStore";
+import { HexGrid } from "../components/HexGrid/HexGrid";
+import { WeatherEffect } from "../components/WeatherEffect/WeatherEffect";
+import styles from "./Weather.module.css";
 
-export const Route = createFileRoute('/weather')({
+export const Route = createFileRoute("/weather")({
   component: WeatherPage,
-})
+});
 
 function WeatherPage() {
-  const markerPosition = useWeatherStore((s) => s.markerPosition)
-  const lastRoll = useWeatherStore((s) => s.lastRoll)
-  const advanceDay = useWeatherStore((s) => s.advanceDay)
-  const placeMarker = useWeatherStore((s) => s.placeMarker)
-  const reset = useWeatherStore((s) => s.reset)
+  const markerPosition = useWeatherStore((s) => s.markerPosition);
+  const lastRoll = useWeatherStore((s) => s.lastRoll);
+  const advanceDay = useWeatherStore((s) => s.advanceDay);
+  const placeMarker = useWeatherStore((s) => s.placeMarker);
+  const reset = useWeatherStore((s) => s.reset);
 
-  const currentCell = findCell(markerPosition.row, markerPosition.col, GRID_CELLS)
+  const currentCell = findCell(markerPosition.row, markerPosition.col, GRID_CELLS);
 
   return (
     <div>
@@ -37,13 +37,9 @@ function WeatherPage() {
         )}
       </div>
 
-      <HexGrid
-        cells={GRID_CELLS}
-        markerPosition={markerPosition}
-        onHexClick={placeMarker}
-      />
+      <HexGrid cells={GRID_CELLS} markerPosition={markerPosition} onHexClick={placeMarker} />
 
       {currentCell && <WeatherEffect weatherType={currentCell.weather} />}
     </div>
-  )
+  );
 }

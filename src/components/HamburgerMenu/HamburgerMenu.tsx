@@ -1,6 +1,6 @@
-import { DialogTrigger, Popover, Button, Dialog } from 'react-aria-components'
-import { Link } from '@tanstack/react-router'
-import styles from './HamburgerMenu.module.css'
+import { DialogTrigger, Popover, Button, Dialog } from "react-aria-components";
+import { Link } from "@tanstack/react-router";
+import styles from "./HamburgerMenu.module.css";
 
 export function HamburgerMenu() {
   return (
@@ -18,5 +18,5 @@ export function HamburgerMenu() {
         </Dialog>
       </Popover>
     </DialogTrigger>
-  )
+  );
 }

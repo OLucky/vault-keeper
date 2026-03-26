@@ -8,7 +8,9 @@
   padding: var(--space-xs) var(--space-sm);
   background: transparent;
   cursor: pointer;
-  transition: color 0.15s, background-color 0.15s;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
 
   &:hover {
     color: var(--color-text-primary);

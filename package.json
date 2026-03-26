@@ -1,14 +1,14 @@
 {
   "name": "vault-keeper",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && tsc -b",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "test": "vitest run"
+    "dev": "vp dev",
+    "build": "vp build",
+    "lint": "vp lint",
+    "preview": "vp preview",
+    "test": "vp test"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.21",
@@ -20,7 +20,6 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
     "@tanstack/router-devtools": "^1.166.2",
     "@tanstack/router-plugin": "^1.166.2",
     "@testing-library/dom": "^10.4.1",
@@ -31,14 +30,11 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
     "jsdom": "^28.1.0",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.48.0",
-    "vite": "^7.3.1",
-    "vitest": "^4.0.18"
-  }
+    "vite": "^8.0.0",
+    "vite-plus": "^0.1.15-alpha.0",
+    "vitest": "^4.1.0"
+  },
+  "packageManager": "npm@11.12.0"
 }

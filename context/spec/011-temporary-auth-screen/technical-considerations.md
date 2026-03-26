@@ -18,8 +18,8 @@ Auth state is managed by a new Zustand store using `sessionStorage` persistence 
 
 ### Environment Variable
 
-| Variable | Purpose |
-|---|---|
+| Variable            | Purpose                                                              |
+| ------------------- | -------------------------------------------------------------------- |
 | `VITE_APP_PASSWORD` | Static password for the auth gate. If empty/unset, auth is disabled. |
 
 - Access in code: `import.meta.env.VITE_APP_PASSWORD`
@@ -44,10 +44,10 @@ In `.github/workflows/deploy.yml`, add the env var to the build step:
 - **Storage type:** `sessionStorage` (not `localStorage`)
 - **State shape:**
 
-| Field | Type | Purpose |
-|---|---|---|
-| `isAuthenticated` | `boolean` | Whether the user has entered the correct password |
-| `authenticate` | `(password: string) => boolean` | Validates password, sets `isAuthenticated` to `true` on match, returns success |
+| Field             | Type                            | Purpose                                                                        |
+| ----------------- | ------------------------------- | ------------------------------------------------------------------------------ |
+| `isAuthenticated` | `boolean`                       | Whether the user has entered the correct password                              |
+| `authenticate`    | `(password: string) => boolean` | Validates password, sets `isAuthenticated` to `true` on match, returns success |
 
 - `authenticate` compares input against `import.meta.env.VITE_APP_PASSWORD`
 - `partialize`: persist only `isAuthenticated`
@@ -83,7 +83,7 @@ Add type declaration for the new env var in `src/vite-env.d.ts` (or create if mi
 
 ```typescript
 interface ImportMetaEnv {
-  readonly VITE_APP_PASSWORD: string
+  readonly VITE_APP_PASSWORD: string;
 }
 ```
 
@@ -92,16 +92,17 @@ interface ImportMetaEnv {
 ## 3. Impact and Risk Analysis
 
 **System Dependencies:**
+
 - `__root.tsx` is modified — this affects all routes, but the change is a simple conditional wrapper
 - No changes to existing stores, components, or routes
 
 **Potential Risks & Mitigations:**
 
-| Risk | Mitigation |
-|---|---|
+| Risk                                                                                | Mitigation                                                                                                                               |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Password is embedded in the JS bundle and visible to anyone who inspects the source | This is a known limitation of client-side auth. Acceptable for temporary content protection — not a substitute for server-side security. |
-| Auth gate accidentally blocks app when env var is misconfigured | Default behavior when env var is unset is "no gate" — safe fallback. Only a non-empty `VITE_APP_PASSWORD` activates the gate. |
-| `sessionStorage` may behave differently across browsers for "session" lifetime | All modern browsers clear `sessionStorage` on tab close. This is well-standardized behavior. |
+| Auth gate accidentally blocks app when env var is misconfigured                     | Default behavior when env var is unset is "no gate" — safe fallback. Only a non-empty `VITE_APP_PASSWORD` activates the gate.            |
+| `sessionStorage` may behave differently across browsers for "session" lifetime      | All modern browsers clear `sessionStorage` on tab close. This is well-standardized behavior.                                             |
 
 ---
 

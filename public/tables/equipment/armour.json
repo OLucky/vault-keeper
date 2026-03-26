@@ -32,12 +32,20 @@
       "die": "d20",
       "entries": [
         { "range": [1, 2], "title": "Desert Robes", "description": "AV 11, 1 slot" },
-        { "range": [3, 5], "title": "Hazard Wrap", "description": "AV 12, 3 slots. ADV on Saves vs Radiation and Toxins." },
+        {
+          "range": [3, 5],
+          "title": "Hazard Wrap",
+          "description": "AV 12, 3 slots. ADV on Saves vs Radiation and Toxins."
+        },
         { "range": [6, 9], "title": "War-Shirt", "description": "AV 12, 2 slots" },
         { "range": [10, 13], "title": "Brigandine", "description": "AV 13, 3 slots" },
         { "range": [14, 16], "title": "Cuirass", "description": "AV 14, 4 slots" },
         { "range": [17, 18], "title": "Chain-Mail", "description": "AV 15, 5 slots" },
-        { "range": [19, 20], "title": "Plate Armour", "description": "AV 16, 6 slots. DIS when swimming or climbing." }
+        {
+          "range": [19, 20],
+          "title": "Plate Armour",
+          "description": "AV 16, 6 slots. DIS when swimming or climbing."
+        }
       ]
     },
     {

@@ -1,50 +1,55 @@
-import { useMemo, useState } from 'react'
-import { formatSessionLogAsText } from '../../lib/exportSessionLog'
-import type { SessionLogEntry as SessionLogEntryType } from '../../stores/sessionLogStore'
-import { useSessionLogStore } from '../../stores/sessionLogStore'
-import { ConfirmDialog } from '../ConfirmDialog/ConfirmDialog'
-import { SessionLogGroup } from './SessionLogGroup'
-import styles from './SessionLogSidebar.module.css'
+import { useMemo, useState } from "react";
+import { formatSessionLogAsText } from "../../lib/exportSessionLog";
+import type { SessionLogEntry as SessionLogEntryType } from "../../stores/sessionLogStore";
+import { useSessionLogStore } from "../../stores/sessionLogStore";
+import { ConfirmDialog } from "../ConfirmDialog/ConfirmDialog";
+import { SessionLogGroup } from "./SessionLogGroup";
+import styles from "./SessionLogSidebar.module.css";
 
 export function SessionLogSidebar() {
-  const entries = useSessionLogStore((s) => s.entries)
-  const removeEntry = useSessionLogStore((s) => s.removeEntry)
-  const clearAll = useSessionLogStore((s) => s.clearAll)
-  const toggleSidebar = useSessionLogStore((s) => s.toggleSidebar)
-  const [showClearConfirm, setShowClearConfirm] = useState(false)
-  const [copied, setCopied] = useState(false)
+  const entries = useSessionLogStore((s) => s.entries);
+  const removeEntry = useSessionLogStore((s) => s.removeEntry);
+  const clearAll = useSessionLogStore((s) => s.clearAll);
+  const toggleSidebar = useSessionLogStore((s) => s.toggleSidebar);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    const text = formatSessionLogAsText(entries)
-    await navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+    const text = formatSessionLogAsText(entries);
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleDownload = () => {
-    const text = formatSessionLogAsText(entries)
-    const blob = new Blob([text], { type: 'text/plain' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'session-log.txt'
-    a.click()
-    URL.revokeObjectURL(url)
-  }
+    const text = formatSessionLogAsText(entries);
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "session-log.txt";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   const groups = useMemo(() => {
     const groupMap = new Map<
       string,
-      { categoryName: string; tableSetName: string; entries: SessionLogEntryType[]; latestTimestamp: number }
-    >()
+      {
+        categoryName: string;
+        tableSetName: string;
+        entries: SessionLogEntryType[];
+        latestTimestamp: number;
+      }
+    >();
 
     for (const entry of entries) {
-      const key = `${entry.categoryId}/${entry.tableSetName}`
-      const existing = groupMap.get(key)
+      const key = `${entry.categoryId}/${entry.tableSetName}`;
+      const existing = groupMap.get(key);
       if (existing) {
-        existing.entries.push(entry)
+        existing.entries.push(entry);
         if (entry.timestamp > existing.latestTimestamp) {
-          existing.latestTimestamp = entry.timestamp
+          existing.latestTimestamp = entry.timestamp;
         }
       } else {
         groupMap.set(key, {
@@ -52,7 +57,7 @@ export function SessionLogSidebar() {
           tableSetName: entry.tableSetName,
           entries: [entry],
           latestTimestamp: entry.timestamp,
-        })
+        });
       }
     }
 
@@ -60,10 +65,10 @@ export function SessionLogSidebar() {
       key,
       ...group,
       entries: group.entries.sort((a, b) => b.timestamp - a.timestamp),
-    }))
+    }));
 
-    return result.sort((a, b) => b.latestTimestamp - a.latestTimestamp)
-  }, [entries])
+    return result.sort((a, b) => b.latestTimestamp - a.latestTimestamp);
+  }, [entries]);
 
   return (
     <>
@@ -71,11 +76,20 @@ export function SessionLogSidebar() {
         <div className={styles.header}>
           <div className={styles.headerTop}>
             <span className={styles.title}>Session Log ({entries.length})</span>
-            <button className={styles.closeButton} onClick={toggleSidebar} type="button" aria-label="Close sidebar">
+            <button
+              className={styles.closeButton}
+              onClick={toggleSidebar}
+              type="button"
+              aria-label="Close sidebar"
+            >
               ✕
             </button>
             {entries.length > 0 && (
-              <button className={styles.clearButton} onClick={() => setShowClearConfirm(true)} type="button">
+              <button
+                className={styles.clearButton}
+                onClick={() => setShowClearConfirm(true)}
+                type="button"
+              >
                 Clear
               </button>
             )}
@@ -83,7 +97,7 @@ export function SessionLogSidebar() {
           {entries.length > 0 && (
             <div className={styles.headerActions}>
               <button className={styles.actionButton} onClick={handleCopy} type="button">
-                {copied ? 'Copied!' : 'Copy'}
+                {copied ? "Copied!" : "Copy"}
               </button>
               <button className={styles.actionButton} onClick={handleDownload} type="button">
                 Download
@@ -112,9 +126,12 @@ export function SessionLogSidebar() {
         message="Clear all logged results? This cannot be undone."
         confirmLabel="Clear"
         isOpen={showClearConfirm}
-        onConfirm={() => { clearAll(); setShowClearConfirm(false) }}
+        onConfirm={() => {
+          clearAll();
+          setShowClearConfirm(false);
+        }}
         onCancel={() => setShowClearConfirm(false)}
       />
     </>
-  )
+  );
 }

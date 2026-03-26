@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import type { SavedResult } from '../../stores/savedResultsStore'
-import { useSavedResultsStore } from '../../stores/savedResultsStore'
-import { ConfirmDialog } from '../ConfirmDialog/ConfirmDialog'
-import { InlineNoteEditor } from '../InlineNoteEditor/InlineNoteEditor'
-import styles from './SavedResultCard.module.css'
+import { useState } from "react";
+import type { SavedResult } from "../../stores/savedResultsStore";
+import { useSavedResultsStore } from "../../stores/savedResultsStore";
+import { ConfirmDialog } from "../ConfirmDialog/ConfirmDialog";
+import { InlineNoteEditor } from "../InlineNoteEditor/InlineNoteEditor";
+import styles from "./SavedResultCard.module.css";
 
 interface SavedResultCardProps {
-  result: SavedResult
+  result: SavedResult;
 }
 
 export function SavedResultCard({ result }: SavedResultCardProps) {
-  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   return (
     <div className={styles.card}>
       <div className={styles.fields}>
         {result.fields.map((field, index) => (
-          <div key={index} className={`${styles.field}${field.triggered ? ` ${styles.triggered}` : ''}`}>
-            <span className={styles.label}>{field.tableName}:</span>{' '}
+          <div
+            key={index}
+            className={`${styles.field}${field.triggered ? ` ${styles.triggered}` : ""}`}
+          >
+            <span className={styles.label}>{field.tableName}:</span>{" "}
             {field.error ? (
               <span className={styles.error}>{field.error}</span>
             ) : (
               <span className={styles.value}>
                 {field.entry.title}
                 {field.entry.description && (
-                  <span className={styles.description}>
-                    {' '}
-                    &mdash; {field.entry.description}
-                  </span>
+                  <span className={styles.description}> &mdash; {field.entry.description}</span>
                 )}
               </span>
             )}
@@ -49,10 +49,13 @@ export function SavedResultCard({ result }: SavedResultCardProps) {
           message="Remove this result from your saved collection?"
           confirmLabel="Remove"
           isOpen={showDeleteConfirm}
-          onConfirm={() => { useSavedResultsStore.getState().removeResult(result.id); setShowDeleteConfirm(false) }}
+          onConfirm={() => {
+            useSavedResultsStore.getState().removeResult(result.id);
+            setShowDeleteConfirm(false);
+          }}
           onCancel={() => setShowDeleteConfirm(false)}
         />
       )}
     </div>
-  )
+  );
 }

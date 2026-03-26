@@ -5,21 +5,57 @@
       "name": "Ancestry",
       "die": "d10",
       "entries": [
-        { "range": [1, 1], "title": "True-kin", "triggers": [{ "tableSet": "character/true-kin" }] },
+        {
+          "range": [1, 1],
+          "title": "True-kin",
+          "triggers": [{ "tableSet": "character/true-kin" }]
+        },
         { "range": [2, 2], "title": "Cacogen", "triggers": [{ "tableSet": "character/cacogen" }] },
         { "range": [3, 3], "title": "Synth", "triggers": [{ "tableSet": "character/synth" }] },
-        { "range": [4, 4], "title": "Newbeast", "triggers": [{ "tableSet": "character/newbeast" }] },
-        { "range": [5, 5], "title": "Neobloom", "triggers": [{ "tableSet": "character/neobloom" }] },
-        { "range": [6, 6], "title": "Mycomorph", "triggers": [{ "tableSet": "character/mycomorph" }] },
-        { "range": [7, 7], "title": "Faa Nomad", "triggers": [{ "tableSet": "character/faa-nomad" }] },
-        { "range": [8, 8], "title": "Cacklemaw Exile", "triggers": [{ "tableSet": "character/cacklemaw-exile" }] },
-        { "range": [9, 9], "title": "Planeyfolk", "triggers": [{ "tableSet": "character/planeyfolk" }] },
-        { "range": [10, 10], "title": "Lithling", "triggers": [{ "tableSet": "character/lithling" }] }
+        {
+          "range": [4, 4],
+          "title": "Newbeast",
+          "triggers": [{ "tableSet": "character/newbeast" }]
+        },
+        {
+          "range": [5, 5],
+          "title": "Neobloom",
+          "triggers": [{ "tableSet": "character/neobloom" }]
+        },
+        {
+          "range": [6, 6],
+          "title": "Mycomorph",
+          "triggers": [{ "tableSet": "character/mycomorph" }]
+        },
+        {
+          "range": [7, 7],
+          "title": "Faa Nomad",
+          "triggers": [{ "tableSet": "character/faa-nomad" }]
+        },
+        {
+          "range": [8, 8],
+          "title": "Cacklemaw Exile",
+          "triggers": [{ "tableSet": "character/cacklemaw-exile" }]
+        },
+        {
+          "range": [9, 9],
+          "title": "Planeyfolk",
+          "triggers": [{ "tableSet": "character/planeyfolk" }]
+        },
+        {
+          "range": [10, 10],
+          "title": "Lithling",
+          "triggers": [{ "tableSet": "character/lithling" }]
+        }
       ]
     },
     { "name": "Strength", "type": "computed", "compute": { "dice": "3d6", "method": "lowest" } },
     { "name": "Dexterity", "type": "computed", "compute": { "dice": "3d6", "method": "lowest" } },
-    { "name": "Constitution", "type": "computed", "compute": { "dice": "3d6", "method": "lowest" } },
+    {
+      "name": "Constitution",
+      "type": "computed",
+      "compute": { "dice": "3d6", "method": "lowest" }
+    },
     { "name": "Intellect", "type": "computed", "compute": { "dice": "3d6", "method": "lowest" } },
     { "name": "Psyche", "type": "computed", "compute": { "dice": "3d6", "method": "lowest" } },
     { "name": "Ego", "type": "computed", "compute": { "dice": "3d6", "method": "lowest" } },
@@ -27,12 +63,35 @@
       "name": "Boon",
       "die": "d6",
       "entries": [
-        { "range": [1, 1], "title": "Advanced Weapon", "triggers": [{ "tableSet": "equipment/advanced-weapon" }] },
-        { "range": [2, 2], "title": "Alchemist's Crucible and an Elixir", "triggers": [{ "tableSet": "equipment/alchemical-crucible" }, { "tableSet": "equipment/elixir" }] },
-        { "range": [3, 3], "title": "Cybernetic Implant", "triggers": [{ "tableSet": "equipment/cybernetics" }] },
+        {
+          "range": [1, 1],
+          "title": "Advanced Weapon",
+          "triggers": [{ "tableSet": "equipment/advanced-weapon" }]
+        },
+        {
+          "range": [2, 2],
+          "title": "Alchemist's Crucible and an Elixir",
+          "triggers": [
+            { "tableSet": "equipment/alchemical-crucible" },
+            { "tableSet": "equipment/elixir" }
+          ]
+        },
+        {
+          "range": [3, 3],
+          "title": "Cybernetic Implant",
+          "triggers": [{ "tableSet": "equipment/cybernetics" }]
+        },
         { "range": [4, 4], "title": "Exotica", "triggers": [{ "tableSet": "equipment/exotica" }] },
-        { "range": [5, 5], "title": "Hypergeometric Codex", "triggers": [{ "tableSet": "equipment/hypergeometric-equation" }] },
-        { "range": [6, 6], "title": "Mystic Gift", "triggers": [{ "tableSet": "equipment/mystic-gift" }] }
+        {
+          "range": [5, 5],
+          "title": "Hypergeometric Codex",
+          "triggers": [{ "tableSet": "equipment/hypergeometric-equation" }]
+        },
+        {
+          "range": [6, 6],
+          "title": "Mystic Gift",
+          "triggers": [{ "tableSet": "equipment/mystic-gift" }]
+        }
       ]
     },
     {

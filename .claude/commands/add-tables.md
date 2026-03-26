@@ -76,6 +76,7 @@ Create the table set JSON following this exact schema:
 ### Step 4: Present for Review
 
 Show the user:
+
 1. The complete JSON file content
 2. Which category it will go in (new or existing)
 3. The file name
@@ -99,6 +100,7 @@ Once the user approves:
 ### Step 6: Announce
 
 Report what was created:
+
 - File path and table set name
 - Number of tables and total entries
 - Category (new or existing)
@@ -115,6 +117,7 @@ Report what was created:
 **Validation:** Ranges must cover 1 to die-max completely. The app validates this at runtime via `src/lib/validation.ts` and will show an error if ranges have gaps or overlaps.
 
 **Example — simple table set:**
+
 ```json
 {
   "name": "Trade Goods",
@@ -144,6 +147,7 @@ Report what was created:
 ```
 
 **Example — table set with triggers:**
+
 ```json
 {
   "name": "NPC Generator",

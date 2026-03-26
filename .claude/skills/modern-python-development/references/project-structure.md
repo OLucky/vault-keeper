@@ -199,6 +199,7 @@ if __name__ == "__main__":
 ```
 
 This enables:
+
 - `python -m package_name` to run the application
 - Clean separation between entry point and CLI logic
 
@@ -284,9 +285,9 @@ class Config:
 ### Order
 
 1. Standard library imports
-2. *(blank line)*
+2. _(blank line)_
 3. Third-party imports
-4. *(blank line)*
+4. _(blank line)_
 5. Local application imports
 
 ```python

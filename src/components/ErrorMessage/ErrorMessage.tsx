@@ -1,7 +1,7 @@
-import styles from './ErrorMessage.module.css'
+import styles from "./ErrorMessage.module.css";
 
 interface ErrorMessageProps {
-  message: string
+  message: string;
 }
 
 export function ErrorMessage({ message }: ErrorMessageProps) {
@@ -9,5 +9,5 @@ export function ErrorMessage({ message }: ErrorMessageProps) {
     <div role="alert" className={styles.error}>
       {message}
     </div>
-  )
+  );
 }

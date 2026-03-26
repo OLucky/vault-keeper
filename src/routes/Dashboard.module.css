@@ -75,7 +75,10 @@
   border-radius: var(--radius-lg);
   color: var(--color-text-primary);
   text-decoration: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .toolCard:hover {

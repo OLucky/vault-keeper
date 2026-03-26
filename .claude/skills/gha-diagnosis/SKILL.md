@@ -12,6 +12,7 @@ Fetch failed workflow logs via `gh`, diagnose root causes, fix, verify locally, 
 ## Input
 
 User may provide:
+
 - **Nothing** — find failures via `gh run list --status failure --limit 5`
 - **Run URL** — e.g. `https://github.com/org/repo/actions/runs/123` → extract run ID
 - **Run/Job ID** — use directly with `gh run view <id> --log-failed`
@@ -28,15 +29,15 @@ gh run view <run-id> --log-failed
 
 Group failures by root cause:
 
-| Category | Signals | Typical Fix |
-|----------|---------|-------------|
-| **Lint/Format** | linter, formatter errors | Auto-fix or targeted edit |
-| **Test** | assertion errors, crashes | Fix code or test |
-| **Security** | vulnerability flags | Upgrade dep, scoped override |
-| **Stale workflow** | action SHA mismatch, deprecated syntax | Update workflow YAML |
-| **Env/secrets** | missing var, auth failure | Fix workflow env block |
-| **Build** | type errors, import failures | Fix source or dependency |
-| **Spec drift** | generated code stale | Regenerate artifacts |
+| Category           | Signals                                | Typical Fix                  |
+| ------------------ | -------------------------------------- | ---------------------------- |
+| **Lint/Format**    | linter, formatter errors               | Auto-fix or targeted edit    |
+| **Test**           | assertion errors, crashes              | Fix code or test             |
+| **Security**       | vulnerability flags                    | Upgrade dep, scoped override |
+| **Stale workflow** | action SHA mismatch, deprecated syntax | Update workflow YAML         |
+| **Env/secrets**    | missing var, auth failure              | Fix workflow env block       |
+| **Build**          | type errors, import failures           | Fix source or dependency     |
+| **Spec drift**     | generated code stale                   | Regenerate artifacts         |
 
 ## Phase 2: Fix Loop
 
@@ -65,10 +66,10 @@ Process in dependency order: workflow config → lint → tests → build.
 
 ## Common Pitfalls
 
-| Pitfall | Instead |
-|---------|---------|
-| Guess fix from job name | Read `gh run view <id> --log-failed` |
-| Blanket dep override | Scope to specific dependency paths |
-| Update action SHA blindly | Check release notes for breaking changes |
-| Fix warnings not in the error | Only fix what CI flagged |
-| `--no-verify` to bypass hooks | Fix the hook issue |
+| Pitfall                       | Instead                                  |
+| ----------------------------- | ---------------------------------------- |
+| Guess fix from job name       | Read `gh run view <id> --log-failed`     |
+| Blanket dep override          | Scope to specific dependency paths       |
+| Update action SHA blindly     | Check release notes for breaking changes |
+| Fix warnings not in the error | Only fix what CI flagged                 |
+| `--no-verify` to bypass hooks | Fix the hook issue                       |

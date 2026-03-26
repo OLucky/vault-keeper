@@ -161,11 +161,31 @@
       "name": "Spores",
       "die": "d20",
       "entries": [
-        { "range": [1, 4], "title": "Soporific Spores", "description": "Targets EGO save or fall asleep for d6 rounds" },
-        { "range": [5, 8], "title": "Berserk Spores", "description": "Targets EGO save or become aggressive for d6 rounds, attacking their comrades" },
-        { "range": [9, 12], "title": "Toxic Spores", "description": "Targets CON save vs a d8 TOX attack" },
-        { "range": [13, 16], "title": "Fellowship Spores", "description": "Targets EGO save or become friendly for d6 rounds" },
-        { "range": [17, 20], "title": "Leeching Spores", "description": "Targets CON save vs d6 damage. You heal HP equal to damage dealt" }
+        {
+          "range": [1, 4],
+          "title": "Soporific Spores",
+          "description": "Targets EGO save or fall asleep for d6 rounds"
+        },
+        {
+          "range": [5, 8],
+          "title": "Berserk Spores",
+          "description": "Targets EGO save or become aggressive for d6 rounds, attacking their comrades"
+        },
+        {
+          "range": [9, 12],
+          "title": "Toxic Spores",
+          "description": "Targets CON save vs a d8 TOX attack"
+        },
+        {
+          "range": [13, 16],
+          "title": "Fellowship Spores",
+          "description": "Targets EGO save or become friendly for d6 rounds"
+        },
+        {
+          "range": [17, 20],
+          "title": "Leeching Spores",
+          "description": "Targets CON save vs d6 damage. You heal HP equal to damage dealt"
+        }
       ]
     },
     {
